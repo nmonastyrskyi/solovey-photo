@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="utf-8">
+    <title>Title</title>
+    <meta name="description" content="">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta property="og:image" content="path/to/image.jpg">
+    <link rel="shortcut icon" href="img/favicon/favicon.ico" type="image/x-icon">
+    <link rel="apple-touch-icon" href="img/favicon/apple-touch-icon.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="img/favicon/apple-touch-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="img/favicon/apple-touch-icon-114x114.png">
+    <link rel="stylesheet" href="css/font-awesome.min.css">
+    <link rel="stylesheet" href="libs/fotorama/fotorama.css">
+    <!-- Chrome, Firefox OS and Opera -->
+    <meta name="theme-color" content="#000">
+    <!-- Windows Phone -->
+    <meta name="msapplication-navbutton-color" content="#000">
+    <!-- iOS Safari -->
+    <meta name="apple-mobile-web-app-status-bar-style" content="#000">
+    <style>
+    body {
+        opacity: 0;
+        overflow-x: hidden;
+    }
+
+    html {
+        background-color: #fff;
+    }
+    </style>
+</head>
+
+<body>
+    <section class="header" id="fixed">
+        <div class="header__logo">Solovey Photo</div>
+        <nav class="header__nav">
+            <ul>
+                <li class="header__nav__item"><a href="#intro">Intro</a></li>
+                <li class="header__nav__item"><a href="#about">About Me</a></li>
+                <li class="header__nav__item"><a href="#galery">Galery</a></li>
+                <li class="header__nav__item"><a href="">My Work</a></li>
+                <li class="header__nav__item"><a href="">Contact</a></li>
+            </ul>
+        </nav>
+    </section>
+    <section class="intro fullscreen white panel" id="intro" style="background-image: url(img/img2.jpg)">
+        <div class="intro__content">
+            <h1>Я фотограф</h1>
+            <p>Добро пожаловать на мой сайт</p>
+        </div>
+        <div class="btn-wrapper">
+            <a href="#about" class="button-circle white">
+        <i class="fa fa-angle-down" aria-hidden="true"></i>
+    </a>
+        </div>
+    </section>
+    <section class="about fullscreen panel" id="about" style="background-image: url(img/masha.jpg)">
+        <div class="about__content">Привет, я Буфет, заходи на мой новый сайт </div>
+        <div class="btn-wrapper">
+            <a href="#galery" class="button-circle black">
+        <i class="fa fa-angle-down" aria-hidden="true"></i>
+    </a>
+        </div>
+    </section>
+    <section class="galery panel fullscreen" style="background-image: url(img/studio/1.jpg)" id="galery">
+        <div class="galery__nav">
+            <ul>
+                <li class="galery__nav__items active" id="studio">
+                    <button>Студийные</button>
+                </li>
+                <li class="galery__nav__items " id="wedding">
+                    <button>Свадебные</button>
+                </li>
+                <li class="galery__nav__items " id="outdoors">
+                    <button>Уличные</button>
+                </li>
+                <li class="galery__nav__items " id="children">
+                    <button>Дети</button>
+                </li>
+                <li class="galery__nav__items " id="pregnant">
+                    <button>Беременные</button>
+                </li>
+            </ul>
+        </div>
+        <div class="fotoramas">
+            <div class="fotorama studio" data-nav="thumbs" data-loop="true" data-allowfullscreen="true">
+                <img src="img/studio/1.jpg" alt="1">
+                <img src="img/studio/2.jpg" alt="2">
+                <img src="img/studio/3.jpg" alt="3">
+                <img src="img/studio/4.jpg" alt="4">
+                <img src="img/studio/5.jpg" alt="5">
+                <img src="img/studio/6.jpg" alt="6">
+                <img src="img/studio/7.jpg" alt="7">
+                <img src="img/studio/8.jpg" alt="8">
+                <img src="img/studio/9.jpg" alt="9">
+            </div>
+            <div class="fotorama  wedding hidden" data-nav="thumbs" data-loop="true" data-allowfullscreen="true">
+                <img src="img/wedding/1.jpg" alt="1">
+                <img src="img/wedding/2.jpg" alt="2">
+            </div>
+            <div class="fotorama outdoors hidden" data-nav="thumbs" data-loop="true" data-allowfullscreen="true">
+                <img src="img/outdoors/1.jpg" alt="1">
+                <img src="img/outdoors/2.jpg" alt="2">
+                <img src="img/outdoors/3.jpg" alt="3">
+                <img src="img/outdoors/4.jpg" alt="4">
+                <!-- <img src="img/studio/5.jpg" alt="5">
+<img src="img/studio/6.jpg" alt="6">
+<img src="img/studio/7.jpg" alt="7">
+<img src="img/studio/8.jpg" alt="8">
+<img src="img/studio/9.jpg" alt="9"> -->
+            </div>
+            <div class="fotorama children hidden" data-nav="thumbs" data-loop="true" data-allowfullscreen="true">
+                <img src="img/children/1.jpg" alt="1">
+                <img src="img/children/2.jpg" alt="2">
+                <img src="img/children/3.jpg" alt="3">
+                <img src="img/children/4.jpg" alt="4">
+                <img src="img/children/5.jpg" alt="5">
+                <img src="img/children/6.jpg" alt="6">
+                <img src="img/children/7.jpg" alt="7">
+                <img src="img/children/8.jpg" alt="8">
+                <img src="img/children/9.jpg" alt="9">
+            </div>
+            <div class="fotorama pregnant hidden" data-nav="thumbs" data-loop="true" data-allowfullscreen="true">
+                <img src="img/pregnant/1.jpg" alt="1">
+                <img src="img/pregnant/2.jpg" alt="2">
+                <img src="img/pregnant/3.jpg" alt="3">
+                <img src="img/pregnant/4.jpg" alt="4">
+                <!-- <img src="img/children/5.jpg" alt="5">
+<img src="img/children/6.jpg" alt="6">
+<img src="img/children/7.jpg" alt="7">
+<img src="img/children/8.jpg" alt="8">
+<img src="img/children/9.jpg" alt="9"> -->
+            </div>
+        </div>
+        <div class="galery__price">
+            <h1>Стоимость фотосессии</h1>
+            <p>Цена за час 100грн</p>
+            <p>Цена за час 100грн</p>
+            <p>Цена за час 100грн</p>
+        </div>
+    </section>
+    <link rel="stylesheet" href="css/main.min.css">
+    <script src="js/scripts.min.js"></script>
+</body>
+
+</html>

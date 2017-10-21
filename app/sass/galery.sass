@@ -1,0 +1,88 @@
+@import "mixins/centerer"
+.galery
+  height: 1024px
+  transition: background 1s ease
+  &__nav
+    ul
+      +centererX()
+      display: flex
+      flex-direction: row
+      justify-content: space-between
+      margin-top: 40px
+    &__items
+      margin-right: 20px 
+      list-style-type: none
+      button
+        -webkit-border-radius: 10;
+        -moz-border-radius: 10;
+        border-radius: 10px;
+        font-family: Courier New;
+        color: inherit
+        font-size: 20px;
+        background: #4c4c4c;
+        padding: 6px 15px 6px 15px;
+        text-decoration: none;
+        border: none
+        transition: background 1.5s ease
+        transition: color .3s ease
+        &:hover 
+          text-decoration: none;
+          color: #dfdfdf
+        &:focus
+          outline: none  
+    .studio
+      background: #4c4c4c;
+      color: inherit
+    .wedding
+      // color: white;
+      background-color: darken(rgb(254,250,242), 10%)
+      &:hover
+        color: #ebbebe
+    .outdoors
+      background-color: lighten(rgb(87,65,58),30%)
+
+    .children
+      background-color: darken(rgb(195,212,213),5%)
+      
+    .pregnant
+      background-color: darken(rgb(200,182,158),10%)
+
+    .active
+      color: #dfdfdf
+      .wedding
+        color: #ebbebe
+
+  .fotorama
+    margin-top: 200px
+    width: 720px
+    height: 560px
+    margin-left: 30px
+    background-color: transparent
+
+.galery__price
+  padding: 5px 30px 5px
+  margin-top: 75px
+  &.studio
+    background: rgba(#4c4c4c,0.4);
+    color: #c4c4c4
+  &.wedding
+    background-color: darken(rgba(254,250,242, 0.4), 10%)
+    color: darken(#ebbebe, 10%)
+  &.outdoors
+    background-color: lighten(rgba(87,65,58, 0.3),30%)
+    color: #b1b1b1
+    text-align: right
+
+
+  &.children
+    background-color: darken(rgba(195,212,213, 0.4),5%)
+    color: darken(rgb(219,173,198), 20%)
+    
+  &.pregnant
+    background-color: darken(rgba(200,182,158, 0.4),10%)
+    color: darken(rgb(200,182,158),45%)
+
+ 
+
+ 
+      
