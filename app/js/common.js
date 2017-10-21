@@ -45,7 +45,7 @@ $(function() { // wait for document ready
         $('.fotorama.' + $fotorama_id).slideDown(1000).removeClass('hidden')
         if ($("#" + $fotorama_id).hasClass('active')) {
 
-            $('.galery').css('backgroundImage', 'url(img/' + $fotorama_id + '/1.jpg)')
+            $('.blur_img').css('backgroundImage', 'url(img/' + $fotorama_id + '/1.jpg)')
             $('.galery__nav__items button').removeClass("studio wedding outdoors children pregnant")
             $('.galery__price').removeClass("studio wedding outdoors children pregnant")
             $('.galery__nav__items button').addClass($fotorama_id)
