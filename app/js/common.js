@@ -16,7 +16,10 @@ $(function() { // wait for document ready
             })
             .setPin(slides[i])
             .addIndicators() // add indicators (requires plugin)
-            .addTo(controller);
+            .addTo(controller)
+            if( i == slides.length - 1)
+             controller = controller.destroy(true);
+
     }
 
 

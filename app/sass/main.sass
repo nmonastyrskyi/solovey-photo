@@ -6,7 +6,8 @@
 @import "intro"
 @import "about"
 @import "galery"
-
+@import "form"
+@import "footer"
 *
 	-webkit-box-sizing: border-box
 	-moz-box-sizing: border-box
@@ -67,8 +68,6 @@ ul
 a
   color: inherit
 
-section.panel
-  // margin-bottom: 300px!important;
 
 .header-clone
   height: 52px
@@ -81,11 +80,16 @@ section.panel
   width: 7em
   height: 7em
   border-radius: 50%
+  transition: background 0.3s ease
   +centererX()
   bottom: 100px
   &:hover
     background-color: rgba(#c2c2c2, 0.1)
     color: inherit
+  &:active
+    background-color: red
+  &:focus
+    background: inherit
   .fa
     font-size: 2em
     +centerer()
@@ -93,12 +97,27 @@ section.panel
 	color: white;
 	border-color: #fff;
 
+
 .fullscreen
+  padding-bottom: 52px
   height: 100%
   width: 100%
   background-size: cover
   overflow: hidden
 
+.button 
+  border: none
+  display: inline-block;
+  border-radius: 15px;
+  padding: 10px 22px 7px;
+  text-decoration: none;
+  transition: 0.3s;
+  outline: none
+  &__purple
+    background-color: darken(#b8bfff, 5%)
+    color: #fff
+    &:hover
+      background-color: darken(#b8bfff, 10%)
 
 
 

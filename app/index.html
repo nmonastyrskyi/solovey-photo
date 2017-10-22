@@ -40,20 +40,19 @@
                 <li class="header__nav__item"><a href="#intro">Intro</a></li>
                 <li class="header__nav__item"><a href="#about">About Me</a></li>
                 <li class="header__nav__item"><a href="#galery">Galery</a></li>
-                <li class="header__nav__item"><a href="">My Work</a></li>
-                <li class="header__nav__item"><a href="">Contact</a></li>
+                <li class="header__nav__item"><a href="#contact">Contact</a></li>
             </ul>
         </nav>
     </section>
-    <section class="intro fullscreen white panel" id="intro" style="background-image: url(img/img2.jpg)">
+    <section class="intro fullscreen white panel paraxify" id="intro" style="background-image: url(img/img2.jpg)">
         <div class="intro__content">
             <h1>Я фотограф</h1>
             <p>Добро пожаловать на мой сайт</p>
         </div>
         <div class="btn-wrapper">
             <a href="#about" class="button-circle white">
-        <i class="fa fa-angle-down" aria-hidden="true"></i>
-    </a>
+              <i class="fa fa-angle-down" aria-hidden="true"></i>
+            </a>
         </div>
     </section>
     <section class="about fullscreen panel" id="about" style="background-image: url(img/masha.jpg)">
@@ -64,7 +63,7 @@
     </a>
         </div>
     </section>
-    <section class="galery panel fullscreen"  id="galery">
+    <section class="galery panel fullscreen" id="galery">
         <div class="blur_img" style="background-image: url(img/studio/1.jpg)"></div>
         <div class="galery__nav">
             <ul>
@@ -140,8 +139,37 @@
             <p>Цена за час 100грн</p>
             <p>Цена за час 100грн</p>
             <p>Цена за час 100грн</p>
+            
+            <div class="btn-wrapper">
+             <a href="#contact" class=" button-galery">
+              <i class="fa fa-angle-down" aria-hidden="true"></i>
+            </a>
+            </div>
+
         </div>
+
     </section>
+    <section class="form-section panel" id="contact">
+        <p class="title">Все вопросы можно задать прямо здесь!</p>
+        <div class="form-container">
+            <form action="#" method="post" class="form">
+                <div class="container">
+                    <div class="row">
+                        <input type="text" class="form__input col-sm-6" placeholder="Ваше Имя">
+                        <input type="text" class="form__input col-sm-6" placeholder="Ваш email">
+                    </div>
+                    <div class="row">
+                        <textarea name="message" placeholder="Ваше сообщение" class="col-sm-12 form__textarea" rows="6"></textarea>
+                    </div>
+                    <button class="button button__purple">Отправить сообщение</button>
+                </div>
+            </form>
+        </div>
+        <form action="#"></form>
+    </section>
+    <footer class="footer">
+
+    </footer>
     <link rel="stylesheet" href="css/main.min.css">
     <script src="js/scripts.min.js"></script>
 </body>
