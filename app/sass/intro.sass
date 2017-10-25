@@ -1,7 +1,35 @@
 @import "mixins/centerer"
+.intro
+  .intro__content
+    +centererX();
+    top: 100px
+    text-align: center
+    color: #4c4c4c
+  .intro__calendar__wrapper
+    
+  .intro__calendar
+    +centerer()
+    width: 66%
+    position: fixed
+  #calendar
+    width: 66%
+    background-color: #fefefe
+    color: #777
+    position: relative
+    height: 100%
+    width: 100%
+    border-radius: 50px 50px 0 0
+    border: none
+    button
+      outline: none
+    .fc-left
+      margin-left: 20px
+      margin-top: 24px  
+    .fc-right
+      margin-right: 20px
+      margin-top: 24px
 
-.intro__content
-  +centererX();
-  top: 100px
-  text-align: center
-  color: #4c4c4c
+    span.fc-day-number
+      margin: 10px  
+
+  

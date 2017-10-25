@@ -1,27 +1,5 @@
 $(function() { // wait for document ready
     // init
-    var controller = new ScrollMagic.Controller({
-        globalSceneOptions: {
-            triggerHook: 'onLeave'
-        }
-    });
-
-    // get all slides
-    var slides = document.querySelectorAll("section.panel");
-
-    // create scene for every slide
-    for (var i = 0; i < slides.length; i++) {
-        new ScrollMagic.Scene({
-                triggerElement: slides[i]
-            })
-            .setPin(slides[i])
-            .addIndicators() // add indicators (requires plugin)
-            .addTo(controller)
-            if( i == slides.length - 1)
-             controller = controller.destroy(true);
-
-    }
-
 
 
     $(".header__nav, .btn-wrapper").on("click", "a", function(event) { //отменяем стандартную обработку нажатия по ссылке     
@@ -59,6 +37,50 @@ $(function() { // wait for document ready
 
     })
 
+    $('#calendar').fullCalendar({
+        googleCalendarApiKey: 'AIzaSyAmckkTJxLGZoqR_ajjKaRtYnaX4oCVX8Y',
+        events: {
+            googleCalendarId: '1kpbrqup8i1upe1s26gnqaddi4@group.calendar.google.com'
+        },
+        firstDay: 1,
+        height: 600,
+        header: {
+            left: 'prev,next today',
+            center: 'title',
+            right: 'month,agendaWeek,agendaDay'
+        },
+        monthNames: ['Январь', 'Февраль', 'Март', 'Апрель', 'Май', 'οюнь', 'οюль', 'Август', 'Сентябрь', 'Октябрь', 'Ноябрь', 'Декабрь'],
+        monthNamesShort: ['Янв.', 'Фев.', 'Март', 'Апр.', 'Май', 'οюнь', 'οюль', 'Авг.', 'Сент.', 'Окт.', 'Ноя.', 'Дек.'],
+        dayNames: ["Воскресенье", "Понедельник", "Вторник", "Среда", "Четверг", "Пятница", "Суббота"],
+        dayNamesShort: ["ВС", "ПН", "ВТ", "СР", "ЧТ", "ПТ", "СБ"],
+        buttonText: {
+            prev: "◀",
+            next: "▶",
+            prevYear: "&nbsp;&lt;&lt;&nbsp;",
+            nextYear: "&nbsp;&gt;&gt;&nbsp;",
+            today: "Сегодня",
+            month: "Месяц",
+            week: "Неделя",
+            day: "День"
+        },
+        textColor: 'black',
+        color: 'black'
+    });
+    $('.intro__calendar').hide()
+    $('.open-calendar-button').on('click', function() {
 
+        $('.shadow').toggleClass('modal_shadow')
+        $('.intro__calendar').css('z-index', '6').fadeToggle('slow')
+      
+      if ($('.shadow').hasClass('modal_shadow') ){
+            $('.shadow').on('click', function() {
+                if ($(event.target).closest(".intro_calendar").length) return;
+                $('.shadow').removeClass('modal_shadow');
+                $('.intro__calendar').fadeOut('slow');
+            });
+        };
 
+    });
+
+      
 });

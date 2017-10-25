@@ -14,6 +14,7 @@
     <link rel="apple-touch-icon" sizes="114x114" href="img/favicon/apple-touch-icon-114x114.png">
     <link rel="stylesheet" href="css/font-awesome.min.css">
     <link rel="stylesheet" href="libs/fotorama/fotorama.css">
+    <link rel="stylesheet" href="libs/fullcalendar/dist/fullcalendar.min.css">
     <!-- Chrome, Firefox OS and Opera -->
     <meta name="theme-color" content="#000">
     <!-- Windows Phone -->
@@ -35,6 +36,17 @@
 <body>
     <section class="header" id="fixed">
         <div class="header__logo">Solovey Photo</div>
+        <div class="header__contacts">
+            <div class="header__contacts__phone">
+                <i class="fa fa-phone" aria-hidden="true"></i>
+                <span>+380(66)-847-97-68</span>
+            </div>
+            <div class="header__contacts__mail">
+                <i class="fa fa-envelope" aria-hidden="true"></i>
+                <span>matrenabox@gmail.com</span>
+            </div>
+        </div>
+         <div class="button open-calendar-button">Открыть календарь</div>
         <nav class="header__nav">
             <ul>
                 <li class="header__nav__item"><a href="#intro">Intro</a></li>
@@ -49,6 +61,12 @@
             <h1>Я фотограф</h1>
             <p>Добро пожаловать на мой сайт</p>
         </div>
+        <div class="inctro__calendar__container">
+            <div class="intro__calendar" style="z-index: -3">
+                <div id="calendar"></div>
+            </div>
+        </div>
+       
         <div class="btn-wrapper">
             <a href="#about" class="button-circle white">
               <i class="fa fa-angle-down" aria-hidden="true"></i>
@@ -62,6 +80,7 @@
         <i class="fa fa-angle-down" aria-hidden="true"></i>
     </a>
         </div>
+        <div class="shadow"></div> <!-- to make a shadow when 'open calendar button pressed' -->
     </section>
     <section class="galery panel fullscreen" id="galery">
         <div class="blur_img" style="background-image: url(img/studio/1.jpg)"></div>
@@ -139,15 +158,13 @@
             <p>Цена за час 100грн</p>
             <p>Цена за час 100грн</p>
             <p>Цена за час 100грн</p>
-            
             <div class="btn-wrapper">
-             <a href="#contact" class=" button-galery">
+                <a href="#contact" class=" button-galery">
               <i class="fa fa-angle-down" aria-hidden="true"></i>
             </a>
             </div>
-
         </div>
-
+        <div class="shadow"></div> <!-- to make a shadow when 'open calendar button pressed' -->
     </section>
     <section class="form-section panel" id="contact">
         <p class="title">Все вопросы можно задать прямо здесь!</p>
@@ -166,9 +183,9 @@
             </form>
         </div>
         <form action="#"></form>
+        <div class="shadow"></div> <!-- to make a shadow when 'open calendar button pressed' -->
     </section>
     <footer class="footer">
-
     </footer>
     <link rel="stylesheet" href="css/main.min.css">
     <script src="js/scripts.min.js"></script>

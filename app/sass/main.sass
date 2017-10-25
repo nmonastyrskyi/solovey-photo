@@ -86,8 +86,6 @@ a
   &:hover
     background-color: rgba(#c2c2c2, 0.1)
     color: inherit
-  &:active
-    background-color: red
   &:focus
     background: inherit
   .fa
@@ -104,6 +102,7 @@ a
   width: 100%
   background-size: cover
   overflow: hidden
+  min-height: 1024px
 
 .button 
   border: none
@@ -119,6 +118,15 @@ a
     &:hover
       background-color: darken(#b8bfff, 10%)
 
-
+.modal_shadow 
+  position: absolute;
+  top: 0;
+  transition: all  1s ease
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #000!important;
+  opacity: 0.6;
+        
 
 @import "media" // Всегда в конце
