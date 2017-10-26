@@ -1,7 +1,6 @@
 $(function() { // wait for document ready
     // init
 
-
     $(".header__nav, .btn-wrapper").on("click", "a", function(event) { //отменяем стандартную обработку нажатия по ссылке     
         event.preventDefault(); //забираем идентификатор бока с атрибута href    
         var id = $(this).attr('href'), //узнаем высоту от начала страницы до блока на который ссылается якорь
@@ -82,5 +81,29 @@ $(function() { // wait for document ready
 
     });
 
+  $("#my-menu").mmenu({
+
+    // "extensions": [
+    //         "pagedim-black",
+    //         "popup"
+    //      ],
+    //      "autoHeight": true
+         // Options
+      });
+      var mmenu_API = $("#my-menu").data( "mmenu" );
+      
+      $(".hamburger--emphatic").click(function() {
+        mmenu_API.open();
+        $(this).toggleClass('is-active')
+      });
+
+$("#nav").mmenu().trigger("open.mm").on("opened.mm", function() {
+    alert( "The menu has just been opened." );
+});
+
+ mmenu_API.bind( "close:start", function( $panel ) {
+         $(".hamburger--emphatic").toggleClass('is-active')
+      });
+ $('#my-menu .button').click(function(){mmenu_API.close()})
       
 });

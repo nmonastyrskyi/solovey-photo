@@ -12,9 +12,6 @@
     <link rel="apple-touch-icon" href="img/favicon/apple-touch-icon.png">
     <link rel="apple-touch-icon" sizes="72x72" href="img/favicon/apple-touch-icon-72x72.png">
     <link rel="apple-touch-icon" sizes="114x114" href="img/favicon/apple-touch-icon-114x114.png">
-    <link rel="stylesheet" href="css/font-awesome.min.css">
-    <link rel="stylesheet" href="libs/fotorama/fotorama.css">
-    <link rel="stylesheet" href="libs/fullcalendar/dist/fullcalendar.min.css">
     <!-- Chrome, Firefox OS and Opera -->
     <meta name="theme-color" content="#000">
     <!-- Windows Phone -->
@@ -34,161 +31,180 @@
 </head>
 
 <body>
-    <section class="header" id="fixed">
-        <div class="header__logo">Solovey Photo</div>
-        <div class="header__contacts">
-            <div class="header__contacts__phone">
-                <i class="fa fa-phone" aria-hidden="true"></i>
-                <span>+380(66)-847-97-68</span>
+    <div id="my-page">
+        <!-- required for mmenu -->
+        <section class="header" id="fixed">
+            <div class="header__logo">Solovey Photo</div>
+            <div class="header__contacts">
+                <div class="header__contacts__phone">
+                    <i class="fa fa-phone" aria-hidden="true"></i>
+                    <span>+380(66)-847-97-68</span>
+                </div>
+                <div class="header__contacts__mail">
+                    <i class="fa fa-envelope" aria-hidden="true"></i>
+                    <span>matrenabox@gmail.com</span>
+                </div>
             </div>
-            <div class="header__contacts__mail">
-                <i class="fa fa-envelope" aria-hidden="true"></i>
-                <span>matrenabox@gmail.com</span>
+            <div class="button open-calendar-button header-button">Открыть календарь</div>
+            <nav class="header__nav">
+                <ul>
+                    <li class="header__nav__item"><a href="#intro">Intro</a></li>
+                    <li class="header__nav__item"><a href="#about">About Me</a></li>
+                    <li class="header__nav__item"><a href="#galery">Galery</a></li>
+                    <li class="header__nav__item"><a href="#contact">Contact</a></li>
+                </ul>  
+            </nav>
+            <nav id="my-menu">
+                <ul>
+                    <li class="header__nav__item"><a href="#intro">Intro</a></li>
+                    <li class="header__nav__item"><a href="#about">About Me</a></li>
+                    <li class="header__nav__item"><a href="#galery">Galery</a></li>
+                    <li class="header__nav__item"><a href="#contact">Contact</a></li>
+                     <div class="button open-calendar-button">Открыть календарь</div>
+                </ul>  
+            </nav>
+            <button class="hamburger hamburger--emphatic" type="button">
+                <span class="hamburger-box">
+                <span class="hamburger-inner"></span>
+                </span>
+            </button>
+        </section>
+        <section class="intro fullscreen white panel paraxify" id="intro" style="background-image: url(img/img2.jpg)">
+            <div class="intro__content">
+                <h1>Я фотограф</h1>
+                <p>Добро пожаловать на мой сайт</p>
             </div>
-        </div>
-         <div class="button open-calendar-button">Открыть календарь</div>
-        <nav class="header__nav">
-            <ul>
-                <li class="header__nav__item"><a href="#intro">Intro</a></li>
-                <li class="header__nav__item"><a href="#about">About Me</a></li>
-                <li class="header__nav__item"><a href="#galery">Galery</a></li>
-                <li class="header__nav__item"><a href="#contact">Contact</a></li>
-            </ul>
-        </nav>
-    </section>
-    <section class="intro fullscreen white panel paraxify" id="intro" style="background-image: url(img/img2.jpg)">
-        <div class="intro__content">
-            <h1>Я фотограф</h1>
-            <p>Добро пожаловать на мой сайт</p>
-        </div>
-        <div class="inctro__calendar__container">
-            <div class="intro__calendar" style="z-index: -3">
-                <div id="calendar"></div>
+            <div class="intro__calendar__container">
+                <div class="intro__calendar" style="z-index: -3">
+                    <div id="calendar"></div>
+                </div>
             </div>
-        </div>
-       
-        <div class="btn-wrapper">
-            <a href="#about" class="button-circle white">
+            <div class="btn-wrapper">
+                <a href="#about" class="button-circle white">
               <i class="fa fa-angle-down" aria-hidden="true"></i>
             </a>
-        </div>
-    </section>
-    <section class="about fullscreen panel" id="about" style="background-image: url(img/masha.jpg)">
-        <div class="about__content">Привет, я Буфет, заходи на мой новый сайт </div>
-        <div class="btn-wrapper">
-            <a href="#galery" class="button-circle black">
+            </div>
+        </section>
+        <section class="about fullscreen panel" id="about" style="background-image: url(img/masha.jpg)">
+            <div class="about__content">Привет, я Буфет, заходи на мой новый сайт </div>
+            <div class="btn-wrapper">
+                <a href="#galery" class="button-circle black">
         <i class="fa fa-angle-down" aria-hidden="true"></i>
     </a>
-        </div>
-        <div class="shadow"></div> <!-- to make a shadow when 'open calendar button pressed' -->
-    </section>
-    <section class="galery panel fullscreen" id="galery">
-        <div class="blur_img" style="background-image: url(img/studio/1.jpg)"></div>
-        <div class="galery__nav">
-            <ul>
-                <li class="galery__nav__items active" id="studio">
-                    <button>Студийные</button>
-                </li>
-                <li class="galery__nav__items " id="wedding">
-                    <button>Свадебные</button>
-                </li>
-                <li class="galery__nav__items " id="outdoors">
-                    <button>Уличные</button>
-                </li>
-                <li class="galery__nav__items " id="children">
-                    <button>Дети</button>
-                </li>
-                <li class="galery__nav__items " id="pregnant">
-                    <button>Беременные</button>
-                </li>
-            </ul>
-        </div>
-        <div class="fotoramas">
-            <div class="fotorama studio" data-nav="thumbs" data-loop="true" data-allowfullscreen="true">
-                <img src="img/studio/1.jpg" alt="1">
-                <img src="img/studio/2.jpg" alt="2">
-                <img src="img/studio/3.jpg" alt="3">
-                <img src="img/studio/4.jpg" alt="4">
-                <img src="img/studio/5.jpg" alt="5">
-                <img src="img/studio/6.jpg" alt="6">
-                <img src="img/studio/7.jpg" alt="7">
-                <img src="img/studio/8.jpg" alt="8">
-                <img src="img/studio/9.jpg" alt="9">
             </div>
-            <div class="fotorama  wedding hidden" data-nav="thumbs" data-loop="true" data-allowfullscreen="true">
-                <img src="img/wedding/1.jpg" alt="1">
-                <img src="img/wedding/2.jpg" alt="2">
+            <div class="shadow"></div>
+            <!-- to make a shadow when 'open calendar button pressed' -->
+        </section>
+        <section class="galery panel fullscreen" id="galery">
+            <div class="blur_img" style="background-image: url(img/studio/1.jpg)"></div>
+            <div class="galery__nav">
+                <ul>
+                    <li class="galery__nav__items active" id="studio">
+                        <button>Студийные</button>
+                    </li>
+                    <li class="galery__nav__items " id="wedding">
+                        <button>Свадебные</button>
+                    </li>
+                    <li class="galery__nav__items " id="outdoors">
+                        <button>Уличные</button>
+                    </li>
+                    <li class="galery__nav__items " id="children">
+                        <button>Дети</button>
+                    </li>
+                    <li class="galery__nav__items " id="pregnant">
+                        <button>Беременные</button>
+                    </li>
+                </ul>
             </div>
-            <div class="fotorama outdoors hidden" data-nav="thumbs" data-loop="true" data-allowfullscreen="true">
-                <img src="img/outdoors/1.jpg" alt="1">
-                <img src="img/outdoors/2.jpg" alt="2">
-                <img src="img/outdoors/3.jpg" alt="3">
-                <img src="img/outdoors/4.jpg" alt="4">
-                <!-- <img src="img/studio/5.jpg" alt="5">
+            <div class="fotoramas">
+                <div class="fotorama studio" data-nav="thumbs" data-loop="true" data-allowfullscreen="true">
+                    <img src="img/studio/1.jpg" alt="1">
+                    <img src="img/studio/2.jpg" alt="2">
+                    <img src="img/studio/3.jpg" alt="3">
+                    <img src="img/studio/4.jpg" alt="4">
+                    <img src="img/studio/5.jpg" alt="5">
+                    <img src="img/studio/6.jpg" alt="6">
+                    <img src="img/studio/7.jpg" alt="7">
+                    <img src="img/studio/8.jpg" alt="8">
+                    <img src="img/studio/9.jpg" alt="9">
+                </div>
+                <div class="fotorama  wedding hidden" data-nav="thumbs" data-loop="true" data-allowfullscreen="true">
+                    <img src="img/wedding/1.jpg" alt="1">
+                    <img src="img/wedding/2.jpg" alt="2">
+                </div>
+                <div class="fotorama outdoors hidden" data-nav="thumbs" data-loop="true" data-allowfullscreen="true">
+                    <img src="img/outdoors/1.jpg" alt="1">
+                    <img src="img/outdoors/2.jpg" alt="2">
+                    <img src="img/outdoors/3.jpg" alt="3">
+                    <img src="img/outdoors/4.jpg" alt="4">
+                    <!-- <img src="img/studio/5.jpg" alt="5">
 <img src="img/studio/6.jpg" alt="6">
 <img src="img/studio/7.jpg" alt="7">
 <img src="img/studio/8.jpg" alt="8">
 <img src="img/studio/9.jpg" alt="9"> -->
-            </div>
-            <div class="fotorama children hidden" data-nav="thumbs" data-loop="true" data-allowfullscreen="true">
-                <img src="img/children/1.jpg" alt="1">
-                <img src="img/children/2.jpg" alt="2">
-                <img src="img/children/3.jpg" alt="3">
-                <img src="img/children/4.jpg" alt="4">
-                <img src="img/children/5.jpg" alt="5">
-                <img src="img/children/6.jpg" alt="6">
-                <img src="img/children/7.jpg" alt="7">
-                <img src="img/children/8.jpg" alt="8">
-                <img src="img/children/9.jpg" alt="9">
-            </div>
-            <div class="fotorama pregnant hidden" data-nav="thumbs" data-loop="true" data-allowfullscreen="true">
-                <img src="img/pregnant/1.jpg" alt="1">
-                <img src="img/pregnant/2.jpg" alt="2">
-                <img src="img/pregnant/3.jpg" alt="3">
-                <img src="img/pregnant/4.jpg" alt="4">
-                <!-- <img src="img/children/5.jpg" alt="5">
+                </div>
+                <div class="fotorama children hidden" data-nav="thumbs" data-loop="true" data-allowfullscreen="true">
+                    <img src="img/children/1.jpg" alt="1">
+                    <img src="img/children/2.jpg" alt="2">
+                    <img src="img/children/3.jpg" alt="3">
+                    <img src="img/children/4.jpg" alt="4">
+                    <img src="img/children/5.jpg" alt="5">
+                    <img src="img/children/6.jpg" alt="6">
+                    <img src="img/children/7.jpg" alt="7">
+                    <img src="img/children/8.jpg" alt="8">
+                    <img src="img/children/9.jpg" alt="9">
+                </div>
+                <div class="fotorama pregnant hidden" data-nav="thumbs" data-loop="true" data-allowfullscreen="true">
+                    <img src="img/pregnant/1.jpg" alt="1">
+                    <img src="img/pregnant/2.jpg" alt="2">
+                    <img src="img/pregnant/3.jpg" alt="3">
+                    <img src="img/pregnant/4.jpg" alt="4">
+                    <!-- <img src="img/children/5.jpg" alt="5">
 <img src="img/children/6.jpg" alt="6">
 <img src="img/children/7.jpg" alt="7">
 <img src="img/children/8.jpg" alt="8">
 <img src="img/children/9.jpg" alt="9"> -->
+                </div>
             </div>
-        </div>
-        <div class="galery__price">
-            <h1>Стоимость фотосессии</h1>
-            <p>Цена за час 100грн</p>
-            <p>Цена за час 100грн</p>
-            <p>Цена за час 100грн</p>
-            <div class="btn-wrapper">
-                <a href="#contact" class=" button-galery">
+            <div class="galery__price">
+                <h1>Стоимость фотосессии</h1>
+                <p>Цена за час 100грн</p>
+                <p>Цена за час 100грн</p>
+                <p>Цена за час 100грн</p>
+                <div class="btn-wrapper">
+                    <a href="#contact" class=" button-galery">
               <i class="fa fa-angle-down" aria-hidden="true"></i>
             </a>
-            </div>
-        </div>
-        <div class="shadow"></div> <!-- to make a shadow when 'open calendar button pressed' -->
-    </section>
-    <section class="form-section panel" id="contact">
-        <p class="title">Все вопросы можно задать прямо здесь!</p>
-        <div class="form-container">
-            <form action="#" method="post" class="form">
-                <div class="container">
-                    <div class="row">
-                        <input type="text" class="form__input col-sm-6" placeholder="Ваше Имя">
-                        <input type="text" class="form__input col-sm-6" placeholder="Ваш email">
-                    </div>
-                    <div class="row">
-                        <textarea name="message" placeholder="Ваше сообщение" class="col-sm-12 form__textarea" rows="6"></textarea>
-                    </div>
-                    <button class="button button__purple">Отправить сообщение</button>
                 </div>
-            </form>
-        </div>
-        <form action="#"></form>
-        <div class="shadow"></div> <!-- to make a shadow when 'open calendar button pressed' -->
-    </section>
-    <footer class="footer">
-    </footer>
-    <link rel="stylesheet" href="css/main.min.css">
-    <script src="js/scripts.min.js"></script>
+            </div>
+            <div class="shadow"></div>
+            <!-- to make a shadow when 'open calendar button pressed' -->
+        </section>
+        <section class="form-section panel" id="contact">
+            <p class="title">Все вопросы можно задать прямо здесь!</p>
+            <div class="form-container">
+                <form action="#" method="post" class="form">
+                    <div class="container">
+                        <div class="row">
+                            <input type="text" class="form__input col-xs-12 col-md-6" placeholder="Ваше Имя">
+                            <input type="text" class="form__input col-xs-12 col-md-6" placeholder="Ваш email">
+                        </div>
+                        <div class="row">
+                            <textarea name="message" placeholder="Ваше сообщение" class="col-xs-12 form__textarea" rows="6"></textarea>
+                        </div>
+                        <button class="button button__purple">Отправить сообщение</button>
+                    </div>
+                </form>
+            </div>
+            <form action="#"></form>
+            <div class="shadow"></div>
+            <!-- to make a shadow when 'open calendar button pressed' -->
+        </section>
+        <footer class="footer">
+        </footer>
+        <link rel="stylesheet" href="css/main.min.css">
+        <script src="js/scripts.min.js"></script>
+    </div>
 </body>
 
 </html>

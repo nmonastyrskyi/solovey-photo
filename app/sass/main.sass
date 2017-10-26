@@ -42,6 +42,8 @@ body textarea:required:valid
 
 html, body
 	height: 100%
+  box-sizing: border-box
+
 
 body
 	font-size: 16px
@@ -53,10 +55,9 @@ body
 	opacity: 1
 	// margin-top: 50px
 
-.container 
-  width: 1024px
-  +centererX()
-
+.hamburger--emphatic
+  display: none
+  outline: none
 .img-responsive
 	display: block
 	max-width: 100%
@@ -88,6 +89,9 @@ a
     color: inherit
   &:focus
     background: inherit
+    color: inherit
+  &:active
+    background-color: inherit
   .fa
     font-size: 2em
     +centerer()
@@ -95,6 +99,8 @@ a
 	color: white;
 	border-color: #fff;
 
+#my-page
+  height: 100%
 
 .fullscreen
   padding-bottom: 52px
@@ -117,6 +123,8 @@ a
     color: #fff
     &:hover
       background-color: darken(#b8bfff, 10%)
+    &:active
+
 
 .modal_shadow 
   position: absolute;
@@ -127,6 +135,20 @@ a
   height: 100%;
   background: #000!important;
   opacity: 0.6;
-        
+
+
+#my-menu
+  .button
+    left: 62.5%
+    transform: translateX(-50%);
+    top: 10px
+    position: relative
+    background-color: rgba(#aaa, 0.2)
+    padding: 3.5px 18px
+    margin: 0 auto
+    cursor: pointer
+    &:hover
+      background-color: #eee
+      
 
 @import "media" // Всегда в конце
