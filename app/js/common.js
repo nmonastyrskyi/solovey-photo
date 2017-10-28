@@ -105,5 +105,13 @@ $("#nav").mmenu().trigger("open.mm").on("opened.mm", function() {
          $(".hamburger--emphatic").toggleClass('is-active')
       });
  $('#my-menu .button').click(function(){mmenu_API.close()})
+
+ $(window).on("scroll", function() {
+    if ($(window).scrollTop() > $(document).height()/4 * 0.6 && $(window).scrollTop() < $(document).height()/4 * 1.4){
+        $('.about__content').show(700)
+    }
+    else
+        $('.about__content').hide(700)
+ })
       
 });

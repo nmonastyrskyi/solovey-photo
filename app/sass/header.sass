@@ -4,9 +4,10 @@
   width: 100%;
   height: 52px;
   z-index: 100
+  font-size: 0.925em
   vertical-align: top
   // margin-top: 50px
-  background-color: rgba(#fff,.7);
+  background-color: rgba(#fff,1);
   border-bottom: 0.2px solid rgba(#ccc, 0.7)
   &__contacts
     display: inline-block
@@ -39,23 +40,25 @@
     margin-right: 10px
     &__item
       display: inline-block;
-      padding: 9px
+      padding: 13px
       font-size: 1.1em
       a
         color: #000
         text-decoration: none
         transition: all 0.3s ease
         &:hover
-          color: #c4c4c4
+          color: darken(#b8bfff, 15%)
 
   .button
     left: 62.5%
+    color: #fff
     transform: translateX(-50%);
-    top: 10px
     position: absolute
-    background-color: rgba(#aaa, 0.2)
-    padding: 3.5px 18px
+    height: 80%
+    border-radius: 0 0 40% 40%
+    background-color: rgba(#aaa, 0.5)
+    padding: 7px 18px
     margin: 0 auto
     cursor: pointer
     &:hover
-      background-color: #fefefe
+      background-color: rgba(#b8bfff, 0.9)

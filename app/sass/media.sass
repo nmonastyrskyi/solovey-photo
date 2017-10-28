@@ -5,17 +5,56 @@
 	.fullscreen
 		background-position: 60% 50%
 
+@media only screen and (max-width : 1500px)
+
+	.about__content
+		font-size: 14px
 @media only screen and (max-width : 1360px)
 	.fullscreen
-		background-position: 70% 50%		
+		background-position: 70% 0%		
 /* Large Devices, Wide Screens */
 @media only screen and (max-width : 1280px)
 	/**/
+	.button-circle
+		font-size: 14px
+		bottom: 50px
 	.header
-		font-size: 0.9em
+		font-size: 0.8em
+		height: 42px
+		.button
+			height: 100%
+			top: 0
+			padding: 10px 20px
+			border-radius: 0
+			cursor: pointer
 
-	.fullscreen
-			background-position: 80% 50%		
+	.about.fullscreen
+		background-position: 80% 50%		
+		min-height: 720px
+		background-size: 150% auto
+		background-repeat: no-repeat
+		background-color: #FFF
+
+	.form__section
+
+		min-height: 612px
+		.title
+			margin-top: 80px
+			font-size: 21px
+		.form__container
+			font-size: 15px
+			top: 150px
+			height: 462px
+			.form__input
+				margin-top: 50px
+				padding: 8px
+			.form__textarea
+				height: 200px
+	.about
+		&__content
+			font-size: 12px
+			padding: 5px
+
 
 /* Medium Devices, Desktops */
 @media only screen and (max-width : 1024px)
@@ -35,6 +74,9 @@
 /* Small Devices, Tablets */
 @media only screen and (max-width : 768px)
 	/**/
+	.fullscreen
+		height: 100%
+		min-height: 100%
 	.col-xs-12
 		width: 90%
 		left: 50%
@@ -55,8 +97,20 @@
 /* Extra Small Devices, Phones */
 @media only screen and (max-width : 480px)
 	/**/
+	.about__content
+		height: 80%	
+		top: 53%
+		margin-top: 0
+		padding: 0
+		border-radius: 0 10px 10px 0
+		&__text
+			top: 50%
+			transform: translateY(-50%)
+			position: absolute
+			font-size: 15px
+
 	.button
-		font-size: 12px
+		font-size: 11px
 
 /* Custom, iPhone Retina */
 @media only screen and (max-width : 341px)
