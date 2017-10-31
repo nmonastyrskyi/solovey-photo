@@ -113,5 +113,33 @@ $("#nav").mmenu().trigger("open.mm").on("opened.mm", function() {
     else
         $('.about__content').hide(700)
  })
+
+$(".add_review").on('click', function(){
+    var $name = $('.reviews__new-review .name').val();
+    var $review = $('.reviews__new-review__text').val();
+
+    addReview($name, $review)
+
+})
+   $('.reviews__new-review__text, .reviews__new-review .name ').focus( function(){
+        $(this).css('border', 'none')
+     })
+function addReview($name, $review) {
+    if ($name.length >=1  && $review.length >=1) {
+        $newComment =  $(".reviews__box__comment:first").clone().prependTo('.reviews__box')
+        $newComment.children('.reviews__box__comment__name').html($name);
+        $newComment.find('.reviews__box__comment__text').html($review);
+        $('.reviews__new-review .name').val('')
+        $('.reviews__new-review__text').val('')
+   }
+    if($name.length < 1)      
+        $('.reviews__new-review .name').css('border', '2px solid #db594f')
+    if($review.length < 1)
+        $('.reviews__new-review__text').css('border', '2px solid #db594f')
+
+  
+
+ 
+}
       
 });
