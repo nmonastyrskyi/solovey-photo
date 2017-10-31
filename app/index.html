@@ -34,15 +34,17 @@
     <div id="my-page">
         <!-- required for mmenu -->
         <section class="header" id="fixed">
-            <div class="header__logo">Solovey Photo</div>
-            <div class="header__contacts">
-                <div class="header__contacts__phone">
-                    <i class="fa fa-phone" aria-hidden="true"></i>
-                    <span>+380(66)-847-97-68</span>
-                </div>
-                <div class="header__contacts__mail">
-                    <i class="fa fa-envelope" aria-hidden="true"></i>
-                    <span>matrenabox@gmail.com</span>
+            <div class="header-left">
+                <div class="header__logo">Solovey Photo</div>
+                <div class="header__contacts">
+                    <div class="header__contacts__phone">
+                        <i class="fa fa-phone" aria-hidden="true"></i>
+                        <span>+380(66)-847-97-68</span>
+                    </div>
+                    <div class="header__contacts__mail">
+                        <i class="fa fa-envelope" aria-hidden="true"></i>
+                        <span>matrenabox@gmail.com</span>
+                    </div>
                 </div>
             </div>
             <div class="button open-calendar-button header-button">Открыть календарь</div>
@@ -50,9 +52,10 @@
                 <ul>
                     <li class="header__nav__item"><a href="#intro">Intro</a></li>
                     <li class="header__nav__item"><a href="#about">About Me</a></li>
-                    <li class="header__nav__item"><a href="#galery">Galery</a></li>
-                    <li class="header__nav__item"><a href="#contact">Contact</a></li>
-                </ul>  
+                    <li class="header__nav__item"><a href="#galery">Галерея</a></li>
+                    <li class="header__nav__item"><a href="#reviews">Отзывы</a></li>
+                    <li class="header__nav__item"><a href="#contact">Контакты</a></li>
+                </ul>
             </nav>
             <nav id="my-menu">
                 <ul>
@@ -60,8 +63,8 @@
                     <li><a href="#about">About Me</a></li>
                     <li><a href="#galery">Galery</a></li>
                     <li><a href="#contact">Contact</a></li>
-                     <div class="button open-calendar-button">Открыть календарь</div>
-                </ul>  
+                    <div class="button open-calendar-button">Открыть календарь</div>
+                </ul>
             </nav>
             <button class="hamburger hamburger--emphatic" type="button">
                 <span class="hamburger-box">
@@ -84,21 +87,18 @@
               <i class="fa fa-angle-down" aria-hidden="true"></i>
             </a>
             </div>
-             <div class="shadow"></div>
+            <div class="shadow"></div>
             <!-- to make a shadow when 'open calendar button pressed' -->
         </section>
         <section class="about fullscreen panel" id="about" style="background-image: url(img/masha.jpg)">
             <div class="about__content">
                 <div class="about__content__text">
-                           <p> <b>Здравствуйте!</b></p>
-        <p>  Меня зовут Маша.
-    Я фотографирую в Харькове. <br>
-  Люблю дело, которым занимаюсь. <br>
-  С удовольствием запечатлю 
-          лучшие  моменты вашей жизни. <br>
-            Приглашаю вас в свой
-             мир фотографии!
-             </p>
+                    <p> <b>Здравствуйте!</b></p>
+                    <p> Меня зовут Маша. Я фотографирую в Харькове.
+                        <br> Люблю дело, которым занимаюсь.
+                        <br> С удовольствием запечатлю лучшие моменты вашей жизни.
+                        <br> Приглашаю вас в свой мир фотографии!
+                    </p>
                 </div>
             </div>
             <div class="btn-wrapper">
@@ -193,6 +193,57 @@
             </div>
             <div class="shadow"></div>
             <!-- to make a shadow when 'open calendar button pressed' -->
+        </section>
+        <section class="reviews" id="reviews" style="background: url(img/mountains/1.jpg);">
+            <h2 class="h2">Отзывы</h2>
+            <div class="reviews__content">
+                <div class="reviews__box">
+                    <div class="reviews__box__comment">
+                        <div class="reviews__box__comment__name">Никита</div>
+                        <div class="reviews__box__comment__text__wrapper">
+                            <div class="reviews__box__comment__text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Earum dicta laudantium perspiciatis mollitia alias quod nemo adipisci sunt, error rerum inventore, culpa, aliquid voluptatem saepe nesciunt expedita odio! Ratione, laudantium. udantium perspiciatis mollitia alias quod nemo adipisci sunt, error rerum inventore, culpa, aliquid voluptatem saepe nesciunt expedita odio! Ratione, laudantium. udantium perspiciatis mollitia alias quod nemo adipisci sunt, error rerum inventore, culpa, aliquid voluptatem saepe nesciunt expedita odio! Ratione, laudantium.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="reviews__box__comment">
+                        <div class="reviews__box__comment__name">Андруша</div>
+                        <div class="reviews__box__comment__text__wrapper">
+                            <div class="reviews__box__comment__text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Earum dicta laudantium perspiciatis mollitia alias quod nemo adipisci sunt, error rerum inventore, culpa, aliquid voluptatem saepe nesciunt expedita odio! Ratione, laudantium. udantium perspiciatis mollitia alias quod nemo adipisci sunt, error rerum inventore, culpa, aliquid voluptatem saepe nesciunt expedita odio! Ratione, laudantium. udantium perspiciatis mollitia alias quod nemo adipisci sunt, error rerum inventore, culpa, aliquid voluptatem saepe nesciunt expedita odio! Ratione, laudantium.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="reviews__box__comment">
+                        <div class="reviews__box__comment__name">Петруша</div>
+                        <div class="reviews__box__comment__text__wrapper">
+                            <div class="reviews__box__comment__text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Earum dicta laudantium perspiciatis mollitia alias quod nemo adipisci sunt, error rerum inventore, culpa, aliquid voluptatem saepe nesciunt expedita odio! Ratione, laudantium. udantium perspiciatis mollitia alias quod nemo adipisci sunt, error rerum inventore, culpa, aliquid voluptatem saepe nesciunt expedita odio! Ratione, laudantium. udantium perspiciatis mollitia alias quod nemo adipisci sunt, error rerum inventore, culpa, aliquid voluptatem saepe nesciunt expedita odio! Ratione, laudantium.
+                            </div>
+                        </div>
+                    </div>
+                     <div class="reviews__box__comment">
+                        <div class="reviews__box__comment__name">Танюша</div>
+                        <div class="reviews__box__comment__text__wrapper">
+                            <div class="reviews__box__comment__text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Earum dicta laudantium perspiciatis mollitia alias quod nemo adipisci sunt, error rerum inventore, culpa, aliquid voluptatem saepe nesciunt expedita odio! Ratione, laudantium. udantium perspiciatis mollitia alias quod nemo adipisci sunt, error rerum inventore, culpa, aliquid voluptatem saepe nesciunt expedita odio! Ratione, laudantium. udantium perspiciatis mollitia alias quod nemo adipisci sunt, error rerum inventore, culpa, aliquid voluptatem saepe nesciunt expedita odio! Ratione, laudantium.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="reviews__new-review__container">
+                    <div class="reviews__new-review">
+                        <h3 class="h3">Оставьте отзыв</h3>
+                        <input type="text" class="name" placeholder="Ваше Имя">
+                        <div class="review__character">
+                            <span>Характер отзыва:</span>
+                            <select clas="reviews__new-review__color">
+                                <option value="green">Положительный</option>
+                                <option value="gray">Нейтральный</option>
+                                <option value="red">Негативный</option>
+                            </select>
+                        </div>
+                        <textarea class="reviews__new-review__text" placeholder="Ваш отзыв"></textarea>
+                    </div>
+                    <button class="button  add_review">Добавить отзыв</button>
+                </div>
+            </div>
         </section>
         <section class="form__section" id="contact">
             <p class="title">Все вопросы можно задать прямо здесь!</p>
