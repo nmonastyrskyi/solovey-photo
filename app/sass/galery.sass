@@ -1,127 +1,86 @@
-@import "mixins/centerer"
 .galery
-  position: relative
-  .blur_img
+  .container,.row
     height: 100%
-    min-height: 1024px
-    width: 100%
-    position: absolute
-    filter: blur(5px)
-    z-index: 0
-    transition: background 1s ease
-    background-size: cover
-    overflow: hidden
-    background-repeat: no-repeat
-  &__nav
-    ul
-      +centererX()
-      display: flex
-      flex-direction: row
-      justify-content: space-between
-      margin-top: 70px
-    &__items
-      margin-right: 20px 
-      list-style-type: none
-      button
-        -webkit-border-radius: 10;
-        -moz-border-radius: 10;
-        border-radius: 10px;
-        font-family: Courier New;
-        color: inherit
-        font-size: 20px;
-        background: #4c4c4c;
-        padding: 6px 15px 6px 15px;
-        text-decoration: none;
-        border: none
-        transition: background 1.5s ease
-        transition: color .3s ease
-        &:hover 
-          text-decoration: none;
-          color: #dfdfdf
-        &:focus
-          outline: none  
-    .studio
-      background: #4c4c4c;
-      color: inherit
-    .wedding
-      // color: white;
-      background-color: darken(rgb(254,250,242), 10%)
-      &:hover
-        color: #ebbebe
-    .outdoors
-      background-color: lighten(rgb(87,65,58),30%)
+  background-color: #efefef
+  &__content
+    margin: 5% 0 0 0
+    height: 95%
+    position: relative
+    display: flex
+    flex-wrap: wrap
+    align-content: center
 
-    .children
-      background-color: darken(rgb(195,212,213),5%)
-      
-    .pregnant
-      background-color: darken(rgb(200,182,158),10%)
+    justify-content: space-around
+    background-color: #05a3a3
+  &__item
+    width: 25%
+    outline: 7px solid #05a3a3
+    height: 49% 
+    overflow: auto
+    background-color: #fff
+    position: relative
+    display: flex
+    flex-direction: column
+    align-items: center
+    justify-content: space-between
+    transition: all 0.5s ease
+    &:hover
+      transform: scale(1.1)
+      z-index: 5
+      overflow: visible
+      outline: 7px solid  #05a3ff
+      a:before
+        content: "\f06e"
+        font-family: FontAwesome
+        text-align: center
+        font-size: 2em
+        width: 100%
+        height: 43%
+        display: block
+        position: absolute
+        background-color: rgba(#000447,0.5)
+        z-index: 2
+      .button
+        background-color: #05a3ff
+        &:hover
+          background-color: lighten(#05a3ff, 7%)
 
-    .active
-      color: #dfdfdf
-      .wedding
-        color: #ebbebe
+    &:first-child
+      margin-bottom: 10px
+    a
+      height:  43%
+      display: block
+      &:before
+        content: ''
+        padding-top: 34%
+        color: rgba(#f4f4f4, 0.7)
+        transition: all 0.5s ease
+        background: transparent
+      img
+        height: 100%
+        width: 100%  
 
-  .fotorama
-    margin-top: 11em
-    width: 720px
-    height: 560px
-    margin-left: 30px
-    background-color: transparent
+    .h3
+      position: relative
+      text-align: center
+      font-weight: bold
+      text-transform: uppercase
+      margin: 0
+  &__price
+    position: relative
+    margin-left: 15px
+    font-size: 1.3em
+    font-weight: bold
+    i
+      color: #4c4c4c
+    span
+      font-size: 1.5em
+  .galery-button
+    margin-bottom: 30px
+    background-color: lighten(#05a3a3, 10%)
+    text-transform: uppercase
+    font-size: 0.9em
+    &:hover
+      background-color: lighten(#05a3a3, 7%)
 
-
-
-.galery__price
-  z-index: 1
-  position: relative
-  padding: 5px 30px 5px
-  margin-top: 75px
-  background: rgba(#4c4c4c,0.4);
-  color: #c4c4c4
-
-  &.studio
-    background: rgba(#4c4c4c,0.4);
-    color: #c4c4c4
-  &.wedding
-    background-color: darken(rgba(254,250,242, 0.4), 10%)
-    color: darken(#ebbebe, 10%)
-    border-color: darken(#ebbebe, 30%)
-  &.outdoors
-    background-color: lighten(rgba(87,65,58, 0.3),30%)
-    color: #b1b1b1
-    text-align: right
-
-
-  &.children
-    background-color: darken(rgba(195,212,213, 0.4),5%)
-    color: darken(rgb(219,173,198), 20%)
-    
-  &.pregnant
-    background-color: darken(rgba(200,182,158, 0.4),10%)
-    color: darken(rgb(200,182,158),45%)
-
-.button-galery
-  border: 2px solid black
-  width: 7em
-  height: 6em
-  border-radius: 50%
-  transition: background 0.3s ease
-  border-radius: 50% 50% 0 0 / 50% 50% 0 0
-  border-color: inherit
-  border-bottom: none
-  outline: none
-  +centererX()
-  bottom: 0px
-  &:hover
-    background-color: rgba(#c2c2c2, 0.1)
-    color: inherit
-  &:focus
-    background: inherit
-    color: inherit
-  .fa
-    font-size: 2em
-    +centerer()
-
-
- 
-      
+        
