@@ -9,6 +9,7 @@
     height: 100%
     position: absolute
     background-color: rgba(#c4c4c4,0.2)
+      
   .h2
     color: #fff
     margin: 130px 0 0 20px
@@ -17,24 +18,32 @@
   &__box
     width: 70%
     background-color: rgba(#fff, 0.9)
-    height: 73%
-    overflow-y: scroll;
+    height: 50%//73%
+    overflow-y: hidden //scroll;
+    transition: all 1s ease
+    border-bottom: 30px solid rgba(#fff, 0.0)
+    border-top: 30px solid rgba(#fff, 0.0)
+
+
    
     &__comment
       display: flex
-      justify-content: space-between
-
+      justify-content: flex-start
+  
       &__name
         background-color: lighten(rgb(218,85,75), 1%)
-        flex-basis: 450px
+        width: 150px
+        flex-basis: auto
         height: 30px
-        margin: 30px
+        margin: 0px 30px 0 30px
+        line-height: 30px
         font-size: 1em
         text-align: center
         color: #fff
       &__text__wrapper
         background-color: #e8e8e8
-        margin: 30px
+        margin: 0px 30px 30px 30px
+        width: 80%
         &:before
           content: ''; 
           position: relative
@@ -42,11 +51,19 @@
           left: -99% ;
           margin-top: 5px;
           border: 20px solid transparent;
-          border-right: 30px solid  #e8e8e8
+          border-right: 20px solid  #e8e8e8
+        &.green:before
+          border-right-color: #d6ffde
+        &.red:before
+          border-right-color: #fcb1b1
+        &.gray:before
+           border-right-color: #e8e8e8
       &__text
         padding: 15px
+        margin-top: -40px
   &__content
     display: flex;
+    // flex-wrap: wrap
     justify-content: space-between
     align-items: flex-start
     position: absolute
@@ -88,33 +105,27 @@
         color: #c4c4c4;
         opacity: 1
         transition: opacity 0.3s ease
-      &:focus::-webkit-input-placeholder 
-        opacity: 0
-      &:focus::-moz-placeholder          
-        opacity: 0
-      &:focus:-moz-placeholder           
-        opacity: 0
-      &:focus:-ms-input-placeholder      
-        opacity: 0 
+     
 
-      &:focus
-        border: 2.5px solid #b8bfff
     .review__character
       display: flex
+      flex-wrap: wrap
       justify-content: space-between
+      align-items: center
       width: 100%
       color: #fff
       font-size: 1.1em
       select
-        // margin-left: 10px
+        height: 30px
         background-color: #fff
         color: #000
         flex-grow: 0.8
+
         text-align: center
         text-align-last: center
     .reviews__new-review__text
       padding-left: 10px
-      height: 50% 
+      height: 45% 
       margin-bottom: 30px
   .button.add_review
     position: relative
@@ -127,10 +138,21 @@
     width: 70%
     transform: translateX(-50%)
     padding-left: 10px
-
-
-
-
-
-
+    &:hover
+       background-color: darken(#db594f, 10%)
+  .button.show-review
+    position: absolute
+    top: 50%
+    background-color: #db594f
+    color: #fff
+    text-transform: uppercase
+    font-weight: bold
+    transform: translateX(-50%)
+    left: 35%
+    z-index: 10
+    margin-top: 30px
+    transition: top 1s ease, background 0.3s ease;
+    cursor: pointer
+    &:hover
+      background-color: darken(#db594f, 10%)
 

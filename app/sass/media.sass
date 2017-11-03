@@ -2,146 +2,211 @@
 
 /*==========  Desktop First  ==========*/
 @media only screen and (max-width : 1650px)
-	.fullscreen
-		background-position: 60% 50%
+  .fullscreen
+    background-position: 60% 50%  
+    
 
 @media only screen and (max-width : 1500px)
 
-	.about__content
-		font-size: 14px
+  .about__content
+    font-size: 14px
 @media only screen and (max-width : 1360px)
-	.fullscreen
-		background-position: 70% 0%		
+  .fullscreen
+    background-position: 70% 0%   
 /* Large Devices, Wide Screens */
 @media only screen and (max-width : 1280px)
-	/**/
-	.button-circle
-		font-size: 14px
-		bottom: 50px
-	.header
-		font-size: 0.8em
-		height: 42px
-		.button
-			height: 100%
-			top: 0
-			padding: 10px 20px
-			border-radius: 0
-			cursor: pointer
+  /**/
+  body
+    font-size: 14px
+  
+  .fullscreen
+    min-height: 720px
 
-	.about.fullscreen
-		background-position: 80% 50%		
-		min-height: 720px
-		background-size: 150% auto
-		background-repeat: no-repeat
-		background-color: #FFF
+  .button-circle
+    font-size: 14px
+    bottom: 50px
+  .header
+    font-size: 0.8em
+    height: 42px
+    .button
+      height: 100%
+      top: 0
+      padding: 10px 20px
+      border-radius: 0
+      cursor: pointer
 
-	.form__section
+  .about.fullscreen
+    background-position: 80% 50%    
+    min-height: 720px
+    background-size: 150% auto
+    background-repeat: no-repeat
+    background-color: #FFF
 
-		min-height: 612px
-		.title
-			margin-top: 80px
-			font-size: 21px
-		.form__container
-			font-size: 15px
-			top: 150px
-			height: 462px
-			.form__input
-				margin-top: 50px
-				padding: 8px
-			.form__textarea
-				height: 200px
-	.about
-		&__content
-			font-size: 12px
-			padding: 5px
+  .form__section
+
+    min-height: 612px
+    .title
+      margin-top: 80px
+      font-size: 21px
+    .form__container
+      font-size: 15px
+      top: 150px
+      height: 462px
+      .form__input
+        margin-top: 50px
+        padding: 8px
+      .form__textarea
+        height: 200px
+  .about
+    &__content
+      font-size: 12px
+      padding: 5px
+
+.reviews
+  .h2
+    font-size: 38px
+    margin-top: 90px
+  .h3 
+    font-size: 28px
+  .reviews__new-review .review__character select
+    height: auto
+    font-size: 0.8em
+  &__content
+    margin-top: 170px
+    font-size: 12px
 
 
 /* Medium Devices, Desktops */
 @media only screen and (max-width : 1024px)
-	/**/
-	.header
-		font-size: 0.8em
-		&__contacts__mail
-			display: none
-	.form__textarea
-		height: 250px!important
-	.open-calendar-button
-		left: 52%!important
-	.header__contacts__phone
-		margin-left: 0.7em
+  /**/
+  .header
+    font-size: 0.8em
+    &__contacts__mail
+      display: none
+  .form__textarea
+    height: 250px!important
+  .open-calendar-button
+    left: 52%!important
+  .header__contacts__phone
+    margin-left: 0.7em
 
-
+  .reviews
+    .h2
+      font-size: 34px
+      margin-top: 70px
+    .h3 
+      font-size: 23px
+      line-height: 1
+    .reviews__new-review .review__character select
+      height: auto
+      font-size: 0.8em
+    &__content
+      margin-top: 170px
+      font-size: 12px
 /* Small Devices, Tablets */
-@media only screen and (max-width : 768px)
-	/**/
-	.fullscreen
-		height: 100%
-		min-height: 100%
-	.col-xs-12
-		width: 90%
-		left: 50%
-		transform: translateX(-50%)
-	.header__nav
-		display: none
-	.hamburger--emphatic
-		display: inline-block
-		float: right
-		margin-right: 15px
-	.open-calendar-button.header-button
-		display: none
+@media only screen and (max-width : 768px) 
+  /**/
+
+  .fullscreen
+    height: 100%
+    min-height: 100%
+  .col-xs-12
+    width: 90%
+    left: 50%
+    transform: translateX(-50%)
+  .header__nav
+    display: none
+  .hamburger--emphatic
+    display: inline-block
+    float: right
+    margin-right: 15px
+  .open-calendar-button.header-button
+    display: none
+
+  .reviews
+    .h2
+      font-size: 34px
+      margin-top: 70px
+      margin-left: 0
+      left: 50%
+      transform: translateX(-50%);
+    &__content
+      margin-top: 155px
+      flex-wrap: wrap
+      height: 80%
+      .button.show-review
+        display: none
+    &__box
+      width: 100%
+      height: 55%
+      overflow: auto
+    .reviews__new-review__container 
+      height: 33%
+      width: 100%
+      .reviews__new-review
+        width: 42%
+        left: 50% 
+        margin: 0
+        transform: translateX(-50%);
+        position: relative
+        align-items: stretch
+        .h3
+          text-align: center
+          margin: 30px 0 10px 0
+
+
 @media only screen and (max-width : 510px)
-	/**/
-	.button
-		font-size: 16px
+  /**/
+  .button
+    font-size: 16px
 
 /* Extra Small Devices, Phones */
 @media only screen and (max-width : 480px)
-	/**/
-	.about__content
-		height: 80%	
-		top: 53%
-		margin-top: 0
-		padding: 0
-		border-radius: 0 10px 10px 0
-		&__text
-			top: 50%
-			transform: translateY(-50%)
-			position: absolute
-			font-size: 15px
+  /**/
+  .about__content
+    height: 80% 
+    top: 53%
+    margin-top: 0
+    padding: 0
+    border-radius: 0 10px 10px 0
+    &__text
+      top: 50%
+      transform: translateY(-50%)
+      position: absolute
+      font-size: 15px
 
-	.button
-		font-size: 11px
+  .button
+    font-size: 11px
 
 /* Custom, iPhone Retina */
 @media only screen and (max-width : 341px)
-	/**/
-	.button
-			font-size: 10px
+  /**/
+  .button
+      font-size: 10px
 
 
 /*==========  Mobile First  ==========*/
 
 /* Custom, iPhone Retina */
 @media only screen and (min-width : 320px)
-	/**/
+  /**/
 
 
 /* Extra Small Devices, Phones */
 @media only screen and (min-width : 480px)
-	/**/
+  /**/
 
 
 /* Small Devices, Tablets */
 @media only screen and (min-width : 768px)
-	/**/
+  /**/
 
 
 /* Medium Devices, Desktops */
 @media only screen and (min-width : 992px)
-	/**/
+  /**/
 
 
 /* Large Devices, Wide Screens */
 @media only screen and (min-width : 1200px)
-	/**/
-
+  /**/
