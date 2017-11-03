@@ -30,7 +30,7 @@ gulp.task('galery-js', function(){
 	return gulp.src([
 		'app/libs/jquery/dist/jquery.min.js',
 		'app/libs/unitegallery-master/dist/js/unitegallery.min.js',
-		'app/libs/unitegallery-master/dist/themes/default/ug-theme-default.js',
+		'app/libs/unitegallery-master/dist/themes/tiles/ug-theme-tiles.js',
 		'app/js/galery.js'
 		])
 	.pipe(concat('galery.min.js'))
