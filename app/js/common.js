@@ -1,6 +1,7 @@
 $(function() { // wait for document ready
     // init
-
+     resize();
+     
     $(".header__nav, .btn-wrapper").on("click", "a", function(event) { //отменяем стандартную обработку нажатия по ссылке     
         event.preventDefault(); //забираем идентификатор бока с атрибута href    
         var id = $(this).attr('href'), //узнаем высоту от начала страницы до блока на который ссылается якорь
@@ -157,5 +158,14 @@ function addReview($name, $review) {
 
         
     })
-      
+    
+    function resize() {
+         var $galery__item__img__height =  $('.galery__item a img').height() + 'px';
+        // alert($galery__item__img__height)
+        $('.a-after').css('height', $galery__item__img__height)
+    }
+    $(window).on('resize', function(){
+        
+       resize();
+    })
 });

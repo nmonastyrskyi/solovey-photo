@@ -4,15 +4,14 @@
     width: 1300px
   background-color: #efefef
   &__content
-    margin: 5% 0 0 0
-    height: 95%
+    margin: 5% 0 3% 0
+    height: 92%
     position: relative
     display: flex
     flex-wrap: wrap
     align-content: center
 
     justify-content: space-around
-    background-color: #05a3a3
   &__item
     width: 25%
     outline: 7px solid #05a3a3
@@ -25,22 +24,30 @@
     align-items: center
     justify-content: space-between
     transition: all 0.5s ease
+    .a-after
+        width: 100%
+        position: absolute
+        z-index: 3
+
     &:hover
       transform: scale(1.1)
       z-index: 5
       overflow: visible
       outline: 7px solid  #05a3ff
-      a:before
-        content: "\f06e"
-        font-family: FontAwesome
-        text-align: center
-        font-size: 2em
-        width: 100%
-        height: 43%
-        display: block
-        position: absolute
+      .a-after
         background-color: rgba(#000447,0.5)
-        z-index: 2
+        &:before
+          content: "\f06e"
+          font-family: FontAwesome
+          text-align: center
+          font-size: 2em
+          width: 100%
+          height: 100%
+          display: block
+          color: rgba(#eee,0.6)
+          margin-top: 30%
+          position: absolute
+          z-index: 2
       .button
         background-color: #05a3ff
         &:hover
@@ -49,7 +56,7 @@
     &:first-child
       margin-bottom: 10px
     a
-      height:  43%
+      // height:  43%
       display: block
       &:before
         content: ''
@@ -69,7 +76,6 @@
       margin: 0
   &__price
     position: relative
-    margin-left: 15px
     font-size: 1.3em
     font-weight: bold
     i
