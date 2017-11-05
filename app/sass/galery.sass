@@ -1,4 +1,6 @@
 .galery
+  a, a:hover
+    text-decoration: none
   .container,.row
     height: 100%
     width: 1300px
@@ -24,6 +26,9 @@
     align-items: center
     justify-content: space-between
     transition: all 0.5s ease
+    &:first-child
+      .galery__price
+        margin-bottom: 10px
     .a-after
         width: 100%
         position: absolute

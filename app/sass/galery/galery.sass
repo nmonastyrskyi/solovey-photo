@@ -1,17 +1,52 @@
-@import '../header'
-
+@import "../vars"
+@import "../fonts"
+@import "../../gallery/libs/font-awesome.min.css"
 @import "../../libs/unitegallery-master/dist/css/unite-gallery.css"
 @import "../../libs/unitegallery-master/dist/themes/default/ug-theme-default.css"
 body 
   opacity: 1
-  .header
-    position: relative!important
-  .galery 
-    width: 80%
-    left: 50%
-    transform: translateX(-50%)
-    height: 100%
-    position: relative
-    top: 300px
-    //left: -20%
-    display: block
+  a
+    color: inherit
+    text-decoration: none
+.h2, .description
+  text-align: center
+.galery 
+  width: 80%
+  left: 50%
+  transform: translateX(-50%)
+  height: 100%
+  position: relative
+  margin-top: 120px
+  //left: -20%
+  display: block
+
+.button 
+  border: none 
+  left: 50%
+  cursor: pointer
+  transform: translateX(-50%)
+  position: absolute
+  float: right
+  margin-right: 10%
+  margin-bottom: 110px
+  display: inline-block;
+  border-radius: 10px;
+  padding: 10px 38px 7px;
+  text-decoration: none;
+  text-transform: uppercase
+  transition: 0.3s;
+  outline: none
+  background-color: darken(#4a944f, 5%)
+  color: #fff
+  &-back
+    margin-top: 30px
+  &-up
+    display: none
+    font-size: 2em
+    margin-top: 30px
+    border-radius: 40%
+    padding: 35px 50px
+
+
+  &:hover
+    background-color: darken(#4a944f, 10%)
