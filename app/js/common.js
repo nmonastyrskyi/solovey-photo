@@ -35,6 +35,19 @@ $(function() { // wait for document ready
             $('.header__nav__item a:eq( 4 )').addClass('active')
         }
 
+   
+            /*ABOUT CONTENT SHOW*/
+    if ($(window).scrollTop() > $(document).height()/4 * 0.6 && $(window).scrollTop() < $(document).height()/4 * 1.4 && $(document).width()>768){
+        $('.about__content').show(700)
+    }
+    else
+        $('.about__content').hide(700)
+
+    if( $(document).width() < 768)
+        $('.about.fullscreen').css('height', 'auto')
+        /*ABOUT CONTENT SHOW END*/
+
+
 
 
     })
@@ -94,12 +107,22 @@ $(function() { // wait for document ready
 
   $("#my-menu").mmenu({
 
-    // "extensions": [
-    //         "pagedim-black",
-    //         "popup"
-    //      ],
-    //      "autoHeight": true
-         // Options
+    onClick:
+    {
+        preventDefault: true
+    },
+    navbar: 
+    {
+    titleLink: "anchor"
+    },
+
+extensions  : ["listview-large", "fx-panels-slide-up", "fx-listitems-drop", "border-offset", "pagedim-black" ],
+
+    "offCanvas": {
+                  "position": "right"
+               }
+ 
+
       });
       var mmenu_API = $("#my-menu").data( "mmenu" );
       
@@ -108,22 +131,12 @@ $(function() { // wait for document ready
         $(this).toggleClass('is-active')
       });
 
-$("#nav").mmenu().trigger("open.mm").on("opened.mm", function() {
-    alert( "The menu has just been opened." );
-});
-
  mmenu_API.bind( "close:start", function( $panel ) {
          $(".hamburger--emphatic").toggleClass('is-active')
       });
  $('#my-menu .button').click(function(){mmenu_API.close()})
 
- $(window).on("scroll", function() {
-    if ($(window).scrollTop() > $(document).height()/4 * 0.6 && $(window).scrollTop() < $(document).height()/4 * 1.4){
-        $('.about__content').show(700)
-    }
-    else
-        $('.about__content').hide(700)
- })
+
 
 $(".add_review").on('click', function(){
     var $name = $('.reviews__new-review .name').val();
@@ -173,6 +186,10 @@ function addReview($name, $review) {
          var $galery__item__img__height =  $('.galery__item a img').height() + 'px';
         // alert($galery__item__img__height)
         $('.a-after').css('height', $galery__item__img__height)
+       
+        // if($(window).height() < 900 && $(window).width() > 1280)
+        //     $('.fullscreen').css('min-height', '900px')
+  
     }
     $(window).on('resize', function(){
         

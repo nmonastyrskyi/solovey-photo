@@ -136,17 +136,28 @@
     &__content
       margin-top: 170px
       font-size: 12px
+
+
+@media only screen and (max-width : 850px)
+
+  .galery
+    .container,.row
+      width: 740px
+
 /* Small Devices, Tablets */
 @media only screen and (max-width : 768px) 
   /**/
-
+  .button-circle
+    display: none
   .fullscreen
-    height: 100%
-    min-height: 100%
+    height: 100vh
+    min-height: 100vh
   .col-xs-12
     width: 90%
     left: 50%
     transform: translateX(-50%)
+  
+  /* HEADER */
   .header__nav
     display: none
   .hamburger--emphatic
@@ -155,15 +166,29 @@
     margin-right: 15px
   .open-calendar-button.header-button
     display: none
+  /* HEADER END */
+  
+  .reviews.fullscreen
+    min-height: 1024px
 
-  .galery, .reviews.fullscreen
-    min-height: 200%
+  /*ABOUT*/
+  .about
+    height: auto!important
+    &__content
+      display: block!important
+  /*ABOUT END*/
+  
+  /*GALLERY*/
+
+
+  .galery
+    min-width: 2vh
     .container,.row
       width: 600px
       margin-top: 20px
     &__content
     position: relative
-    mh
+
     &__item
       width: 50%
       height: 25% 
@@ -180,7 +205,9 @@
         .galery__price
           margin-bottom: 15px
 
+  /*GALLERY END*/
 
+  /*REVIEWS*/
   .reviews
     .h2
       font-size: 34px
@@ -211,7 +238,17 @@
         .h3
           text-align: center
           margin: 30px 0 10px 0
+  /*REVIEWS END*/
 
+@media only screen and (max-width : 670px)
+
+  .galery
+    min-height: 1480px
+    .container,.row
+      width: 470px
+      min-height: 1480px
+    .galery__item
+      height: 370px
 
 @media only screen and (max-width : 510px)
   /**/
@@ -221,26 +258,154 @@
 /* Extra Small Devices, Phones */
 @media only screen and (max-width : 480px)
   /**/
-  .about__content
-    height: 80% 
-    top: 53%
-    margin-top: 0
-    padding: 0
-    border-radius: 0 10px 10px 0
-    &__text
-      top: 50%
-      transform: translateY(-50%)
+  .intro,.form,.reviews
+    min-height: 800px
+  html, body
+    height: auto
+
+     /*ABOUT*/
+  .about
+    position: relative
+    .about__content
+      outline: 20px  solid #f6f6f6
+      display: block!important
+      width: 100%
       position: absolute
-      font-size: 15px
+      margin: 0
+      height: auto
+      border-radius: 0
+      top: 600px
+      transform: translateY(-95%)
+      &__text
+        line-height: 1.5
+
+  .about.fullscreen
+    background-position: 100% 0%    
+    min-height: 667px
+    background-size: 160% auto
+    background-repeat: no-repeat
+    background-color: #FFF
+  /*ABOUT END*/
+
 
   .button
     font-size: 11px
+  
+    /*  GALLERY */
+
+
+  .galery
+    min-height: 4vh
+    background-color: #FFF
+    &__content
+      top: 0px
+      height: 560vh!important
+    &__item
+      width: 100%
+      height: 68.5vh!important
+      &:hover
+        transform: none
+        outline: 4px solid #05a3a3
+        .a-after
+          display: none
+    .button.galery-button
+      background-color: lighten(#05a3a3, 9%)
+    .container,.row
+      width: 100%
+      padding: 0
+      margin: 0
+      min-height: 560vh!important
+
+    /*  REVIEWS */
+
+  .reviews
+    min-height: 800px!important
+    &__content
+      display: block
+      width: 100%
+      margin: 0
+      height: 100%
+      
+    .h2
+      margin-top: 30px
+    &__box
+      top: 120px
+      left: 50% 
+      transform: translateX(-50%)
+      position: relative
+      width: 90%
+      &__comment
+    &__new-review__container
+      width: 90%
+      position: absolute
+      background-color: rgba(#999, 0.8)
+      bottom: 0px
+      height: 28%!important
+      
+  .reviews .reviews__new-review__container .reviews__new-review
+    width: 100%
+    display: block
+    input, .review__character
+      width: 40%
+      top: 55px
+      position: relative
+      left: 20px
+    .name
+      top: 15%
+      position: absolute
+
+   
+    .reviews__new-review__text
+      right: 20px
+      top: 15%
+      position: absolute
+      width: 40%
+    span
+      position: relative
+      left: 50% 
+      transform: translateX(-50%)
+    select
+      margin-top: 5px
+      height: 21px
+      width: 100%
+  .button.add_review
+    position: absolute!important
+    bottom: 10px
+    padding: 6px
+    width: 50%!important
+
+     /*  REVIEWS ENDS */
 
 /* Custom, iPhone Retina */
 @media only screen and (max-width : 341px)
   /**/
   .button
-      font-size: 10px
+    font-size: 10px
+
+
+  //    /*ABOUT*/
+  // .about
+  //   position: relative
+  //   .about__content
+  //     outline: 20px  solid #f6f6f6
+  //     display: block!important
+  //     width: 100%
+  //     position: absolute
+  //     margin: 0
+  //     height: 200px
+  //     border-radius: 0
+  //     top: 600px
+  //     transform: translateY(-95%)
+  //     &__text
+  //       line-height: 1.5
+
+  // .about.fullscreen
+  //   background-position: 100% 0%    
+  //   min-height: 568px
+  //   background-size: 160% auto
+  //   background-repeat: no-repeat
+  //   background-color: #FFF
+  // /*ABOUT END*/
 
 
 /*==========  Mobile First  ==========*/
