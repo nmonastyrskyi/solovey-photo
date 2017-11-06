@@ -1,36 +1,51 @@
 $(function() { // wait for document ready
     // init
      resize();
+
+    $(window).scroll(function() {
+        var $window_top = $(window).scrollTop();
+        var $intro_top = $('section#intro').offset().top
+        var $about_top = $('section#about').offset().top
+        var $galery_top = $('section#galery').offset().top
+        var $galery_offset_top = $galery_top - ($galery_top - $about_top) * 0.3
+        var $reviews_top = $('section#reviews').offset().top
+        var $reviews_offset_top = $reviews_top - ($reviews_top - $galery_top) * 0.3
+        var $contacts_top = $('section#contact').offset().top
+        var $contacts_ofsset_top = $contacts_top - ($contacts_top - $reviews_top) * 0.3
+
+
+       if($window_top >= $intro_top && $window_top < $about_top * 0.7) {
+            $('.header__nav__item a').removeClass('active')
+            $('.header__nav__item a:first').addClass('active')
+        }
+        else  if($window_top >=  $about_top * 0.7 && $window_top < $galery_offset_top) {
+            $('.header__nav__item a').removeClass('active')
+            $('.header__nav__item a:eq( 1 )').addClass('active')
+        }
+        else  if($window_top >= $galery_offset_top && $window_top < $reviews_offset_top) {
+            $('.header__nav__item a').removeClass('active')
+            $('.header__nav__item a:eq( 2 )').addClass('active')
+        }
+        else  if($window_top  >= $reviews_offset_top && $window_top < $contacts_ofsset_top) {
+            $('.header__nav__item a').removeClass('active')
+            $('.header__nav__item a:eq( 3 )').addClass('active')
+        }
+         else  if($window_top  >=$contacts_ofsset_top) {
+            $('.header__nav__item a').removeClass('active')
+            $('.header__nav__item a:eq( 4 )').addClass('active')
+        }
+
+
+
+    })
      
-    $(".header__nav, .btn-wrapper").on("click", "a", function(event) { //отменяем стандартную обработку нажатия по ссылке     
+    $(".header__nav, #my-menu, .btn-wrapper").on("click", "a", function(event) { //отменяем стандартную обработку нажатия по ссылке     
         event.preventDefault(); //забираем идентификатор бока с атрибута href    
         var id = $(this).attr('href'), //узнаем высоту от начала страницы до блока на который ссылается якорь
             top = $(id).offset().top;
            //анимируем переход на расстояние - top за 1500 мс
         $('body,html').animate({ scrollTop: top }, 1500);
     });
-
-
-
-
-    $('.galery__nav__items').on('click', function() {
-        $(this).siblings('li').removeClass('active');
-        $(this).addClass('active')
-        var $fotorama_id = $(this).attr('id')
-        $('.fotorama').slideUp(1000)
-        $('.fotorama.' + $fotorama_id).slideDown(1000).removeClass('hidden')
-        if ($("#" + $fotorama_id).hasClass('active')) {
-
-            $('.blur_img').css('backgroundImage', 'url(img/' + $fotorama_id + '/1.jpg)')
-            $('.galery__nav__items button').removeClass("studio wedding outdoors children pregnant")
-            $('.galery__price').removeClass("studio wedding outdoors children pregnant")
-            $('.galery__nav__items button').addClass($fotorama_id)
-            $('.galery__price').addClass($fotorama_id)
-
-        }
-
-
-    })
 
     $('#calendar').fullCalendar({
         googleCalendarApiKey: 'AIzaSyAmckkTJxLGZoqR_ajjKaRtYnaX4oCVX8Y',
