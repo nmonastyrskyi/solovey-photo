@@ -1,7 +1,11 @@
 $(function() { // wait for document ready
-    // init
+
+    var $window_height = $(window).height()
+    if($(window).width() <= 768)
+        $('.intro.fullscreen').css({ 'min-height' : $window_height + 'px', 'max-height': $window_height + 'px'})
      resize();
 
+     /*HIGHLIGHT NAV ITEMS WHEN SCROLLING*/
     $(window).scroll(function() {
         var $window_top = $(window).scrollTop();
         var $intro_top = $('section#intro').offset().top
@@ -12,7 +16,6 @@ $(function() { // wait for document ready
         var $reviews_offset_top = $reviews_top - ($reviews_top - $galery_top) * 0.3
         var $contacts_top = $('section#contact').offset().top
         var $contacts_ofsset_top = $contacts_top - ($contacts_top - $reviews_top) * 0.3
-
 
        if($window_top >= $intro_top && $window_top < $about_top * 0.7) {
             $('.header__nav__item a').removeClass('active')
@@ -34,6 +37,7 @@ $(function() { // wait for document ready
             $('.header__nav__item a').removeClass('active')
             $('.header__nav__item a:eq( 4 )').addClass('active')
         }
+         /*HIGHLIGHT NAV ITEMS WHEN SCROLLING END*/
 
    
             /*ABOUT CONTENT SHOW*/
@@ -51,15 +55,29 @@ $(function() { // wait for document ready
 
 
     })
-     
-    $(".header__nav, #my-menu, .btn-wrapper").on("click", "a", function(event) { //отменяем стандартную обработку нажатия по ссылке     
+     /*SMOOTH SCROLL TO ANCHOR*/
+    $(".header__nav,.btn-wrapper").on("click", "a", function(event) { //отменяем стандартную обработку нажатия по ссылке     
         event.preventDefault(); //забираем идентификатор бока с атрибута href    
         var id = $(this).attr('href'), //узнаем высоту от начала страницы до блока на который ссылается якорь
             top = $(id).offset().top;
+        var top0 = $('#intro').offset().top
            //анимируем переход на расстояние - top за 1500 мс
-        $('body,html').animate({ scrollTop: top }, 1500);
+        $('body,html').animate({ scrollTop: top - top0 }, 1500);
     });
+        $("#my-menu").on("click", "a", function(event) { //отменяем стандартную обработку нажатия по ссылке     
+        event.preventDefault(); //забираем идентификатор бока с атрибута href    
+        var id = $(this).attr('href'), //узнаем высоту от начала страницы до блока на который ссылается якорь
+            top = $(id).offset().top;
+        var top0 = $('#intro').offset().top
+           //анимируем переход на расстояние - top за 1500 мс
+        $('body,html').animate({ scrollTop: top - top0 }, 1500);
+        // alert(top)
+        // alert(top0)
+    });
+     /*SMOOTH SCROLL TO ANCHOR END*/
+    
 
+     /*INIT FULLCALENDAR*/
     $('#calendar').fullCalendar({
         googleCalendarApiKey: 'AIzaSyAmckkTJxLGZoqR_ajjKaRtYnaX4oCVX8Y',
         events: {
@@ -104,6 +122,7 @@ $(function() { // wait for document ready
         };
 
     });
+     /*INIT FULLCALENDAR END*/
 
   $("#my-menu").mmenu({
 
@@ -123,21 +142,22 @@ extensions  : ["listview-large", "fx-panels-slide-up", "fx-listitems-drop", "bor
                }
  
 
+    /*INIT MOBILE MENU*/
       });
       var mmenu_API = $("#my-menu").data( "mmenu" );
       
       $(".hamburger--emphatic").click(function() {
         mmenu_API.open();
-        $(this).toggleClass('is-active')
+        $(this).addClass('is-active')
       });
 
  mmenu_API.bind( "close:start", function( $panel ) {
-         $(".hamburger--emphatic").toggleClass('is-active')
+         $(".hamburger--emphatic").removeClass('is-active')
       });
  $('#my-menu .button').click(function(){mmenu_API.close()})
+     /*INIT MOBILE MENU END*/
 
-
-
+     /*INIT REVIEW ADDING*/
 $(".add_review").on('click', function(){
     var $name = $('.reviews__new-review .name').val();
     var $review = $('.reviews__new-review__text').val();
@@ -177,18 +197,17 @@ function addReview($name, $review) {
         else {
             $('.reviews__box').css({"overflow-y": "hidden", "height": "50%" })
             $(this).css('top', '50%').html("Показать еще")
-        }
-
-        
+        }     
     })
+     /*INIT REVIEW ADDING END*/
     
     function resize() {
          var $galery__item__img__height =  $('.galery__item a img').height() + 'px';
         // alert($galery__item__img__height)
         $('.a-after').css('height', $galery__item__img__height)
        
-        // if($(window).height() < 900 && $(window).width() > 1280)
-        //     $('.fullscreen').css('min-height', '900px')
+         if($(window).width() <= 768 && $(window).width() > 480 )
+             $('.header__logo,.header__contacts').unwrap('.header-left')
   
     }
     $(window).on('resize', function(){
