@@ -1,9 +1,14 @@
   jQuery(document).ready(function(){ 
+
+
+
         jQuery("#gallery").unitegallery({
          tiles_type:"nested",
         tiles_nested_optimal_tile_width:300
         }); 
 
+        $("body").css("opacity", "1");
+        
         setTimeout(function() {
         document.querySelector('.button-up').style.display='block'
         }, 1000);

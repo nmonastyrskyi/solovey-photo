@@ -1,5 +1,7 @@
 $(function() { // wait for document ready
-
+ 
+    $("body").css("opacity", "1");
+    
     var $window_height = $(window).height()
     if($(window).width() <= 768)
         $('.intro.fullscreen').css({ 'min-height' : $window_height + 'px', 'max-height': $window_height + 'px'})
