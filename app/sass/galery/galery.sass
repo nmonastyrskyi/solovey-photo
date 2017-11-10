@@ -1,5 +1,6 @@
 @import "../vars"
 @import "../fonts"
+@import "../../libs/bootstrap-grid/bootstrap-grid"
 @import "../../gallery/libs/font-awesome.min.css"
 @import "../../libs/unitegallery-master/dist/css/unite-gallery.css"
 @import "../../libs/unitegallery-master/dist/themes/default/ug-theme-default.css"
@@ -8,8 +9,12 @@ body
   a
     color: inherit
     text-decoration: none
+.online-store
+  background-color: #efefeffb
+
 .h2, .description
   text-align: center
+  position: relative
 .galery 
   width: 80%
   left: 50%
@@ -21,7 +26,7 @@ body
   display: block
   &:after
     content: ''
-    background-color: #c4c4c4
+    background-color: #aaa
     width: 100%
     margin-top: 35px
     height: 4px
@@ -40,21 +45,96 @@ body
   display: inline-block;
   border-radius: 10px;
   padding: 10px 38px 7px;
-  text-decoration: none;
+
   text-transform: uppercase
   transition: 0.3s;
   outline: none
-  background-color: darken(#4a944f, 5%)
+  background-color: darken(#c4c4c4, 5%)
   color: #fff
   &-back
     margin-top: 30px
   &-up
     display: none
-    font-size: 2em
+    font-size: 1.7em
     margin-top: 70px
     border-radius: 40%
-    padding: 35px 50px
- 
+    padding: 33px 46px
 
   &:hover
-    background-color: darken(#4a944f, 10%)
+    background-color: darken(#c4c4c4, 10%)
+    text-decoration: none;
+    color: #fff
+  &:focus
+    background-color: darken(#c4c4c4, 10%)
+    text-decoration: none;
+    color: #fff
+ 
+
+/* INDIVIDUAL*/
+
+.individual.header
+  display: block
+  position: relative
+  font-size: 1.5vmin
+  margin: 1vmin 2vmin 8vmin 2vmin
+  .button 
+    margin-top: 0.5vh
+
+.individual-img-wrapper
+  a
+    display: block
+
+.header.individual
+  .button
+    background-color: #c4c4c4
+    &:hover
+      background-color: #ccc
+ 
+.individual-img-link
+  position: absolute
+  // display: inline-block
+  left: 50%
+  transform: translateX(-50%)
+  margin: 1vh 0 1vh 0
+  cursor: pointer
+  img
+    width: auto
+    height: 38.5vmin
+    left: 50%
+    transform: translateX(-50%)
+    // display: block
+    position: relative
+  a
+    z-index: 3
+    display: block
+    position: absolute
+    width: 100%
+    height: 100%
+  &:hover:after
+    background-color: rgba(#c4c4c4, 0.2)
+    color: transparent
+  &:after
+    content: 'Студийные фото'
+    padding-top: 25%
+    font-size: 3vmin
+    font-weight: light
+    font-family: regular
+    letter-spacing: 8px
+    color: #fff
+    z-index: 2
+    top: 0
+    width: 100%
+    height: 100%
+    background-color: rgba(#4c4c4c, 0.7)
+    position: absolute
+    display: block
+    text-align: center
+    transition: all 0.7s ease
+.individual-img-link:last-child:after
+  content: 'Уличные фото'
+.individual-img-link:last-child:hover:after
+  background-color: transparent
+.individual-img-link:last-child
+  top: 58vmin
+/* INDIVIDUAL END*/
+    

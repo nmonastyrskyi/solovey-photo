@@ -43,7 +43,7 @@ $(function() { // wait for document ready
             /*ABOUT CONTENT SHOW*/
     $introHeight = $('.intro').outerHeight();
     // $aboutHeight = $('.about').outerHeight();
-    if ($(window).scrollTop() >  $introHeight * 0.7 && $(document).width()>768){
+    if ($(window).scrollTop() >  $introHeight * 0.65 && $(document).width()>768){
         $('.about__content').show(700)
     }
     else
@@ -52,7 +52,6 @@ $(function() { // wait for document ready
     if( $(document).width() < 768)
         $('.about.fullscreen').css('height', 'auto')
         /*ABOUT CONTENT SHOW END*/
-
 
 
 
@@ -196,12 +195,10 @@ function addReview($name, $review) {
         if($(this).hasClass('shown_all')){
             $('.reviews__box').css({"overflow-y": "auto", "height": "66%" })
             $(this).css('top', '66%').html("Свернуть")
-            $(".button-circle[href='#contact']").hide(500)
         }
         else {
             $('.reviews__box').css({"overflow-y": "hidden", "height": "50%" })
             $(this).css('top', '50%').html("Показать еще")
-             $(".button-circle[href='#contact']").show(500)
         }     
     })
         /*SHOW MORE REVIEWS BUTTON HANDLER END*/

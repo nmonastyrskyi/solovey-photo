@@ -1,14 +1,7 @@
 @import "vars"
 
 /*Tablets, phones*/
-@media only screen and (orientation: portrait)
-  /* GALLERY*/
-  // .galery
-    // max-height: 90vmin!important
-    // .row,.container
-      // max-height: 90vmin!important
-  /*GALLERY END*/
-
+@media only screen and (max-width: 1024px) and (orientation: portrait)
   /*REVIEWS*/
   .reviews
   
@@ -141,6 +134,17 @@
       padding: 5px
 
   /*REVIEWS*/
+  .reviews,.reviews:before
+    min-height: 720px
+  .reviews
+    .h2
+      margin-top: 55px
+    &__content
+      margin-top: 150px
+    .h3
+      font-size: 1.6em
+  .reviews__box,.reviews__new-review__container
+    // min-height: 400px
 
      
 
@@ -535,8 +539,10 @@
     .reviews__new-review__text
       right: 20px
       top: 15%
+      margin: 0
       position: absolute
       width: 40%
+      height: 93px
     span
       position: relative
       left: 50% 
