@@ -70,12 +70,6 @@ a
   color: inherit
 
 
-.header-clone
-  height: 52px
-  width: 100%
-  position: absolute
-  z-index: 999
-  background-color: rgba(255, 255, 5, 0.9);
 .button-circle
   border: 1px solid black
   width: 7em
@@ -85,7 +79,7 @@ a
   +centererX()
   bottom: 100px
   &:hover
-    background-color: rgba(#c2c2c2, 0.1)
+    background-color: rgba(#c2c2c2, 0.2)
     color: inherit
   &:focus
     background: inherit
@@ -96,8 +90,28 @@ a
     font-size: 2em
     +centerer()
 .white
-  color: white;
+  color: #444;
+  background-color: rgba(#FFF, 0.6)
   border-color: #fff;
+  border: none
+  &:hover
+    background-color: rgba(#fff, 0.5)
+  &:focus
+    background-color: rgba(#FFF, 0.4)
+    color: inherit
+
+.menthol
+  background-color: lighten(rgba(#05a3a3, 0.7), 5%)
+  color: #fff
+  border: none
+  &:hover
+    background-color: lighten(rgba(#05a3a3, 0.6), 6%)
+    color: #fff
+  &:focus
+    color: #fff
+    background-color: lighten(rgba(#05a3a3, 0.5), 6%)
+  &:active
+    background-color: lighten(rgba(#05a3a3, 0.5), 6%)
 
 #my-page
   height: 100vh

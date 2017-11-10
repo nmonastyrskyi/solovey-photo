@@ -41,7 +41,9 @@ $(function() { // wait for document ready
 
    
             /*ABOUT CONTENT SHOW*/
-    if ($(window).scrollTop() > $(document).height()/4 * 0.6 && $(window).scrollTop() < $(document).height()/4 * 1.4 && $(document).width()>768){
+    $introHeight = $('.intro').outerHeight();
+    // $aboutHeight = $('.about').outerHeight();
+    if ($(window).scrollTop() >  $introHeight * 0.7 && $(document).width()>768){
         $('.about__content').show(700)
     }
     else
@@ -188,28 +190,41 @@ function addReview($name, $review) {
         $('.reviews__new-review__text').css('border', '2px solid #db594f') 
 }
 
+    /*SHOW MORE REVIEWS BUTTON HANDLER*/
     $('.button.show-review').click(function(){
         $(this).toggleClass('shown_all')
         if($(this).hasClass('shown_all')){
             $('.reviews__box').css({"overflow-y": "auto", "height": "66%" })
             $(this).css('top', '66%').html("Свернуть")
+            $(".button-circle[href='#contact']").hide(500)
         }
         else {
             $('.reviews__box').css({"overflow-y": "hidden", "height": "50%" })
             $(this).css('top', '50%').html("Показать еще")
+             $(".button-circle[href='#contact']").show(500)
         }     
     })
+        /*SHOW MORE REVIEWS BUTTON HANDLER END*/
+
      /*INIT REVIEW ADDING END*/
     
+       /*ON RESIZE FUNCTION*/
     function resize() {
-         var $galery__item__img__height =  $('.galery__item a img').height() + 'px';
-        // alert($galery__item__img__height)
-        $('.a-after').css('height', $galery__item__img__height)
+        /*GALLERY IMG AFTER RESIZE*/
+        galleryItemImgAfterResize()
        
          if($(window).width() <= 768 && $(window).width() > 480 )
              $('.header__logo,.header__contacts').unwrap('.header-left')
   
     }
+
+    /*GALLERY IMG AFTER RESIZE*/
+      function galleryItemImgAfterResize() {
+        var $galery__item__img__height =  $('.galery__item a img').height() + 'px';
+        // alert($galery__item__img__height)
+        $('.a-after').css('height', $galery__item__img__height)
+        } 
+
     $(window).on('resize', function(){
         
        resize();
