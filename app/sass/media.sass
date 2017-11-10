@@ -54,6 +54,31 @@
 
 
 /*==========  Desktop First  ==========*/
+@media only screen and (max-width: 1920px)
+  
+  /*GALLERY*/
+  .galery
+    height: 1080px
+    .container,.row
+      width: 900px
+      height: 930px
+    &__content
+      border-width: 3px
+      margin-top: 70px
+    &__item
+      border-width: 2px
+      &:hover
+        border-width: 2px
+
+      .h3 
+        font-size: 1em
+      .galery__price
+        font-size: 1em
+      .button
+        font-size: 0.7em
+        margin-bottom: 15px
+    .button-circle
+      bottom: 10px!important
 @media only screen and (max-width : 1650px)
   .fullscreen
     background-position: 60% 50%  
@@ -94,25 +119,28 @@
 
   /*GALLERY*/
   .galery
-    height: 1100px
+    height: 720px
     .container,.row
-      width: 900px
-      height: 950px
+      width: 600px
+      height: 600px
     &__content
-      border-width: 3px
-    &__item
       border-width: 2px
+    &__item
+      border-width: 1.5px
       &:hover
         border-width: 2px
 
       .h3 
-        font-size: 1em
+        font-size: 0.8em
       .galery__price
-        font-size: 1em
+        font-size: 0.8em
       .button
-        font-size: 0.7em
+        font-size: 0.5em
         margin-bottom: 15px
+    .button-circle
+      font-size: 10px
 
+  /*GALLERY END*/
   .form__section
 
     min-height: 612px
