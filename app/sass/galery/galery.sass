@@ -1,5 +1,5 @@
 @import "../vars"
-@import "../fonts"
+@import "fonts"
 @import "../../libs/bootstrap-grid/bootstrap-grid"
 @import "../../gallery/libs/font-awesome.min.css"
 @import "../../libs/unitegallery-master/dist/css/unite-gallery.css"
@@ -72,6 +72,7 @@ body
 
 /* INDIVIDUAL*/
 
+
 .individual.header
   display: block
   position: relative
@@ -84,13 +85,13 @@ body
   a
     display: block
 
-.header.individual
+.header.individual 
   .button
     background-color: #c4c4c4
     &:hover
       background-color: #ccc
  
-.individual-img-link
+.individual-img-link,%events-item
   position: absolute
   // display: inline-block
   left: 50%
@@ -117,8 +118,8 @@ body
     content: 'Студийные фото'
     padding-top: 25%
     font-size: 3vmin
-    font-weight: light
-    font-family: regular
+    font-weight: 100
+    font-family: roboto
     letter-spacing: 8px
     color: #fff
     z-index: 2
@@ -137,4 +138,19 @@ body
 .individual-img-link:last-child
   top: 58vmin
 /* INDIVIDUAL END*/
+
+/*EVENTS*/
+.events-img-link1:after
+  content: 'Свадьбы'
+.events-img-link2:after
+  content: 'Дни Рождения'
+.events-img-link3:after
+  content: 'Крестины'
+.events-img-link4:after
+  content: 'Спектакли, конкурсы, турниры'  
+@for $i from 1 through 4 
+  .events-img-link#{$i}
+    @extend %events-item
+    top: 19vmin + 40.5vmin * ($i - 1)
+  
     

@@ -6,7 +6,7 @@
     <title>Title</title>
     <meta name="description" content="">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
     <meta property="og:image" content="path/to/image.jpg">
     <link rel="shortcut icon" href="img/favicon/favicon.ico" type="image/x-icon">
     <link rel="apple-touch-icon" href="img/favicon/apple-touch-icon.png">
@@ -30,7 +30,7 @@
     </style>
 </head>
 
-<body  style="opacity:0;transition: 1s ease;">
+<body style="opacity:0;transition: 1s ease;">
     <div id="my-page">
         <!-- required for mmenu -->
         <section class="header" id="fixed">
@@ -84,7 +84,7 @@
         <section class="about fullscreen " id="about" style="background-image: url(img/masha.jpg)">
             <div class="about__content">
                 <div class="about__content__text">
-                    <p> <b>Здравствуйте!</b></p>
+                    <p>Здравствуйте!</p>
                     <p> Меня зовут Маша. Я фотографирую в Харькове.
                         <br> Люблю дело, которым занимаюсь.
                         <br> С удовольствием запечатлю лучшие моменты вашей жизни.
@@ -140,7 +140,7 @@
                             <button class="button galery-button"> <a href="gallery/pregnant.html">Больше фото</a></button>
                         </div>
                         <div class="galery__item">
-                            <a href="#">
+                            <a href="/gallery/events.html">
                                 <div class="a-after"></div><img src="img/img4.jpg" alt=""></a>
                             <h3 class="h3">Мероприятия</h3>
                             <div class="galery__price">
@@ -420,8 +420,8 @@
                             </div>
                         </div>
                     </div>
-                    <div class="button show-review">Показать еще</div>
                 </div>
+                <div class="button show-review">Показать еще</div>
                 <div class="reviews__new-review__container">
                     <div class="reviews__new-review">
                         <h3 class="h3">Оставьте отзыв</h3>
@@ -448,24 +448,34 @@
         <section class="form__section" id="contact">
             <p class="title">Все вопросы можно задать прямо здесь!</p>
             <div class="form__container">
-                <form action="#" method="post" class="form">
-                    <div class="container">
-                        <div class="row">
-                            <input type="text" class="form__input col-xs-12 col-md-6" placeholder="Ваше Имя">
-                            <input type="text" class="form__input col-xs-12 col-md-6" placeholder="Ваш email">
+                <div class="form__content">
+                    <form action="#" method="post" class="form">
+                        <div class="container">
+                            <div class="row">
+                                <input type="text" class="form__input col-xs-12 col-md-6" placeholder="Ваше Имя">
+                                <input type="text" class="form__input col-xs-12 col-md-6" placeholder="Ваш email">
+                            </div>
+                            <div class="row">
+                                <textarea name="message" placeholder="Ваше сообщение" class="col-xs-12 form__textarea" rows="6"></textarea>
+                            </div>
                         </div>
-                        <div class="row">
-                            <textarea name="message" placeholder="Ваше сообщение" class="col-xs-12 form__textarea" rows="6"></textarea>
-                        </div>
-                        <button class="button button__purple">Отправить сообщение</button>
-                    </div>
-                </form>
+                    </form>
+                </div>
+                <button class="button menthol">Отправить сообщение</button>
             </div>
             <form action="#"></form>
             <div class="shadow"></div>
             <!-- to make a shadow when 'open calendar button pressed' -->
         </section>
         <footer class="footer">
+            <div class="footer__contacts">
+                <div class="footer__contacts__item"><i class="fa fa-phone" aria-hidden="true"> <span>+380(66)325-00-43</span></i></div>
+                <div class="footer__contacts__item"><i class="fa fa-envelope" aria-hidden="true"><span> matrenabox@gmail.com </span></i></div>
+                <div class="footer__contacts__item"><a href="https://vk.com/marysolovey"><i class="fa fa-vk" aria-hidden="true"></i></a></div>
+                <div class="footer__contacts__item"><i class="fa fa-facebook" aria-hidden="true"></i></div>
+                <div class="footer__contacts__item"><i class="fa fa-instagram" aria-hidden="true"></i></div>
+                <div class="footer__contacts__item"><i class="fa fa-telegram" aria-hidden="true"></i></div>
+            </div>
         </footer>
         <nav id="my-menu">
             <ul>

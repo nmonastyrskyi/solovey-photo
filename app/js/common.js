@@ -2,9 +2,12 @@ $(function() { // wait for document ready
  
     $("body").css("opacity", "1");
     
-    var $window_height = $(window).height()
-    if($(window).width() <= 768)
-        $('.intro.fullscreen').css({ 'min-height' : $window_height + 'px', 'max-height': $window_height + 'px'})
+    /*STOP RESIZING ON PHONES*/
+    var $window_height = $(window).height();
+    if($(window).width() <= 768) {
+        $('.intro.fullscreen').css({ 'min-height' : $window_height + 'px', 'max-height': $window_height + 'px', 'height': $window_height + 'px'});
+    }
+    /*STOP RESIZING ON PHONES*/
      resize();
 
      /*HIGHLIGHT NAV ITEMS WHEN SCROLLING*/
@@ -193,13 +196,11 @@ function addReview($name, $review) {
 
     /*SHOW MORE REVIEWS BUTTON HANDLER*/
     $('.button.show-review').click(function(){
-        $(this).toggleClass('shown_all')
-        if($(this).hasClass('shown_all')){
-            $('.reviews__box').css({"overflow-y": "auto", "height": "66%" })
+        $('.reviews__box').toggleClass('shown_all')
+        if($('.reviews__box').hasClass('shown_all')){
             $(this).css('top', '66%').html("Свернуть")
         }
         else {
-            $('.reviews__box').css({"overflow-y": "hidden", "height": "50%" })
             $(this).css('top', '50%').html("Показать еще")
         }     
     })
