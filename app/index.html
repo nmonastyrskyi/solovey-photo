@@ -47,11 +47,11 @@
                     </div>
                 </div>
             </div>
-            <div class="button open-calendar-button header-button">Открыть календарь</div>
+            <!-- <div class="button open-calendar-button header-button">Открыть календарь</div> -->
             <nav class="header__nav">
                 <ul>
                     <li class="header__nav__item"><a href="#intro">Intro</a></li>
-                    <li class="header__nav__item"><a href="#about">About Me</a></li>
+                    <li class="header__nav__item"><a href="#about">Обо мне</a></li>
                     <li class="header__nav__item"><a href="#galery">Галерея</a></li>
                     <li class="header__nav__item"><a href="#reviews">Отзывы</a></li>
                     <li class="header__nav__item"><a href="#contact">Контакты</a></li>
@@ -111,7 +111,7 @@
                             <div class="galery__price">
                                 <i class="fa fa-tags" aria-hidden="true"></i> от <span>300</span> грн.
                             </div>
-                            <button class="button galery-button"> <a href="gallery/individual.html">Больше фото</a></button>
+                            <a class="button galery-button" href="gallery/individual.html">Подробнее</a>
                         </div>
                         <div class="galery__item">
                             <a href="gallery/love-story.html">
@@ -120,7 +120,7 @@
                             <div class="galery__price">
                                 <i class="fa fa-tags" aria-hidden="true"></i> от <span>300</span> грн.
                             </div>
-                            <button class="button galery-button"> <a href="gallery/love-story.html">Больше фото</a></button>
+                            <a class="button galery-button" href="gallery/love-story.html">Подробнее</a>
                         </div>
                         <div class="galery__item">
                             <a href="gallery/children.html">
@@ -128,7 +128,7 @@
                             <h3 class="h3">Семейные и детские</h3>
                             <div class="galery__price"><i class="fa fa-tags" aria-hidden="true"></i> от <span>300</span> грн.
                             </div>
-                            <button class="button galery-button"> <a href="gallery/children.html">Больше фото</a></button>
+                            <a class="button galery-button" href="gallery/children.html">Подробнее</a>
                         </div>
                         <div class="galery__item">
                             <a href="gallery/pregnant.html">
@@ -137,25 +137,25 @@
                             <div class="galery__price">
                                 <i class="fa fa-tags" aria-hidden="true"></i> от <span>300</span> грн.
                             </div>
-                            <button class="button galery-button"> <a href="gallery/pregnant.html">Больше фото</a></button>
+                            <a class="button galery-button" href="gallery/pregnant.html">Подробнее</a>
                         </div>
                         <div class="galery__item">
                             <a href="/gallery/events.html">
-                                <div class="a-after"></div><img src="img/img4.jpg" alt=""></a>
+                                <div class="a-after"></div><img src="img/previews/events.jpg" alt=""></a>
                             <h3 class="h3">Мероприятия</h3>
                             <div class="galery__price">
                                 <i class="fa fa-tags" aria-hidden="true"></i> от <span>300</span> грн.
                             </div>
-                            <button class="button galery-button">Больше фото</button>
+                            <a class="button galery-button" href="/gallery/events.html">Подробнее</a>
                         </div>
                         <div class="galery__item">
                             <a href="#">
-                                <div class="a-after"></div><img src="img/img4.jpg" alt=""></a>
+                                <div class="a-after"></div><img src="img/previews/video.jpg" alt=""></a>
                             <h3 class="h3">Видео</h3>
                             <div class="galery__price">
                                 <i class="fa fa-tags" aria-hidden="true"></i> от <span>300</span> грн.
                             </div>
-                            <button class="button galery-button">Больше фото</button>
+                            <a class="button galery-button">Подробнее</a>
                         </div>
                         <div class="galery__item">
                             <a href="gallery/online-store.html">
@@ -164,7 +164,7 @@
                             <div class="galery__price">
                                 <i class="fa fa-tags" aria-hidden="true"></i> от <span>300</span> грн.
                             </div>
-                            <button class="button galery-button"> <a href="gallery/online-store.html">Больше фото</a></button>
+                            <a class="button galery-button" href="gallery/online-store.html">Подробнее</a>
                         </div>
                         <div class="galery__item">
                             <a href="#">
@@ -173,7 +173,7 @@
                             <div class="galery__price">
                                 <i class="fa fa-tags" aria-hidden="true"></i> от <span>300</span> грн.
                             </div>
-                            <button class="button galery-button">Больше фото</button>
+                            <button class="button galery-button">Подробнее</button>
                         </div>
                     </div>
                 </div>
@@ -421,7 +421,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="button show-review">Показать еще</div>
+                <div class="button show-review" onselectstart="return false">Показать еще</div>
                 <div class="reviews__new-review__container">
                     <div class="reviews__new-review">
                         <h3 class="h3">Оставьте отзыв</h3>
@@ -448,20 +448,23 @@
         <section class="form__section" id="contact">
             <p class="title">Все вопросы можно задать прямо здесь!</p>
             <div class="form__container">
-                <div class="form__content">
-                    <form action="#" method="post" class="form">
+                <form action="#" method="post" class="form">
+                    <div class="form__content">
                         <div class="container">
                             <div class="row">
-                                <input type="text" class="form__input col-xs-12 col-md-6" placeholder="Ваше Имя">
-                                <input type="text" class="form__input col-xs-12 col-md-6" placeholder="Ваш email">
+                                <input type="hidden" name="project_name" value="SOLOVEY PHOTO">
+                                <input type="hidden" name="admin_email" value="prospectgagarina@gmail.com">
+                                <input type="hidden" name="form_subject" value="ВОПРОС С САЙТА">
+                                <input type="text" name="Name" class="form__input col-xs-12 col-md-6" placeholder="Ваше Имя" required>
+                                <input type="email" name="E-mail" class="form__input col-xs-12 col-md-6" placeholder="Ваш email" required>
                             </div>
                             <div class="row">
-                                <textarea name="message" placeholder="Ваше сообщение" class="col-xs-12 form__textarea" rows="6"></textarea>
+                                <textarea name="message" placeholder="Ваше сообщение" class="col-xs-12 form__textarea" rows="6" required></textarea>
                             </div>
                         </div>
-                    </form>
-                </div>
-                <button class="button menthol">Отправить сообщение</button>
+                    </div>
+                    <button class="button menthol">Отправить сообщение</button>
+                </form>
             </div>
             <form action="#"></form>
             <div class="shadow"></div>
@@ -480,7 +483,7 @@
         <nav id="my-menu">
             <ul>
                 <li><a href="#intro">Intro</a></li>
-                <li><a href="#about">About Me</a></li>
+                <li><a href="#about">Обо мне</a></li>
                 <li><a href="#galery">Галерея</a></li>
                 <li><a href="#reviews">Отзывы</a></li>
                 <li><a href="#contact">Контакты</a></li>

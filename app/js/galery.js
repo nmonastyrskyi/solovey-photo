@@ -7,6 +7,7 @@
         tiles_nested_optimal_tile_width:300
         }); 
 
+
         $("body").css("opacity", "1");
         
         setTimeout(function() {
@@ -21,4 +22,5 @@
         $('body,html').animate({ scrollTop: top }, 1500);
     });
   
-      }); 
+
+     }); 

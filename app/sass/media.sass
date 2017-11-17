@@ -5,10 +5,10 @@
   /*REVIEWS*/
   .reviews:before
     height: 100vh!important
-    min-height: 1050px!important
+    min-height: 1200px!important
   .reviews
     height: 100vh!important
-    min-height: 1050px!important
+    min-height: 1200px!important
     .h2
       // font-size: 34px
       margin-top: 70px
@@ -19,14 +19,15 @@
       margin-top: 155px
       flex-wrap: wrap
       height: 80vh!important
-      .button.show-review
-        display: none
     &__box
       // margin-left: -30px
       width: 100%
       height: 40vh!important
-      overflow-y: auto!important
-
+    .button.show-review
+      position: relative
+      top: 10px!important
+      margin-top: 10px
+      left: 50%
     .reviews__new-review__container 
       height: 33vh
       width: 100%
@@ -245,13 +246,10 @@
       margin-top: 155px
       flex-wrap: wrap
       height: 80%
-      .button.show-review
-        display: none
+
     &__box
       width: 100%
       height: 55%
-      overflow: auto!important
-
     .reviews__new-review__container 
       height: 33%
       width: 100%
@@ -287,12 +285,22 @@
   /*FORM-END*/
   .footer
     height: 10vh
-@media only screen and (max-width : 850px)
+@media only screen and (max-width : 870px)
   .galery
     height: 870px
     .container,.row
       width: 740px
       height: 760px
+
+  /*REVIEWS*/
+  @media (orientation:portrait)
+    .reviews,.reviefs:before
+      min-height: 1050px!important
+    .reviews  
+      .button.show-review
+        top: 0px!important
+      .reviews__new-review__container
+        margin-top: 50px
 
 
 
@@ -301,7 +309,7 @@
 @media only screen and (max-width : 768px) 
   /**/
   .intro
-    // height: 100vh!important
+    height: 1024px!important
   #my-page
     height: auto
   .button-circle
@@ -325,7 +333,7 @@
     float: right
     margin-right: 15px
   .open-calendar-button.header-button
-    display: none
+    display: block
   /* HEADER END */
   
   .reviews.fullscreen
@@ -336,6 +344,8 @@
     height: auto!important
     &__content
       display: block!important
+      top: 40%
+      padding-right: 20px
   /*ABOUT END*/
   
   /*GALLERY*/
@@ -385,11 +395,13 @@
       flex-wrap: wrap
       height: 80%
       .button.show-review
-        display: none
+        position: relative
+        top: 10px
+        left: 50%
     &__box
       width: 100%
       height: 55%
-      overflow: auto!important
+
 
     .reviews__new-review__container 
       height: 33%
@@ -537,7 +549,8 @@
       border-bottom: 5px solid #05a3a3
       &:hover
         transform: none
-        border: 4px solid #05a3a3
+        border: none
+        border-bottom: 5px solid #05a3a3
         .a-after
           display: none
     .button.galery-button
@@ -559,11 +572,16 @@
       width: 100%
       margin: 0
       min-height: 800px
-      
+    .button.show-review
+      position: relative
+      top: 70px!important
+      background-color: #c4c4c4!important
+      border-radius: 10px
     .h2
       margin-top: 50px
     &__box
-      height: 400px!important
+      height: 420px!important
+      border-bottom-width: 50px
       // overflow: hidden!important
       top: 120px
       left: 50% 
@@ -655,7 +673,11 @@
 
 /* iPhone 6+*/
 @media only screen and (max-width : 414px)
+  .intro
+    height: 736px!important
+
   /*  GALLERY */
+
   .galery
     height: 4200px
     background-color: #FFF
@@ -678,7 +700,8 @@
 /* Custom, iPhone 6 */
 @media only screen and (max-width : 375px)
   /**/
-
+  .intro
+    height: 667px!important
 
   /*REVIEWS*/
   .reviews
@@ -709,6 +732,8 @@
 
 /* Iphone 5 */
 @media only screen and (max-width : 320px)
+  .intro
+    height: 568px!important
   /*  GALLERY */
   .galery
     height: 3800px
@@ -724,7 +749,7 @@
   /*REVIEWS*/
   .reviews
     &__box
-      height: 445px!important
+      height: 425px!important
   /*REVIEWS END*/
   /*FORM*/
   .form__section

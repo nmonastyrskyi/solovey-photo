@@ -1,11 +1,29 @@
 $(function() { // wait for document ready
  
     $("body").css("opacity", "1");
+
+    /*E-mail AJAX SEND*/
+    $("form").submit(function() { 
+        var th = $(this);
+        $.ajax({
+            type: "POST",
+            url: "../mail.php", 
+            data: th.serialize()
+        }).done(function() {
+            alert("Thank you!");
+            setTimeout(function() {
+                // Done Functions
+                th.trigger("reset");
+            }, 1000);
+        });
+        return false;
+    });
+
     
     /*STOP RESIZING ON PHONES*/
     var $window_height = $(window).height();
     if($(window).width() <= 768) {
-        $('.intro.fullscreen').css({ 'min-height' : $window_height + 'px', 'max-height': $window_height + 'px', 'height': $window_height + 'px'});
+        $('.intro.fullscreen').css({ 'min-height' : $window_height + 'px!important', 'max-height': $window_height + 'px!important', 'height': $window_height + 'px!important'});
     }
     /*STOP RESIZING ON PHONES*/
      resize();
@@ -198,10 +216,19 @@ function addReview($name, $review) {
     $('.button.show-review').click(function(){
         $('.reviews__box').toggleClass('shown_all')
         if($('.reviews__box').hasClass('shown_all')){
+            if ($(window).height() > $(window).width() || $(window).width() <= 768) {
+                 $(this).css('top', '66%').html("Выключить скролл")
+            }
+            else
             $(this).css('top', '66%').html("Свернуть")
         }
+         
         else {
-            $(this).css('top', '50%').html("Показать еще")
+             if ($(window).height() > $(window).width() || $(window).width() <= 768) {
+                 $(this).css('top', '50%').html("Включить скролл")
+            }
+            else
+                $(this).css('top', '50%').html("Показать еще")
         }     
     })
         /*SHOW MORE REVIEWS BUTTON HANDLER END*/
@@ -215,7 +242,10 @@ function addReview($name, $review) {
        
          if($(window).width() <= 768 && $(window).width() > 480 )
              $('.header__logo,.header__contacts').unwrap('.header-left')
-  
+        
+         if ($(window).height() > $(window).width() || $(window).width() <= 768) {
+        $('.button.show-review').html("Включить скролл")
+    }
     }
 
     /*GALLERY IMG AFTER RESIZE*/

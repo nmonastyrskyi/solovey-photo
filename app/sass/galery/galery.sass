@@ -76,10 +76,11 @@ body
 .individual.header
   display: block
   position: relative
-  font-size: 1.5vmin
+  font-size: 16px
   margin: 1vmin 2vmin 8vmin 2vmin
   .button 
     margin-top: 0.5vh
+
 
 .individual-img-wrapper
   a
@@ -90,7 +91,7 @@ body
     background-color: #c4c4c4
     &:hover
       background-color: #ccc
- 
+
 .individual-img-link,%events-item
   position: absolute
   // display: inline-block
@@ -130,13 +131,45 @@ body
     position: absolute
     display: block
     text-align: center
-    transition: all 0.7s ease
+    transition: all 0.6s ease, background 0.7s ease
 .individual-img-link:last-child:after
   content: 'Уличные фото'
 .individual-img-link:last-child:hover:after
   background-color: transparent
 .individual-img-link:last-child
-  top: 58vmin
+  top: calc(220px + 40.5vmin)
+
+
+@media only screen and (max-width: 768px)
+  .individual.header
+    font-size: 13px
+  .individual-img-link
+    img
+      height: 48.5vmin!important
+    top: 210px!important
+  .individual-img-link:last-child
+    top: calc(220px + 48.5vmin)!important
+
+@media only screen and (max-width: 480px)
+  .individual-img-link
+    img
+      height: 48.5vmin!important
+    &:after
+      background-color: rgba(#4c4c4c, 0.6)
+      font-weight: 500
+      font-size: 16px
+  .individual-img-link:last-child
+    top: calc(215px + 48.5vmin)!important
+@media only screen and (max-width: 320px)
+  .individual.header
+    font-size: 11px
+  .individual-img-link
+    top: 34vh!important
+    &:after
+      font-size: 14px
+  .individual-img-link:last-child
+    top: 66vh!important
+
 /* INDIVIDUAL END*/
 
 /*EVENTS*/
@@ -148,9 +181,29 @@ body
   content: 'Крестины'
 .events-img-link4:after
   content: 'Спектакли, конкурсы, турниры'  
+
+$min_mar_top: 19vmin
+
+
+
 @for $i from 1 through 4 
   .events-img-link#{$i}
     @extend %events-item
-    top: 19vmin + 40.5vmin * ($i - 1)
-  
+    top: calc(220px + 40.5vmin * (#{$i} - 1))
+  @media only screen and (max-width: 768px)
+    .events-img-link#{$i}
+      top: calc(220px + 50.5vmin * (#{$i} - 1))
+      img
+        height: 48.5vmin!important
+      &:after
+        background-color: rgba(#4c4c4c, 0.6)
+        font-weight: 500
+      &:hover:after
+        background-color: rgba(#4c4c4c, 0.6)
+        color: #fff
+      
+
+
+
+
     
