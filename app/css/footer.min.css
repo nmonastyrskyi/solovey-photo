@@ -1,1 +1,1 @@
-.footer{background-color:#2f2f2f;height:15%;width:100%;position:static}
+.footer{background-color:#2f2f2f;font-size:2.4em;color:#fff;height:15vh;min-height:100px;width:100%;position:relative}.footer__contacts{position:relative;top:50%;-webkit-transform:translateY(-50%);-ms-transform:translateY(-50%);transform:translateY(-50%);display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-justify-content:space-around;-ms-flex-pack:distribute;justify-content:space-around}.footer__contacts span{font-size:.7em;margin-left:10px}

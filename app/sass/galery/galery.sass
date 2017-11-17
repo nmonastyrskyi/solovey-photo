@@ -1,0 +1,209 @@
+@import "../vars"
+@import "fonts"
+@import "../../libs/bootstrap-grid/bootstrap-grid"
+@import "../../gallery/libs/font-awesome.min.css"
+@import "../../libs/unitegallery-master/dist/css/unite-gallery.css"
+@import "../../libs/unitegallery-master/dist/themes/default/ug-theme-default.css"
+body 
+  opacity: 1
+  a
+    color: inherit
+    text-decoration: none
+.online-store
+  background-color: #efefeffb
+
+.h2, .description
+  text-align: center
+  position: relative
+.galery 
+  width: 80%
+  left: 50%
+  transform: translateX(-50%)
+  height: 100%
+  position: relative
+  margin-top: 120px
+  //left: -20%
+  display: block
+  &:after
+    content: ''
+    background-color: #aaa
+    width: 100%
+    margin-top: 35px
+    height: 4px
+    position: absolute
+    z-index: 9
+
+.button 
+  border: none 
+  left: 50%
+  cursor: pointer
+  transform: translateX(-50%)
+  position: absolute
+  float: right
+  margin-right: 10%
+  margin-bottom: 110px
+  display: inline-block;
+  border-radius: 10px;
+  padding: 10px 38px 7px;
+
+  text-transform: uppercase
+  transition: 0.3s;
+  outline: none
+  background-color: darken(#c4c4c4, 5%)
+  color: #fff
+  &-back
+    margin-top: 30px
+  &-up
+    display: none
+    font-size: 1.7em
+    margin-top: 70px
+    border-radius: 40%
+    padding: 33px 46px
+
+  &:hover
+    background-color: darken(#c4c4c4, 10%)
+    text-decoration: none;
+    color: #fff
+  &:focus
+    background-color: darken(#c4c4c4, 10%)
+    text-decoration: none;
+    color: #fff
+ 
+
+/* INDIVIDUAL*/
+
+
+.individual.header
+  display: block
+  position: relative
+  font-size: 16px
+  margin: 1vmin 2vmin 8vmin 2vmin
+  .button 
+    margin-top: 0.5vh
+
+
+.individual-img-wrapper
+  a
+    display: block
+
+.header.individual 
+  .button
+    background-color: #c4c4c4
+    &:hover
+      background-color: #ccc
+
+.individual-img-link,%events-item
+  position: absolute
+  // display: inline-block
+  left: 50%
+  transform: translateX(-50%)
+  margin: 1vh 0 1vh 0
+  cursor: pointer
+  img
+    width: auto
+    height: 38.5vmin
+    left: 50%
+    transform: translateX(-50%)
+    // display: block
+    position: relative
+  a
+    z-index: 3
+    display: block
+    position: absolute
+    width: 100%
+    height: 100%
+  &:hover:after
+    background-color: rgba(#c4c4c4, 0.2)
+    color: transparent
+  &:after
+    content: 'Студийные фото'
+    padding-top: 25%
+    font-size: 3vmin
+    font-weight: 100
+    font-family: roboto
+    letter-spacing: 8px
+    color: #fff
+    z-index: 2
+    top: 0
+    width: 100%
+    height: 100%
+    background-color: rgba(#4c4c4c, 0.7)
+    position: absolute
+    display: block
+    text-align: center
+    transition: all 0.6s ease, background 0.7s ease
+.individual-img-link:last-child:after
+  content: 'Уличные фото'
+.individual-img-link:last-child:hover:after
+  background-color: transparent
+.individual-img-link:last-child
+  top: calc(220px + 40.5vmin)
+
+
+@media only screen and (max-width: 768px)
+  .individual.header
+    font-size: 13px
+  .individual-img-link
+    img
+      height: 48.5vmin!important
+    top: 210px!important
+  .individual-img-link:last-child
+    top: calc(220px + 48.5vmin)!important
+
+@media only screen and (max-width: 480px)
+  .individual-img-link
+    img
+      height: 48.5vmin!important
+    &:after
+      background-color: rgba(#4c4c4c, 0.6)
+      font-weight: 500
+      font-size: 16px
+  .individual-img-link:last-child
+    top: calc(215px + 48.5vmin)!important
+@media only screen and (max-width: 320px)
+  .individual.header
+    font-size: 11px
+  .individual-img-link
+    top: 34vh!important
+    &:after
+      font-size: 14px
+  .individual-img-link:last-child
+    top: 66vh!important
+
+/* INDIVIDUAL END*/
+
+/*EVENTS*/
+.events-img-link1:after
+  content: 'Свадьбы'
+.events-img-link2:after
+  content: 'Дни Рождения'
+.events-img-link3:after
+  content: 'Крестины'
+.events-img-link4:after
+  content: 'Спектакли, конкурсы, турниры'  
+
+$min_mar_top: 19vmin
+
+
+
+@for $i from 1 through 4 
+  .events-img-link#{$i}
+    @extend %events-item
+    top: calc(220px + 40.5vmin * (#{$i} - 1))
+  @media only screen and (max-width: 768px)
+    .events-img-link#{$i}
+      top: calc(220px + 50.5vmin * (#{$i} - 1))
+      img
+        height: 48.5vmin!important
+      &:after
+        background-color: rgba(#4c4c4c, 0.6)
+        font-weight: 500
+      &:hover:after
+        background-color: rgba(#4c4c4c, 0.6)
+        color: #fff
+      
+
+
+
+
+    

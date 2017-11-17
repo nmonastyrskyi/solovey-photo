@@ -6,7 +6,7 @@
     <title>Title</title>
     <meta name="description" content="">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
     <meta property="og:image" content="path/to/image.jpg">
     <link rel="shortcut icon" href="img/favicon/favicon.ico" type="image/x-icon">
     <link rel="apple-touch-icon" href="img/favicon/apple-touch-icon.png">
@@ -30,7 +30,7 @@
     </style>
 </head>
 
-<body>
+<body style="opacity:0;transition: 1s ease;">
     <div id="my-page">
         <!-- required for mmenu -->
         <section class="header" id="fixed">
@@ -47,15 +47,20 @@
                     </div>
                 </div>
             </div>
-            <div class="button open-calendar-button header-button">Открыть календарь</div>
+            <!-- <div class="button open-calendar-button header-button">Открыть календарь</div> -->
             <nav class="header__nav">
                 <ul>
                     <li class="header__nav__item"><a href="#intro">Intro</a></li>
+<<<<<<< HEAD
                     <li class="header__nav__item"><a href="#about">About Me</a></li>
+=======
+                    <li class="header__nav__item"><a href="#about">Обо мне</a></li>
+>>>>>>> tiny_fullpage_gallery
                     <li class="header__nav__item"><a href="#galery">Галерея</a></li>
                     <li class="header__nav__item"><a href="#reviews">Отзывы</a></li>
                     <li class="header__nav__item"><a href="#contact">Контакты</a></li>
                 </ul>
+<<<<<<< HEAD
             </nav>
             <nav id="my-menu">
                 <ul>
@@ -65,6 +70,8 @@
                     <li><a href="#contact">Contact</a></li>
                     <div class="button open-calendar-button">Открыть календарь</div>
                 </ul>
+=======
+>>>>>>> tiny_fullpage_gallery
             </nav>
             <button class="hamburger hamburger--emphatic" type="button">
                 <span class="hamburger-box">
@@ -72,7 +79,7 @@
                 </span>
             </button>
         </section>
-        <section class="intro fullscreen white panel paraxify" id="intro" style="background-image: url(img/img2.jpg)">
+        <section class="intro fullscreen white " id="intro" style="background-image: url(img/img2.jpg)">
             <div class="intro__content">
                 <h1>Я фотограф</h1>
                 <p>Добро пожаловать на мой сайт</p>
@@ -88,12 +95,20 @@
             </a>
             </div>
             <div class="shadow"></div>
+<<<<<<< HEAD
             <!-- to make a shadow when 'open calendar button pressed' -->
+=======
+            <!-- to make a shadow when 'open calendar button pressed'-->
+>>>>>>> tiny_fullpage_gallery
         </section>
-        <section class="about fullscreen panel" id="about" style="background-image: url(img/masha.jpg)">
+        <section class="about fullscreen " id="about" style="background-image: url(img/masha.jpg)">
             <div class="about__content">
                 <div class="about__content__text">
+<<<<<<< HEAD
                     <p> <b>Здравствуйте!</b></p>
+=======
+                    <p>Здравствуйте!</p>
+>>>>>>> tiny_fullpage_gallery
                     <p> Меня зовут Маша. Я фотографирую в Харькове.
                         <br> Люблю дело, которым занимаюсь.
                         <br> С удовольствием запечатлю лучшие моменты вашей жизни.
@@ -102,94 +117,95 @@
                 </div>
             </div>
             <div class="btn-wrapper">
-                <a href="#galery" class="button-circle black">
+                <a href="#galery" class="button-circle menthol">
         <i class="fa fa-angle-down" aria-hidden="true"></i>
-    </a>
+                </a>
             </div>
             <div class="shadow"></div>
             <!-- to make a shadow when 'open calendar button pressed' -->
         </section>
-        <section class="galery panel fullscreen" id="galery">
-            <div class="blur_img" style="background-image: url(img/studio/1.jpg)"></div>
-            <div class="galery__nav">
-                <ul>
-                    <li class="galery__nav__items active" id="studio">
-                        <button>Студийные</button>
-                    </li>
-                    <li class="galery__nav__items " id="wedding">
-                        <button>Свадебные</button>
-                    </li>
-                    <li class="galery__nav__items " id="outdoors">
-                        <button>Уличные</button>
-                    </li>
-                    <li class="galery__nav__items " id="children">
-                        <button>Дети</button>
-                    </li>
-                    <li class="galery__nav__items " id="pregnant">
-                        <button>Беременные</button>
-                    </li>
-                </ul>
+        <section class="galery" id="galery">
+            <div class="container">
+                <div class="row">
+                    <div class="galery__content">
+                        <div class="galery__item">
+                            <a href="gallery/individual.html">
+                                <div class="a-after"></div><img src="img/previews/individual.jpg" alt=""></a>
+                            <h3 class="h3">Индивидуальные <br>фотосессии</h3>
+                            <div class="galery__price">
+                                <i class="fa fa-tags" aria-hidden="true"></i> от <span>300</span> грн.
+                            </div>
+                            <a class="button galery-button" href="gallery/individual.html">Подробнее</a>
+                        </div>
+                        <div class="galery__item">
+                            <a href="gallery/love-story.html">
+                                <div class="a-after"></div><img src="img/previews/love-story.jpg" alt=""></a>
+                            <h3 class="h3">Love story</h3>
+                            <div class="galery__price">
+                                <i class="fa fa-tags" aria-hidden="true"></i> от <span>300</span> грн.
+                            </div>
+                            <a class="button galery-button" href="gallery/love-story.html">Подробнее</a>
+                        </div>
+                        <div class="galery__item">
+                            <a href="gallery/children.html">
+                                <div class="a-after"></div><img src="img/previews/children.jpg" alt=""></a>
+                            <h3 class="h3">Семейные и детские</h3>
+                            <div class="galery__price"><i class="fa fa-tags" aria-hidden="true"></i> от <span>300</span> грн.
+                            </div>
+                            <a class="button galery-button" href="gallery/children.html">Подробнее</a>
+                        </div>
+                        <div class="galery__item">
+                            <a href="gallery/pregnant.html">
+                                <div class="a-after"></div><img src="img/previews/pregnant.jpg" alt=""></a>
+                            <h3 class="h3">Будущие мамы</h3>
+                            <div class="galery__price">
+                                <i class="fa fa-tags" aria-hidden="true"></i> от <span>300</span> грн.
+                            </div>
+                            <a class="button galery-button" href="gallery/pregnant.html">Подробнее</a>
+                        </div>
+                        <div class="galery__item">
+                            <a href="/gallery/events.html">
+                                <div class="a-after"></div><img src="img/previews/events.jpg" alt=""></a>
+                            <h3 class="h3">Мероприятия</h3>
+                            <div class="galery__price">
+                                <i class="fa fa-tags" aria-hidden="true"></i> от <span>300</span> грн.
+                            </div>
+                            <a class="button galery-button" href="/gallery/events.html">Подробнее</a>
+                        </div>
+                        <div class="galery__item">
+                            <a href="#">
+                                <div class="a-after"></div><img src="img/previews/video.jpg" alt=""></a>
+                            <h3 class="h3">Видео</h3>
+                            <div class="galery__price">
+                                <i class="fa fa-tags" aria-hidden="true"></i> от <span>300</span> грн.
+                            </div>
+                            <a class="button galery-button">Подробнее</a>
+                        </div>
+                        <div class="galery__item">
+                            <a href="gallery/online-store.html">
+                                <div class="a-after"></div><img src="img/previews/online-store.jpg" alt=""></a>
+                            <h3 class="h3">Интернет Магазины</h3>
+                            <div class="galery__price">
+                                <i class="fa fa-tags" aria-hidden="true"></i> от <span>300</span> грн.
+                            </div>
+                            <a class="button galery-button" href="gallery/online-store.html">Подробнее</a>
+                        </div>
+                        <div class="galery__item">
+                            <a href="#">
+                                <div class="a-after"></div><img src="img/previews/Carpathians.jpg" alt=""></a>
+                            <h3 class="h3">Пейзажи</h3>
+                            <div class="galery__price">
+                                <i class="fa fa-tags" aria-hidden="true"></i> от <span>300</span> грн.
+                            </div>
+                            <button class="button galery-button">Подробнее</button>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <div class="fotoramas">
-                <div class="fotorama studio" data-nav="thumbs" data-loop="true" data-allowfullscreen="true">
-                    <img src="img/studio/1.jpg" alt="1">
-                    <img src="img/studio/2.jpg" alt="2">
-                    <img src="img/studio/3.jpg" alt="3">
-                    <img src="img/studio/4.jpg" alt="4">
-                    <img src="img/studio/5.jpg" alt="5">
-                    <img src="img/studio/6.jpg" alt="6">
-                    <img src="img/studio/7.jpg" alt="7">
-                    <img src="img/studio/8.jpg" alt="8">
-                    <img src="img/studio/9.jpg" alt="9">
-                </div>
-                <div class="fotorama  wedding hidden" data-nav="thumbs" data-loop="true" data-allowfullscreen="true">
-                    <img src="img/wedding/1.jpg" alt="1">
-                    <img src="img/wedding/2.jpg" alt="2">
-                </div>
-                <div class="fotorama outdoors hidden" data-nav="thumbs" data-loop="true" data-allowfullscreen="true">
-                    <img src="img/outdoors/1.jpg" alt="1">
-                    <img src="img/outdoors/2.jpg" alt="2">
-                    <img src="img/outdoors/3.jpg" alt="3">
-                    <img src="img/outdoors/4.jpg" alt="4">
-                    <!-- <img src="img/studio/5.jpg" alt="5">
-<img src="img/studio/6.jpg" alt="6">
-<img src="img/studio/7.jpg" alt="7">
-<img src="img/studio/8.jpg" alt="8">
-<img src="img/studio/9.jpg" alt="9"> -->
-                </div>
-                <div class="fotorama children hidden" data-nav="thumbs" data-loop="true" data-allowfullscreen="true">
-                    <img src="img/children/1.jpg" alt="1">
-                    <img src="img/children/2.jpg" alt="2">
-                    <img src="img/children/3.jpg" alt="3">
-                    <img src="img/children/4.jpg" alt="4">
-                    <img src="img/children/5.jpg" alt="5">
-                    <img src="img/children/6.jpg" alt="6">
-                    <img src="img/children/7.jpg" alt="7">
-                    <img src="img/children/8.jpg" alt="8">
-                    <img src="img/children/9.jpg" alt="9">
-                </div>
-                <div class="fotorama pregnant hidden" data-nav="thumbs" data-loop="true" data-allowfullscreen="true">
-                    <img src="img/pregnant/1.jpg" alt="1">
-                    <img src="img/pregnant/2.jpg" alt="2">
-                    <img src="img/pregnant/3.jpg" alt="3">
-                    <img src="img/pregnant/4.jpg" alt="4">
-                    <!-- <img src="img/children/5.jpg" alt="5">
-<img src="img/children/6.jpg" alt="6">
-<img src="img/children/7.jpg" alt="7">
-<img src="img/children/8.jpg" alt="8">
-<img src="img/children/9.jpg" alt="9"> -->
-                </div>
-            </div>
-            <div class="galery__price">
-                <h1>Стоимость фотосессии</h1>
-                <p>Цена за час 100грн</p>
-                <p>Цена за час 100грн</p>
-                <p>Цена за час 100грн</p>
-                <div class="btn-wrapper">
-                    <a href="#contact" class=" button-galery">
-              <i class="fa fa-angle-down" aria-hidden="true"></i>
-            </a>
-                </div>
+            <div class="btn-wrapper">
+                <a href="#reviews" class="button-circle menthol">
+        <i class="fa fa-angle-down" aria-hidden="true"></i>
+                </a>
             </div>
             <div class="shadow"></div>
             <!-- to make a shadow when 'open calendar button pressed' -->
@@ -428,8 +444,13 @@
                             </div>
                         </div>
                     </div>
+<<<<<<< HEAD
                     <div class="button show-review">Показать еще</div>
                 </div>
+=======
+                </div>
+                <div class="button show-review" onselectstart="return false">Показать еще</div>
+>>>>>>> tiny_fullpage_gallery
                 <div class="reviews__new-review__container">
                     <div class="reviews__new-review">
                         <h3 class="h3">Оставьте отзыв</h3>
@@ -442,16 +463,29 @@
                                 <option value="red">Негативный</option>
                             </select>
                         </div>
+<<<<<<< HEAD
                         <textarea required class="reviews__new-review__text" placeholder="Ваш отзыв"></textarea>
+=======
+                        <textarea class="reviews__new-review__text" placeholder="Ваш отзыв"></textarea>
+>>>>>>> tiny_fullpage_gallery
                     </div>
                     <button class="button  add_review">Добавить отзыв</button>
                 </div>
             </div>
+<<<<<<< HEAD
+=======
+            <div class="btn-wrapper">
+                <a href="#contact" class="button-circle white">
+        <i class="fa fa-angle-down" aria-hidden="true"></i>
+                </a>
+            </div>
+>>>>>>> tiny_fullpage_gallery
         </section>
         <section class="form__section" id="contact">
             <p class="title">Все вопросы можно задать прямо здесь!</p>
             <div class="form__container">
                 <form action="#" method="post" class="form">
+<<<<<<< HEAD
                     <div class="container">
                         <div class="row">
                             <input type="text" class="form__input col-xs-12 col-md-6" placeholder="Ваше Имя">
@@ -459,9 +493,23 @@
                         </div>
                         <div class="row">
                             <textarea required name="message" placeholder="Ваше сообщение" class="col-xs-12 form__textarea" rows="6"></textarea>
+=======
+                    <div class="form__content">
+                        <div class="container">
+                            <div class="row">
+                                <input type="hidden" name="project_name" value="SOLOVEY PHOTO">
+                                <input type="hidden" name="admin_email" value="prospectgagarina@gmail.com">
+                                <input type="hidden" name="form_subject" value="ВОПРОС С САЙТА">
+                                <input type="text" name="Name" class="form__input col-xs-12 col-md-6" placeholder="Ваше Имя" required>
+                                <input type="email" name="E-mail" class="form__input col-xs-12 col-md-6" placeholder="Ваш email" required>
+                            </div>
+                            <div class="row">
+                                <textarea name="message" placeholder="Ваше сообщение" class="col-xs-12 form__textarea" rows="6" required></textarea>
+                            </div>
+>>>>>>> tiny_fullpage_gallery
                         </div>
-                        <button class="button button__purple">Отправить сообщение</button>
                     </div>
+                    <button class="button menthol">Отправить сообщение</button>
                 </form>
             </div>
             <form action="#"></form>
@@ -469,7 +517,25 @@
             <!-- to make a shadow when 'open calendar button pressed' -->
         </section>
         <footer class="footer">
+            <div class="footer__contacts">
+                <div class="footer__contacts__item"><i class="fa fa-phone" aria-hidden="true"> <span>+380(66)325-00-43</span></i></div>
+                <div class="footer__contacts__item"><i class="fa fa-envelope" aria-hidden="true"><span> matrenabox@gmail.com </span></i></div>
+                <div class="footer__contacts__item"><a href="https://vk.com/marysolovey"><i class="fa fa-vk" aria-hidden="true"></i></a></div>
+                <div class="footer__contacts__item"><i class="fa fa-facebook" aria-hidden="true"></i></div>
+                <div class="footer__contacts__item"><i class="fa fa-instagram" aria-hidden="true"></i></div>
+                <div class="footer__contacts__item"><i class="fa fa-telegram" aria-hidden="true"></i></div>
+            </div>
         </footer>
+        <nav id="my-menu">
+            <ul>
+                <li><a href="#intro">Intro</a></li>
+                <li><a href="#about">Обо мне</a></li>
+                <li><a href="#galery">Галерея</a></li>
+                <li><a href="#reviews">Отзывы</a></li>
+                <li><a href="#contact">Контакты</a></li>
+                <!-- <div class="button open-calendar-button">Открыть календарь</div> -->
+            </ul>
+        </nav>
         <link rel="stylesheet" href="css/main.min.css">
         <script src="js/scripts.min.js"></script>
     </div>
