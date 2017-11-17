@@ -46,10 +46,6 @@ gulp.task('js', ['common-js'], function() {
 		'app/libs/jquery.mmenu/jquery.mmenu.all.js',
 		'app/libs/fullcalendar/dist/fullcalendar.min.js',
 		'app/libs/fotorama/fotorama.js',
-<<<<<<< HEAD
-
-=======
->>>>>>> tiny_fullpage_gallery
 		'app/js/common.min.js', // Всегда в конце
 		])
 	.pipe(concat('scripts.min.js'))
