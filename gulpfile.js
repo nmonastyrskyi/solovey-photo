@@ -31,6 +31,7 @@ gulp.task('galery-js', function(){
 		'app/libs/jquery/dist/jquery.min.js',
 		'app/libs/unitegallery-master/dist/js/unitegallery.min.js',
 		'app/libs/unitegallery-master/dist/themes/tiles/ug-theme-tiles.js',
+    'app/libs/jquery-parallax.js/parallax.min.js',
 		'app/js/galery.js'
 		])
 	.pipe(concat('galery.min.js'))

@@ -1,5 +1,6 @@
 $(function() { // wait for document ready
  
+
     $("body").css("opacity", "1");
 
     /*E-mail AJAX SEND*/
@@ -241,8 +242,13 @@ function addReview($name, $review) {
         galleryItemImgAfterResize()
        
          if($(window).width() <= 768 && $(window).width() > 480 )
-             $('.header__logo,.header__contacts').unwrap('.header-left')
+             $('.header__logo,.header__contacts').unwrap('.header-left').addClass('unwrapped')
+         else if($(window).width() > 768 && $('.header__logo,.header__contacts').hasClass('unwrapped'))
+              $('.header__logo,.header__contacts').wrapAll("<div class='header-left'></div>").removeClass('unwrapped')
         
+         if ($(window).width() <= 480)
+            $('.footer__phone,.footer__mail').wrapAll("<div class='footer__item,footer__left'></div>")
+
          if ($(window).height() > $(window).width() || $(window).width() <= 768) {
         $('.button.show-review').html("Включить скролл")
     }

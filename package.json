@@ -27,6 +27,7 @@
   },
   "dependencies": {
     "fotorama": "^4.6.4",
+    "jquery-parallax.js": "^1.5.0",
     "scrollmagic": "^2.0.5"
   }
 }
