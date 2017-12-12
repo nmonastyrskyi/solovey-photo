@@ -1,7 +1,38 @@
 $(function() { // wait for document ready
- 
+    
 
     $("body").css("opacity", "1");
+
+     /*REVIEWS NAV*/
+    var revBoxStyle = getComputedStyle(document.querySelector('.reviews__box'))
+    var revBoxBorderTop = parseInt(revBoxStyle.borderTopWidth) //WITHOUT PX
+    //HEIGHT INCLUDING JUST BOTTOM_BORDER
+    var revBoxHeight = document.querySelector('.reviews__box').offsetHeight - revBoxBorderTop;
+    var comments = document.querySelectorAll('.reviews__box__comment')
+    //optimal Height of several comments scroll
+    var comOptHeight = [];
+    //optimal Height of one comment scroll
+    var comHeight = [] ;
+    //counter for several comments scroll
+    var comOptIndex = -1;
+    //counter for one comment scroll
+    var comIndex = -1;
+    //make connection between one and multiply comments scroll
+    var breakpoints = {};
+    var invertBreakpoints = {};
+    
+    var trueBoxHeight = $('.reviews__box')[0].scrollHeight;
+    var boxHeight = $('.reviews__box').height();
+    var scrollLeft = trueBoxHeight - boxHeight;
+    //comment is still scrolling if true
+    var isPlaying = false;
+    var isPaused = false;
+    var scrolledFromStart = false;
+    var afterMultiplyReviewsScroll = false;
+    // var afterSingleReviewScroll = false;
+    //after scroll from start to end
+    var afterSuperScroll = false;
+
 
     /*E-mail AJAX SEND*/
     $("form").submit(function() { 
@@ -26,8 +57,8 @@ $(function() { // wait for document ready
     if($(window).width() <= 768) {
         $('.intro.fullscreen').css({ 'min-height' : $window_height + 'px!important', 'max-height': $window_height + 'px!important', 'height': $window_height + 'px!important'});
     }
-    /*STOP RESIZING ON PHONES*/
-     resize();
+    // STOP RESIZING ON PHONES
+    //  resize();
 
      /*HIGHLIGHT NAV ITEMS WHEN SCROLLING*/
     $(window).scroll(function() {
@@ -100,7 +131,220 @@ $(function() { // wait for document ready
         // alert(top0)
     });
      /*SMOOTH SCROLL TO ANCHOR END*/
+
+     /*REVIEWS NAV*/
+    //for Navigating next and previous comments bunch
     
+    function makeReviewsNawGrid(){
+        var totalsumOpt = 0
+        var j = 0;
+        //for bunch of comments scroll
+        var sumOpt = 0;
+        //for 1 comment scroll
+        var sum = 0;
+       
+        for ( var i = 0; i < comments.length; i++ ) {
+            sumOpt += comments[i].offsetHeight;
+            sum += comments[i].offsetHeight;
+            comHeight[i] =  sum
+            invertBreakpoints[i] = j;
+            if (sumOpt > revBoxHeight) {
+                breakpoints[j] = i; 
+                //STARTS WITH LAST NOT PLACED COMMENT
+                totalsumOpt += (sumOpt - comments[i].offsetHeight);
+                comOptHeight[j] = totalsumOpt
+                sumOpt = comments[i].offsetHeight;
+                console.log(i + ' 2 '+ sumOpt)
+                j++
+            } 
+        }
+       }
+    pseudoScroll();
+    setTimeout(function(){$('.play,.backward,.forward,.fast-forward,.fast-backward').prop('disabled', false)}, 4999)
+    setTimeout(makeReviewsNawGrid, 5000)
+
+     function pseudoScroll() {   $('.reviews__box').css('overflow', 'auto')
+        var scrollWidth = document.querySelector('.reviews__box').offsetWidth - document.querySelector('.reviews__box').clientWidth
+       $('.reviews__box__comment__text').css('margin-right', scrollWidth )
+       $('.reviews__box').css('overflow', 'hidden')
+    }
+
+    function nextComment() {
+        // console.log('scrollTop: ' +  $('.reviews__box').scrollTop())
+        // console.log('trueBoxHeight: ' +   trueBoxHeight)
+        // console.log('boxHeight: ' +  boxHeight)
+        // // console.log(comHeight[comIndex])
+        // console.log('scrollL: ' + scrollLeft)
+         if((!afterMultiplyReviewsScroll) || comIndex == -1) {
+             comIndex++
+             comOptIndex = invertBreakpoints[comIndex]
+         }
+         if(  comIndex == breakpoints[comOptHeight.length - 1] - 1) {
+            comIndex = -1;
+            $('.reviews__box').animate({scrollTop: 0}, 1750)
+            afterSuperScroll = false;
+         }
+
+
+        
+        $('.reviews__box').animate({scrollTop:comHeight[comIndex]}, 500)
+         console.log("comOptIndex: " + comOptIndex)
+        console.log("comIndex: " + comIndex)
+        afterMultiplyReviewsScroll = false
+        // afterSingleReviewScroll = true
+    }
+    function nextComments() {
+        if(isPlaying) {      
+            $('.reviews__box').finish()
+                    }
+
+        else if(comOptIndex < comOptHeight.length - 1 && !isPlaying) {
+
+            comOptIndex++
+            comIndex = breakpoints[comOptIndex]
+        }
+        else {
+            comOptIndex = -1;
+            comIndex = -1;
+             $('.reviews__box').animate({scrollTop: 0}, 1750)
+        }
+        if(!isPlaying)
+        $('.reviews__box').animate({scrollTop:comOptHeight[comOptIndex]}, 1000)
+        // alert(comOptHeight[comOptIndex])
+      
+        console.log("comOptIndex: " + comOptIndex)
+        console.log("comIndex: " + comIndex)
+        isPlaying = false;
+        afterMultiplyReviewsScroll = true
+        // afterSingleReviewScroll = false
+    }
+
+   function prevComment(){
+        comIndex--
+        if(afterMultiplyReviewsScroll)
+            comIndex--
+        if(comIndex  >= 0) {
+        comOptIndex = invertBreakpoints[comIndex]
+        $('.reviews__box').animate({scrollTop:comHeight[comIndex]}, 800)
+          console.log("comOptIndex: " + comOptIndex)
+        console.log("comIndex: " + comIndex)
+        }
+
+        else if(comIndex == -1) {
+            $('.reviews__box').animate({scrollTop: 0 }, 800)
+            
+        }
+        else {
+            ( $('.reviews__box').animate({scrollTop: comOptHeight[comOptHeight.length - 1]}, 1750))
+            comIndex = breakpoints[comOptHeight.length - 1] - 2
+            afterSuperScroll = true;
+
+            //TODO
+             // comOptIndex = breakpoints[comOptHeight.length - 2]
+            // alert(comIndex)
+
+
+        }      
+        afterMultiplyReviewsScroll = false
+        // afterSingleReviewScroll = true
+        // console.log("afterSingleReviewScroll: " + afterSingleReviewScroll)
+    }
+
+      function prevComments(){
+        comOptIndex--
+        if(comOptIndex  >= 0) {
+         
+        comIndex = breakpoints[comOptIndex]
+
+        $('.reviews__box').animate({scrollTop:comOptHeight[comOptIndex]}, 1000)
+          console.log("comOptIndex: " + comOptIndex)
+        console.log("comIndex: " + comIndex)
+         // console.log('afterSingleReviewScroll: ' + afterSingleReviewScroll)
+        }
+        else if(comOptIndex == -1) {
+            $('.reviews__box').animate({scrollTop: 0 }, 1000)
+            comIndex = -1
+            comOptIndex = -1
+            afterSuperScroll = true;
+             console.log("comOptIndex: " + comOptIndex)
+        console.log("comIndex: " + comIndex)
+          console.log("afterSuperScroll: " + afterSuperScroll)
+        }
+        else {
+            ( $('.reviews__box').animate({scrollTop: comOptHeight[comOptHeight.length - 1]}, 1750))
+            comOptIndex = comOptHeight.length - 1
+            comIndex = breakpoints[comOptHeight.length - 2]
+        }      
+         afterMultiplyReviewsScroll = true
+        // afterSingleReviewScroll = false
+
+    }
+
+    $('.button.forward').on('click', function() { nextComment() })
+    $('.button.fast-forward').on('click', function() { nextComments() })
+    $('.button.backward').on('click', function() { prevComment() })
+    $('.button.fast-backward').on('click', function() { prevComments() })
+    $('.button.play').on('click', function(){
+        play()
+         if ( isPlaying )
+             $(this).html("<i class='fa fa-pause' aria-hidden='true'></i>")
+        // else
+        //      $(this).html("<i class='fa fa-play' aria-hidden='true'></i>")
+    });
+
+    function play() {
+
+        if(isPlaying) {
+            isPaused = true;
+            isPlaying = false;
+        }
+
+        else if(isPaused) {
+              isPaused = false;
+            isPlaying = true;
+        }
+
+        if (!isPaused) {
+        comOptIndex++
+        comIndex = breakpoints[comOptIndex]
+        }
+
+        // alert(comments.length)
+        var speed = (comHeight[comIndex - 1] -  comHeight[comIndex - 2]) * 30
+        if (!speed)
+            speed = comHeight[comIndex - 1] * 30
+       
+        if(!isPlaying) {
+        $('.reviews__box').animate({scrollTop:comOptHeight[comOptIndex]}, speed, 'linear')
+        }
+        else {
+            $('.reviews__box').stop();
+        }
+        isPlaying =  true;
+        // alert(comOptHeight[comOptIndex])
+         console.log('speed ' + speed)
+        console.log("comOptIndex: " + comOptIndex)
+        console.log("comIndex: " + comIndex)
+        setTimeout(function(){isPlaying = false;}, speed)
+        // afterSingleReviewScroll = false
+    }
+
+  
+    function resetReviewsNav() {
+    comOptHeight = [];
+    comHeight = [];
+    breakpoints = {};
+    invertBreakpoints = {};
+    comOptIndex = -1;
+    comIndex = -1;
+    scrolledFromStart = false;
+    afterMultiplyReviewsScroll = false;
+    // afterSingleReviewScroll = false;
+
+     var revBoxHeight = document.querySelector('.reviews__box').offsetHeight - revBoxBorderTop;
+    var comments = document.querySelectorAll('.reviews__box__comment');
+    makeReviewsNawGrid()
+    }
 
      /*INIT FULLCALENDAR*/
     $('#calendar').fullCalendar({
@@ -214,24 +458,24 @@ function addReview($name, $review) {
 }
 
     /*SHOW MORE REVIEWS BUTTON HANDLER*/
-    $('.button.show-review').click(function(){
-        $('.reviews__box').toggleClass('shown_all')
-        if($('.reviews__box').hasClass('shown_all')){
-            if ($(window).height() > $(window).width() || $(window).width() <= 768) {
-                 $(this).css('top', '66%').html("Выключить скролл")
-            }
-            else
-            $(this).css('top', '66%').html("Свернуть")
-        }
+    // $('.button.show-review').click(function(){
+    //     $('.reviews__box').toggleClass('shown_all')
+    //     if($('.reviews__box').hasClass('shown_all')){
+    //         if ($(window).height() > $(window).width() || $(window).width() <= 768) {
+    //              $(this).css('top', '66%').html("Выключить скролл")
+    //         }
+    //         else
+    //         $(this).css('top', '66%').html("Свернуть")
+    //     }
          
-        else {
-             if ($(window).height() > $(window).width() || $(window).width() <= 768) {
-                 $(this).css('top', '50%').html("Включить скролл")
-            }
-            else
-                $(this).css('top', '50%').html("Показать еще")
-        }     
-    })
+    //     else {
+    //          if ($(window).height() > $(window).width() || $(window).width() <= 768) {
+    //              $(this).css('top', '50%').html("Включить скролл")
+    //         }
+    //         else
+    //             $(this).css('top', '50%').html("Показать еще")
+    //     }     
+    // })
         /*SHOW MORE REVIEWS BUTTON HANDLER END*/
 
      /*INIT REVIEW ADDING END*/
@@ -239,7 +483,8 @@ function addReview($name, $review) {
        /*ON RESIZE FUNCTION*/
     function resize() {
         /*GALLERY IMG AFTER RESIZE*/
-        galleryItemImgAfterResize()
+        galleryItemImgAfterResize();
+        pseudoScroll();
        
          if($(window).width() <= 768 && $(window).width() > 480 )
              $('.header__logo,.header__contacts').unwrap('.header-left').addClass('unwrapped')
@@ -249,10 +494,34 @@ function addReview($name, $review) {
          if ($(window).width() <= 480)
             $('.footer__phone,.footer__mail').wrapAll("<div class='footer__item,footer__left'></div>")
 
-         if ($(window).height() > $(window).width() || $(window).width() <= 768) {
-        $('.button.show-review').html("Включить скролл")
+
+    //REVIEWS NAV 
+   
     }
+
+    /*DO WHEN RESIZING FINISH*/
+    var resizeId;
+    function resizeReview() {
+
+    $('.reviews__box').animate({scrollTop:0}, 1000)
+    clearTimeout(resizeId);
+    $('.play,.pause,.backward,.forward,.fast-forward,.fast-backward').prop('disabled', true)
+    resizeId = setTimeout(doneResizing, 3000);
+
     }
+    $(window).on('orientationchange', function() {resizeReview()})
+    $(window).resize(function() {
+        if( !(/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) ) {
+            resizeReview()
+};
+    });
+ 
+ 
+    function doneResizing(){
+    $('.play,.pause,.backward,.forward,.fast-forward,.fast-backward').prop('disabled', false)
+    resetReviewsNav()
+    }
+    /*DO WHEN RESIZING FINISH END*/
 
     /*GALLERY IMG AFTER RESIZE*/
       function galleryItemImgAfterResize() {
@@ -265,4 +534,7 @@ function addReview($name, $review) {
         
        resize();
     })
+
+
+
 });

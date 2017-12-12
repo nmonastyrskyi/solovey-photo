@@ -20,8 +20,8 @@
   &__box
     width: 70%
     background-color: rgba(#fff, 0.9)
-    height: 50vh//73%
-    overflow-y: hidden //scroll;
+    height: 66vh//73%
+    overflow-y: auto //scroll;
     transition: all 1s ease
     border-bottom: 30px solid rgba(#fff, 0.0)
     border-top: 30px solid rgba(#fff, 0.0)
@@ -68,13 +68,13 @@
     display: flex;
     // flex-wrap: wrap
     justify-content: space-between
-    align-items: flex-start
+    align-items: center
     position: absolute
-    margin: 180px 30px 0 20px
+    margin: 0px 30px 0 20px
     height: 100vh
-    min-height: 
   &__new-review__container
-    height: 50%
+    height: 66%
+    max-height: 530px
     width: 26% 
     background-color: rgba(127,168,199, 0.85)
   &__new-review 
@@ -92,10 +92,11 @@
       font-size: 34px
     .name
       shrink: 2
-      border-radius: 5%
+      border-radius: 5px
       height: 33px
       font-size: 0.9em
       padding-left: 10px
+      border: none
     .name, .reviews__new-review__text
       &::-webkit-input-placeholder  /* Chrome/Opera/Safari */
         color: #c4c4c4;
@@ -126,7 +127,7 @@
       span
         margin-right: 10px
       select
-
+        border: none
         height: 30px
         background-color: #fff
         color: #000
@@ -135,6 +136,7 @@
         text-align: center
         text-align-last: center
     .reviews__new-review__text
+      border: none
       border-radius: 2%
       margin-top: 15px
       flex-shrink: 3
@@ -154,20 +156,41 @@
     padding-right: 20px
     &:hover
        background-color: darken(#db594f, 10%)
-  .button.show-review
+  &__nav
     position: absolute
-    top: 50vh
-    background-color: #db594f
-    color: #fff
-    text-transform: uppercase
+    top: 85vh
+    left: 33%
+    margin-left: 30px
     transform: translateX(-50%)
-    left: 35%
-    z-index: 10
-    margin-top: 30px
-    transition: top 1s ease, background 0.3s ease;
-    cursor: pointer
-    &:hover
-      background-color: darken(#db594f, 10%)
+    button
+      padding: 5px 25px
+      margin-left: 10px
+      display: inline-block
+      border-radius: 8px
+      top: 66vh
+      background-color: rgba(#ddd,0.8)
+      color: #fff
+      text-transform: uppercase
+      transform: translateX(-50%)
+      left: 39%
+      z-index: 10
+      transition: background 0.5s ease;
+      cursor: pointer
+      &:first-child
+        margin-left: 0
+      &:disabled
+        cursor: not-allowed
+      &:hover
+        background-color: rgba(#db594f,0.85)
+    .button.backward
+      left: 25%
+    
+    .play,.pause
+      display: none
+      background-color: rgba(#bbb,0.8)  
+      &:hover
+        background-color: rgba(#db594f,0.85)
+
   .button-circle
     border-radius: 45% 45% 0  0
     width: 8em

@@ -9,6 +9,9 @@
   .reviews
     height: 100vh!important
     min-height: 1200px!important
+    &__nav
+      top: calc(40vh + 80px)
+      left: 50%
     .h2
       // font-size: 34px
       margin-top: 70px
@@ -153,8 +156,8 @@
   .reviews
     .h2
       margin-top: 55px
-    &__content
-      margin-top: 150px
+    // &__content
+      // margin-top: 150px
     .h3
       font-size: 1.6em
   .reviews__box,.reviews__new-review__container
@@ -208,8 +211,8 @@
       text-align: center
       display: block
       width: 100%
-    &__content
-      margin-top: 160px
+    // &__content
+    //   margin-top: 160px
     .h3
       font-size: 23px
     
@@ -243,7 +246,7 @@
       left: 50%
       transform: translateX(-50%);
     &__content
-      margin-top: 155px
+    //   margin-top: 155px
       flex-wrap: wrap
       height: 80%
 
@@ -273,7 +276,7 @@
       height: auto
       font-size: 0.8em
     &__content
-      margin-top: 170px
+      // margin-top: 170px
       font-size: 12px
   /*REVIEWS END*/
   /*FORM*/
@@ -384,6 +387,8 @@
       width: 100%
       margin: 0
       min-height: 800px
+    &__nav
+      top: calc(40vh + 30px)
     .h2
       // font-size: 34px
       margin-top: 70px
@@ -391,7 +396,7 @@
       left: 50%
       transform: translateX(-50%);
     &__content
-      margin-top: 155px
+    //   margin-top: 155px
       flex-wrap: wrap
       height: 80%
       .button.show-review
@@ -400,13 +405,13 @@
         left: 50%
     &__box
       width: 100%
-      height: 55%
+      height: 45vh
 
 
     .reviews__new-review__container 
       height: 33%
       width: 100%
-      margin-top: 30px
+      margin-top: 100px
       .reviews__new-review
         width: 42%
         left: 50% 
@@ -461,6 +466,10 @@
     .container,.row
       width: 470px
       height: 1780px
+
+  .reviews
+    &__nav
+      display: flex
 
 @media only screen and (max-width : 510px)
   /**/
@@ -579,9 +588,17 @@
       border-radius: 10px
     .h2
       margin-top: 50px
+    &__nav
+      top: 519px
+      button.forward,button.backward
+        display: none
+      button.fast-forward
+        margin-left: 100px
+      button.play
+        display: inline-block
     &__box
-      height: 420px!important
-      border-bottom-width: 50px
+      height: 440px!important
+      border-bottom-width: 70px
       // overflow: hidden!important
       top: 120px
       left: 50% 
@@ -754,6 +771,8 @@
   .reviews
     &__box
       height: 425px!important
+    &__nav
+      top: 500px
   /*REVIEWS END*/
   /*FORM*/
   .form__section
