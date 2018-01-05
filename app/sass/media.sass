@@ -90,6 +90,12 @@
       min-height: 44px
   /*FORM END*/
   
+  /*FOOTER*/
+  .footer
+    @for $i from 3 through 6
+      &__contacts__item:nth-child(#{$i})
+        font-size: 1.5em!important
+  /*FOOTER END*/
 @media only screen and (max-width : 1650px)
   .fullscreen
     background-position: 60% 50%  
@@ -752,13 +758,18 @@
 
   /*FOOTER*/
   .footer
-    font-size: 1em
+    font-size: 2em
     height: 80px
-    &__social
-      font-size: 2.5em
+    &__contacts
+      margin-left: -1.6em
+    .footer__contacts__item
+      font-size: 1.3em!important
+      
+
     &__phone,&__mail
-      span
-        font-size: 1.1em
+      position: absolute
+      display: none      
+
   /*FOOTER END*/
 
 
@@ -868,6 +879,11 @@
       width: 220px
   /*FORM END*/
 
+  /*PRICE*/
+  .price
+    table
+      td
+        font-size: 10px
 
 /*==========  Mobile First  ==========*/
 

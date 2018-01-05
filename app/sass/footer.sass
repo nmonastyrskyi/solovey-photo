@@ -18,3 +18,13 @@
     span
       font-size: 0.7em
       margin-left: 10px
+    
+      transition: all 0.5s ease
+    i:hover
+      color: rgba(6,188,188,.9)
+    .vk
+      font-size: 2em
+    @for $i from 3 through 6
+      .footer__contacts__item:nth-child(#{$i})
+        font-size: 2em 
+
