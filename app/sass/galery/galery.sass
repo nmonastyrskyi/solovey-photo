@@ -59,7 +59,11 @@ body
     margin-top: 70px
     border-radius: 40%
     padding: 33px 46px
-
+    @media only screen and (max-width : 1280px)
+      font-size: 1.5em
+      padding: 33px 45px
+    @media only screen and (max-width : 480px)
+      padding: 20px 35px
   &:hover
     background-color: darken(#c4c4c4, 10%)
     text-decoration: none;
