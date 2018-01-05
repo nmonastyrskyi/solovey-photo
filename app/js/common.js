@@ -66,9 +66,11 @@ $(function() { // wait for document ready
         var $intro_top = $('section#intro').offset().top
         var $about_top = $('section#about').offset().top
         var $galery_top = $('section#galery').offset().top
+        var $price_top = $('section#price').offset().top
         var $galery_offset_top = $galery_top - ($galery_top - $about_top) * 0.3
+        var $price_offset_top = $price_top - ($price_top - $galery_top) * 0.3
         var $reviews_top = $('section#reviews').offset().top
-        var $reviews_offset_top = $reviews_top - ($reviews_top - $galery_top) * 0.3
+        var $reviews_offset_top = $reviews_top - ($reviews_top - $price_top) * 0.3
         var $contacts_top = $('section#contact').offset().top
         var $contacts_ofsset_top = $contacts_top - ($contacts_top - $reviews_top) * 0.3
 
@@ -80,17 +82,23 @@ $(function() { // wait for document ready
             $('.header__nav__item a').removeClass('active')
             $('.header__nav__item a:eq( 1 )').addClass('active')
         }
-        else  if($window_top >= $galery_offset_top && $window_top < $reviews_offset_top) {
+        else  if($window_top >= $galery_offset_top && $window_top < $price_offset_top) {
             $('.header__nav__item a').removeClass('active')
             $('.header__nav__item a:eq( 2 )').addClass('active')
         }
-        else  if($window_top  >= $reviews_offset_top && $window_top < $contacts_ofsset_top) {
+
+        else  if($window_top >= $price_offset_top && $window_top < $reviews_offset_top) {
             $('.header__nav__item a').removeClass('active')
             $('.header__nav__item a:eq( 3 )').addClass('active')
         }
-         else  if($window_top  >=$contacts_ofsset_top) {
+
+        else  if($window_top  >= $reviews_offset_top && $window_top < $contacts_ofsset_top) {
             $('.header__nav__item a').removeClass('active')
             $('.header__nav__item a:eq( 4 )').addClass('active')
+        }
+         else  if($window_top  >=$contacts_ofsset_top) {
+            $('.header__nav__item a').removeClass('active')
+            $('.header__nav__item a:eq( 5 )').addClass('active')
         }
          /*HIGHLIGHT NAV ITEMS WHEN SCROLLING END*/
 
