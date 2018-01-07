@@ -109,7 +109,7 @@ $(function() { // wait for document ready
     if ($(window).scrollTop() >  $introHeight * 0.65 && $(document).width()>768){
         $('.about__content').show(700)
     }
-    else
+    else  if( !(/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) )
         $('.about__content').hide(700)
 
     if( $(document).width() < 768)
@@ -162,7 +162,7 @@ $(function() { // wait for document ready
                 totalsumOpt += (sumOpt - comments[i].offsetHeight);
                 comOptHeight[j] = totalsumOpt
                 sumOpt = comments[i].offsetHeight;
-                console.log(i + ' 2 '+ sumOpt)
+                // console.log(i + ' 2 '+ sumOpt)
                 j++
             } 
         }
@@ -196,8 +196,8 @@ $(function() { // wait for document ready
 
         
         $('.reviews__box').animate({scrollTop:comHeight[comIndex]}, 500)
-         console.log("comOptIndex: " + comOptIndex)
-        console.log("comIndex: " + comIndex)
+        //  console.log("comOptIndex: " + comOptIndex)
+        // console.log("comIndex: " + comIndex)
         afterMultiplyReviewsScroll = false
         // afterSingleReviewScroll = true
     }
@@ -216,15 +216,14 @@ $(function() { // wait for document ready
             comIndex = -1;
              $('.reviews__box').animate({scrollTop: 0}, 1750)
         }
-        if(!isPlaying)
-        $('.reviews__box').animate({scrollTop:comOptHeight[comOptIndex]}, 1000)
         // alert(comOptHeight[comOptIndex])
       
-        console.log("comOptIndex: " + comOptIndex)
-        console.log("comIndex: " + comIndex)
-        isPlaying = false;
+        // console.log("comOptIndex: " + comOptIndex)
+        // console.log("comIndex: " + comIndex)
         afterMultiplyReviewsScroll = true
         // afterSingleReviewScroll = false
+
+        $('.reviews__box').animate({scrollTop:comOptHeight[comOptIndex]}, 1000)
     }
 
    function prevComment(){
@@ -234,8 +233,8 @@ $(function() { // wait for document ready
         if(comIndex  >= 0) {
         comOptIndex = invertBreakpoints[comIndex]
         $('.reviews__box').animate({scrollTop:comHeight[comIndex]}, 800)
-          console.log("comOptIndex: " + comOptIndex)
-        console.log("comIndex: " + comIndex)
+        //   console.log("comOptIndex: " + comOptIndex)
+        // console.log("comIndex: " + comIndex)
         }
 
         else if(comIndex == -1) {
@@ -265,8 +264,8 @@ $(function() { // wait for document ready
         comIndex = breakpoints[comOptIndex]
 
         $('.reviews__box').animate({scrollTop:comOptHeight[comOptIndex]}, 1000)
-          console.log("comOptIndex: " + comOptIndex)
-        console.log("comIndex: " + comIndex)
+        //   console.log("comOptIndex: " + comOptIndex)
+        // console.log("comIndex: " + comIndex)
          // console.log('afterSingleReviewScroll: ' + afterSingleReviewScroll)
         }
         else if(comOptIndex == -1) {
@@ -274,9 +273,9 @@ $(function() { // wait for document ready
             comIndex = -1
             comOptIndex = -1
             afterSuperScroll = true;
-             console.log("comOptIndex: " + comOptIndex)
-        console.log("comIndex: " + comIndex)
-          console.log("afterSuperScroll: " + afterSuperScroll)
+        //      console.log("comOptIndex: " + comOptIndex)
+        // console.log("comIndex: " + comIndex)
+        //   console.log("afterSuperScroll: " + afterSuperScroll)
         }
         else {
             ( $('.reviews__box').animate({scrollTop: comOptHeight[comOptHeight.length - 1]}, 1750))
@@ -302,39 +301,24 @@ $(function() { // wait for document ready
 
     function play() {
 
-        if(isPlaying) {
-            isPaused = true;
-            isPlaying = false;
-        }
-
-        else if(isPaused) {
-              isPaused = false;
-            isPlaying = true;
-        }
-
-        if (!isPaused) {
         comOptIndex++
         comIndex = breakpoints[comOptIndex]
-        }
+        $('.play').prop('disabled', true).addClass('gray')
 
-        // alert(comments.length)
+
+      
+
+
+
         var speed = (comHeight[comIndex - 1] -  comHeight[comIndex - 2]) * 30
         if (!speed)
             speed = comHeight[comIndex - 1] * 30
-       
-        if(!isPlaying) {
-        $('.reviews__box').animate({scrollTop:comOptHeight[comOptIndex]}, speed, 'linear')
-        }
-        else {
-            $('.reviews__box').stop();
-        }
-        isPlaying =  true;
+       $('.reviews__box').animate({scrollTop:comOptHeight[comOptIndex]}, speed, 'linear')
         // alert(comOptHeight[comOptIndex])
-         console.log('speed ' + speed)
-        console.log("comOptIndex: " + comOptIndex)
-        console.log("comIndex: " + comIndex)
-        setTimeout(function(){isPlaying = false;}, speed)
-        // afterSingleReviewScroll = false
+        //  console.log('speed ' + speed)
+        // console.log("comOptIndex: " + comOptIndex)
+        // console.log("comIndex: " + comIndex)
+        setTimeout(function(){$('.play').prop('disabled', false).removeClass('gray');}, speed)
     }
 
   
@@ -355,50 +339,50 @@ $(function() { // wait for document ready
     }
 
      /*INIT FULLCALENDAR*/
-    $('#calendar').fullCalendar({
-        googleCalendarApiKey: 'AIzaSyAmckkTJxLGZoqR_ajjKaRtYnaX4oCVX8Y',
-        events: {
-            googleCalendarId: '1kpbrqup8i1upe1s26gnqaddi4@group.calendar.google.com'
-        },
-        firstDay: 1,
-        height: 600,
-        header: {
-            left: 'prev,next today',
-            center: 'title',
-            right: 'month,agendaWeek,agendaDay'
-        },
-        monthNames: ['Январь', 'Февраль', 'Март', 'Апрель', 'Май', 'οюнь', 'οюль', 'Август', 'Сентябрь', 'Октябрь', 'Ноябрь', 'Декабрь'],
-        monthNamesShort: ['Янв.', 'Фев.', 'Март', 'Апр.', 'Май', 'οюнь', 'οюль', 'Авг.', 'Сент.', 'Окт.', 'Ноя.', 'Дек.'],
-        dayNames: ["Воскресенье", "Понедельник", "Вторник", "Среда", "Четверг", "Пятница", "Суббота"],
-        dayNamesShort: ["ВС", "ПН", "ВТ", "СР", "ЧТ", "ПТ", "СБ"],
-        buttonText: {
-            prev: "◀",
-            next: "▶",
-            prevYear: "&nbsp;&lt;&lt;&nbsp;",
-            nextYear: "&nbsp;&gt;&gt;&nbsp;",
-            today: "Сегодня",
-            month: "Месяц",
-            week: "Неделя",
-            day: "День"
-        },
-        textColor: 'black',
-        color: 'black'
-    });
-    $('.intro__calendar').hide()
-    $('.open-calendar-button').on('click', function() {
+    // $('#calendar').fullCalendar({
+    //     googleCalendarApiKey: 'AIzaSyAmckkTJxLGZoqR_ajjKaRtYnaX4oCVX8Y',
+    //     events: {
+    //         googleCalendarId: '1kpbrqup8i1upe1s26gnqaddi4@group.calendar.google.com'
+    //     },
+    //     firstDay: 1,
+    //     height: 600,
+    //     header: {
+    //         left: 'prev,next today',
+    //         center: 'title',
+    //         right: 'month,agendaWeek,agendaDay'
+    //     },
+    //     monthNames: ['Январь', 'Февраль', 'Март', 'Апрель', 'Май', 'οюнь', 'οюль', 'Август', 'Сентябрь', 'Октябрь', 'Ноябрь', 'Декабрь'],
+    //     monthNamesShort: ['Янв.', 'Фев.', 'Март', 'Апр.', 'Май', 'οюнь', 'οюль', 'Авг.', 'Сент.', 'Окт.', 'Ноя.', 'Дек.'],
+    //     dayNames: ["Воскресенье", "Понедельник", "Вторник", "Среда", "Четверг", "Пятница", "Суббота"],
+    //     dayNamesShort: ["ВС", "ПН", "ВТ", "СР", "ЧТ", "ПТ", "СБ"],
+    //     buttonText: {
+    //         prev: "◀",
+    //         next: "▶",
+    //         prevYear: "&nbsp;&lt;&lt;&nbsp;",
+    //         nextYear: "&nbsp;&gt;&gt;&nbsp;",
+    //         today: "Сегодня",
+    //         month: "Месяц",
+    //         week: "Неделя",
+    //         day: "День"
+    //     },
+    //     textColor: 'black',
+    //     color: 'black'
+    // });
+    // $('.intro__calendar').hide()
+    // $('.open-calendar-button').on('click', function() {
 
-        $('.shadow').toggleClass('modal_shadow')
-        $('.intro__calendar').css('z-index', '6').fadeToggle('slow')
+    //     $('.shadow').toggleClass('modal_shadow')
+    //     $('.intro__calendar').css('z-index', '6').fadeToggle('slow')
       
-      if ($('.shadow').hasClass('modal_shadow') ){
-            $('.shadow').on('click', function() {
-                if ($(event.target).closest(".intro_calendar").length) return;
-                $('.shadow').removeClass('modal_shadow');
-                $('.intro__calendar').fadeOut('slow');
-            });
-        };
+    //   if ($('.shadow').hasClass('modal_shadow') ){
+    //         $('.shadow').on('click', function() {
+    //             if ($(event.target).closest(".intro_calendar").length) return;
+    //             $('.shadow').removeClass('modal_shadow');
+    //             $('.intro__calendar').fadeOut('slow');
+    //         });
+    //     };
 
-    });
+    // });
      /*INIT FULLCALENDAR END*/
 
   $("#my-menu").mmenu({
@@ -458,6 +442,9 @@ function addReview($name, $review) {
 
         $('.reviews__new-review .name').val('')
         $('.reviews__new-review__text').val('')
+
+        resetReviewsNav();
+        resizeReview();
    }
     if($name.length < 1)      
         $('.reviews__new-review .name').css('border', '2px solid #db594f')
@@ -514,7 +501,7 @@ function addReview($name, $review) {
     $('.reviews__box').animate({scrollTop:0}, 1000)
     clearTimeout(resizeId);
     $('.play,.pause,.backward,.forward,.fast-forward,.fast-backward').prop('disabled', true)
-    resizeId = setTimeout(doneResizing, 3000);
+    resizeId = setTimeout(doneResizing, 5000);
 
     }
     $(window).on('orientationchange', function() {resizeReview()})
