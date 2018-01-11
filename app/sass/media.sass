@@ -10,7 +10,7 @@
     height: 100vh!important
     min-height: 1200px!important
     &__nav
-      top: calc(43vh + 10px)
+      top: calc(41vh + 10px)
       left: 50%
     .h2
       // font-size: 34px
@@ -19,13 +19,14 @@
       left: 50%
       transform: translateX(-50%);
     &__content
-      margin-top: 155px
+      margin-top: 15px
+      font-size: 12px
       flex-wrap: wrap
       height: 80vh!important
     &__box
       // margin-left: -30px
       width: 100%
-      height: 40vh!important
+      height: 40vh
     .button.show-review
       position: relative
       top: 10px!important
@@ -54,9 +55,7 @@
     .reviews__new-review .review__character select
       height: auto
       font-size: 0.8em
-    &__content
-      margin-top: 170px
-      font-size: 12px
+     
 
   /*REVIEWS END*/
 
@@ -253,51 +252,25 @@
 
 /*FOR IPAD PRO*/
 @media only screen and (max-width : 1024px) and (min-height: 1024px)
-  /*REVIEWS*/
-  .reviews
-    .h2
-      // font-size: 34px
-      margin-top: 70px
-      margin-left: 0
-      left: 50%
-      transform: translateX(-50%);
-    &__content
-    //   margin-top: 155px
-      flex-wrap: wrap
-      height: 80%
+  
+  /*HEADER*/
+  .header
+    font-size: 1em
+    height: 55px
+    &__contacts__mail
+      display: none
+  .open-calendar-button
+    left: 52%!important
+  .header__contacts__phone
+    margin-left: 2em
+  /*HEADER END*/
 
-    &__box
-      width: 100%
-      height: 55%
-    .reviews__new-review__container 
-      height: 33%
-      width: 100%
-      .reviews__new-review
-        width: 42%
-        left: 50% 
-        margin: 0
-        transform: translateX(-50%);
-        position: relative
-        align-items: stretch
-        .h3
-          text-align: center
-          margin: 30px 0 10px 0
-    .h2
-      font-size: 34px
-      margin-top: 70px
-    .h3 
-      font-size: 23px
-      line-height: 1
-    .reviews__new-review .review__character select
-      height: auto
-      font-size: 0.8em
-    &__content
-      // margin-top: 170px
-      font-size: 12px
-  /*REVIEWS END*/
   /*FORM*/
   .form__section
     height: 90vh
+    .title
+      font-size: 36px
+      top: 130px
     .form__container
       min-height: 0
       margin-top: 220px
@@ -411,8 +384,12 @@
       width: 100%
       margin: 0
       min-height: 800px
+      flex-wrap: wrap
+      height: 80%
+      margin-top: 15px
+      font-size: 12px
     &__nav
-      top: calc(40vh + 40px)
+      top: calc(45vh + 20px)
       left: 50%
     .h2
       // font-size: 34px
@@ -420,10 +397,7 @@
       margin-left: 0
       left: 50%
       transform: translateX(-50%);
-    &__content
-    //   margin-top: 155px
-      flex-wrap: wrap
-      height: 80%
+      
       .button.show-review
         position: relative
         top: 10px
@@ -455,10 +429,7 @@
       line-height: 1
     .reviews__new-review .review__character select
       height: auto
-      font-size: 0.8em
-    &__content
-      margin-top: 170px
-      font-size: 12px
+      font-size: 0.8em  
   /*REVIEWS END*/
  
   /*FORM*/
@@ -648,13 +619,13 @@
       height: 30px
       width: 0
   /*PRICE SECTION END*/
-    /*  REVIEWS */
+
+  /*  REVIEWS */
   .reviews
     min-height: 830px!important
     &__content
       display: block
       width: 100%
-      margin: 0
       min-height: 800px
     .button.show-review
       position: relative
@@ -663,6 +634,7 @@
       border-radius: 10px
     .h2
       margin-top: 50px
+      position: absolute
     &__nav
       top: 519px
       button.forward,button.backward

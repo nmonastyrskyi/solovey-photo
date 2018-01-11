@@ -41,7 +41,7 @@
         transition: all 0.7s ease
         &:before
           display: block
-          content: "\f06e"
+          content: "\f083"
           font-family: FontAwesome
           text-align: center
           font-size: 2em
@@ -53,6 +53,9 @@
           position: absolute
           z-index: 2
           transition: all 0.7s ease
+        &.video:before
+          content: "\f03d"
+
 
     &:hover
       // transform: scale(1.1)
@@ -60,10 +63,11 @@
       overflow: visible
       border: 4px solid  lighten(#05a3a3, 10%)
       .a-after
-        background-color: lighten(rgba(#05a3a3, 0.3), 10%)
+        background-color: ligten(rgba(#05a3a3, 0.5), 30%)
         &:before
-          color: rgba(#ddd,0.9)
-          text-shadow: 2px 2px 30px #444
+          color: rgba(lighten(#05a3a3, 10%),.7)
+          text-shadow: 2px 2px 30px rgba(darken(#05a3a3, 20%),0.3)
+      // .a-after.online-store:before,.a-after.events:before,.a-after.pregnant:before,.a-after.video:before BRIGHT BACKGROUND
   
       .button
         background-color: lighten(#05a3a3, 10%)
