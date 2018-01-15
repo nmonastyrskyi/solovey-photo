@@ -1,5 +1,7 @@
-node_modules
-dist
-package-lock.json
-package.json
-
+/node_modules/
+/dist/
+/.git/
+app/css/
+/**/*.psd
+/**/Thumbs.db
+/**/*.DS_Store

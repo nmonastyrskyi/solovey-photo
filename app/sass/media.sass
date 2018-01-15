@@ -334,10 +334,15 @@
   /*ABOUT*/
   .about
     height: auto!important
+    position: relative
     &__content
-      display: block!important
-      top: 40%
+      position: absolute
+      display: block
+      height: 100%
       padding-right: 20px
+    .about__content__text
+      background-color: transparent
+
   /*ABOUT END*/
   
   /*GALLERY*/
@@ -486,6 +491,43 @@
       height: 30px
       width: 0
   /*PRICE SECTION END*/
+
+
+@media only screen and (max-width : 610px)
+  /*HEADER*/
+  .header__contacts__mail
+    display: none
+  /*HEADER END*/
+
+   /*ABOUT*/
+  .about
+    position: relative
+    .about__content
+      margin-top: 30px
+      outline: 10px 20px 20px 20px  solid #f6f6f6
+      border-top: 20px solid #f6f6f6
+      display: block
+      width: 100%
+      font-size: 13px
+      position: absolute
+      margin: 0
+      padding-top: 0
+      border-radius: 0
+      height: auto
+      top: 480px
+      // transform: translateY(-95%)
+      &__text
+        transform: none
+        top: 0
+        line-height: 1.5
+
+  .about.fullscreen
+    background-position: 100% -50px    
+    height: 720px
+    background-size: 940px auto
+    background-repeat: no-repeat
+    background-color: #FFF
+  /*ABOUT END*/
 @media only screen and (max-width : 510px)
   /**/
   .button
@@ -506,8 +548,7 @@
   // GENERAL END
 
   /*HEADER*/
-  .header__contacts__mail
-    display: none
+
   .hamburger--emphatic
     padding-right: 0
   .hamburger-inner,.hamburger-inner:before,.hamburger-inner:after 
@@ -519,23 +560,12 @@
   .about
     position: relative
     .about__content
-      outline: 20px  solid #f6f6f6
-      display: block!important
-      width: 100%
-      font-size: 13px
-      position: absolute
-      margin: 0
-      height: auto
-      border-radius: 0
-      top: 690px
-      transform: translateY(-95%)
-      &__text
-        line-height: 1.5
+     top: 440px
 
   .about.fullscreen
-    background-position: 100% 0%    
-    height: 720px
-    background-size: 160% auto
+    background-position: calc(91%) -20px    
+    height: 720px!important
+    background-size: 820px auto
     background-repeat: no-repeat
     background-color: #FFF
   /*ABOUT END*/
@@ -546,10 +576,10 @@
   
     /*  GALLERY */
   .galery
-    height: 5000px
+    height: 4900px
     background-color: #FFF
     .container,.row
-      height: 5000px
+      height: 4900px
       width: 100%
     &:before
       content: 'Галерея и цены'
@@ -563,7 +593,7 @@
       top: 60px
 
     &__content
-      top: 120px
+      top: 100px
       height: 4800px
       border: none
     &__item
@@ -601,6 +631,16 @@
       position: relative
       width: 100%
       padding: 0px
+      border-radius: 5px
+      &:before 
+        content: "";
+        position: absolute;
+        height: 90px;
+        width: 10px;
+        transform: rotate(31deg);
+        top: -24px;
+        left: -2px
+        background: rgba(yellow, 0.5); 
       td
         border-radius: 0!important
         font-size: 14px

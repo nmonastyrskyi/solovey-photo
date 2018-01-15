@@ -76,19 +76,21 @@ body
 
 /* INDIVIDUAL*/
 
+.container
+  width: 90vw
 
 .individual.header
   display: block
   position: relative
   font-size: 16px
-  margin: 1vmin 2vmin 8vmin 2vmin
+  margin: 10px 20px 80px 20px
   .button 
-    margin-top: 0.5vh
+    margin-top: 5px
 
 
-.individual-img-wrapper
-  a
-    display: block
+// .individual-img-wrapper
+//   a
+//     display: block
 
 .header.individual 
   .button
@@ -101,11 +103,11 @@ body
   // display: inline-block
   left: 50%
   transform: translateX(-50%)
-  margin: 1vh 0 1vh 0
+  margin: 10px 0 10px 0
   cursor: pointer
   img
     width: auto
-    height: 38.5vmin
+    height: 415px
     left: 50%
     transform: translateX(-50%)
     // display: block
@@ -122,7 +124,7 @@ body
   &:after
     content: 'Студийные фото'
     padding-top: 25%
-    font-size: 3vmin
+    font-size: 32px
     font-weight: 100
     font-family: roboto
     letter-spacing: 8px
@@ -141,32 +143,64 @@ body
 .individual-img-link:last-child:hover:after
   background-color: transparent
 .individual-img-link:last-child
-  top: calc(220px + 40.5vmin)
+  top: 630px
 
-
+@media only screen and (max-width: 1520px)
+  .individual-img-link img
+    height: 400px
+@media only screen and (max-width: 1060px)
+  .individual-img-link img
+    height: 387px
+  .individual-img-link:last-child 
+    top: 640px
+@media only screen and (max-width: 1024px) and (orientation: portrait)
+  .individual-img-link img
+    height: 500px
+  .individual-img-link:first-child 
+    margin-top: 20px  
+  .individual-img-link:last-child 
+    top: 790px
+@media only screen and (max-width: 795px)
+  .individual-img-link img
+    height: 374px
+  .individual-img-link:last-child 
+    top: 600px
 @media only screen and (max-width: 768px)
-  .individual.header
-    font-size: 13px
-  .individual-img-link
-    img
-      height: 48.5vmin!important
-    top: 210px!important
+  .individual-img-link img
+    height: 345px
+  .individual-img-link      
+    top: 210px
+  .individual-img-link:first-child
+    margin-top: 60px
   .individual-img-link:last-child
-    top: calc(220px + 48.5vmin)!important
+    top: 635px
+
+@media only screen and (max-width: 600px)
+  .individual-img-link img
+    height: 374px
+  .individual-img-link:last-child 
+    top: 670px
 
 @media only screen and (max-width: 480px)
   .description
     padding: 0 20px
+    font-size: 14px
+  .button-back
+    font-size: 14px
+    padding: 9px 33px 6px 33px
   .individual-img-link
     margin-top: 80px
     img
-      height: 48.5vmin!important
+      height: 200px
     &:after
       background-color: rgba(#4c4c4c, 0.6)
-      font-weight: 500
-      font-size: 16px
+      font-size: 20px
+  .individual-img-link:first-child
+    top: 330px
   .individual-img-link:last-child
-    top: calc(215px + 48.5vmin)!important
+    top: 530px
+    margin-bottom: 20px
+
 @media only screen and (max-width: 320px)
   .individual.header
     font-size: 11px
@@ -187,7 +221,7 @@ body
 .events-img-link3:after
   content: 'Крестины'
 .events-img-link4:after
-  content: 'Спектакли, конкурсы, турниры'  
+  content: 'Выступления'  
 
 $min_mar_top: 19vmin
 
@@ -196,18 +230,31 @@ $min_mar_top: 19vmin
 @for $i from 1 through 4 
   .events-img-link#{$i}
     @extend %events-item
-    top: calc(220px + 40.5vmin * (#{$i} - 1))
+    top: calc(160px + 430px * (#{$i} - 1))
+    line-height: 30px
   @media only screen and (max-width: 768px)
     .events-img-link#{$i}
-      top: calc(220px + 50.5vmin * (#{$i} - 1))
+      top: calc(160px + 50.5vmin * (#{$i} - 1))
       img
         height: 48.5vmin!important
       &:after
         background-color: rgba(#4c4c4c, 0.6)
-        font-weight: 500
+        // font-weight: 500
       &:hover:after
         background-color: rgba(#4c4c4c, 0.6)
         color: #fff
+  @media only screen and (max-width: 480px)
+    .events-img-link#{$i}
+      top: calc(140px + 50.5vmin * (#{$i} - 1))
+      img
+        height: 48.5vmin!important
+  @media only screen and (max-width: 320px)
+    .events-img-link#{$i}
+      top: calc(110px + 50.5vmin * (#{$i} - 1))
+      &:after
+        font-size: 24px
+      img
+        height: 48.5vmin!important
       
 
 
