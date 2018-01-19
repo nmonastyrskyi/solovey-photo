@@ -33,6 +33,8 @@ $(function() { // wait for document ready
     //after scroll from start to end
     var afterSuperScroll = false;
 
+    /*Highlite header first section*/
+    $('.header__nav__item a:first').addClass('active')
     
     /*E-mail AJAX SEND*/
     $("form").submit(function() { 
@@ -63,57 +65,57 @@ $(function() { // wait for document ready
      /*HIGHLIGHT NAV ITEMS WHEN SCROLLING*/
     $(window).scroll(function() {
         var $window_top = $(window).scrollTop();
-        var $intro_top = $('section#intro').offset().top
+        // var $intro_top = $('section#intro').offset().top
         var $about_top = $('section#about').offset().top
         var $galery_top = $('section#galery').offset().top
         var $price_top = $('section#price').offset().top
         var $galery_offset_top = $galery_top - ($galery_top - $about_top) * 0.3
         var $price_offset_top = $price_top - ($price_top - $galery_top) * 0.3
         var $reviews_top = $('section#reviews').offset().top
-        var $reviews_offset_top = $reviews_top - ($reviews_top - $price_top) * 0.3
+        var $reviews_offset_top = $reviews_top - ($reviews_top - $price_top) * 0.2
         var $contacts_top = $('section#contact').offset().top
         var $contacts_ofsset_top = $contacts_top - ($contacts_top - $reviews_top) * 0.3
 
-       if($window_top >= $intro_top && $window_top < $about_top * 0.7) {
+       // if($window_top >= $intro_top && $window_top < $about_top * 0.7) {
+       //      $('.header__nav__item a').removeClass('active')
+       //      $('.header__nav__item a:first').addClass('active')
+       //  }
+        if($window_top >=  $about_top  && $window_top < $galery_offset_top * 0.7) {
             $('.header__nav__item a').removeClass('active')
             $('.header__nav__item a:first').addClass('active')
         }
-        else  if($window_top >=  $about_top * 0.7 && $window_top < $galery_offset_top) {
-            $('.header__nav__item a').removeClass('active')
-            $('.header__nav__item a:eq( 1 )').addClass('active')
-        }
         else  if($window_top >= $galery_offset_top && $window_top < $price_offset_top) {
             $('.header__nav__item a').removeClass('active')
-            $('.header__nav__item a:eq( 2 )').addClass('active')
+            $('.header__nav__item a:eq( 1 )').addClass('active')
         }
 
         else  if($window_top >= $price_offset_top && $window_top < $reviews_offset_top) {
             $('.header__nav__item a').removeClass('active')
-            $('.header__nav__item a:eq( 3 )').addClass('active')
+            $('.header__nav__item a:eq( 2 )').addClass('active')
         }
 
         else  if($window_top  >= $reviews_offset_top && $window_top < $contacts_ofsset_top) {
             $('.header__nav__item a').removeClass('active')
-            $('.header__nav__item a:eq( 4 )').addClass('active')
+            $('.header__nav__item a:eq( 3 )').addClass('active')
         }
          else  if($window_top  >=$contacts_ofsset_top) {
             $('.header__nav__item a').removeClass('active')
-            $('.header__nav__item a:eq( 5 )').addClass('active')
+            $('.header__nav__item a:eq( 4 )').addClass('active')
         }
          /*HIGHLIGHT NAV ITEMS WHEN SCROLLING END*/
 
    
             /*ABOUT CONTENT SHOW*/
-    $introHeight = $('.intro').outerHeight();
-    // $aboutHeight = $('.about').outerHeight();
-    if ($(window).scrollTop() >  $introHeight * 0.65 && $(document).width()>768){
-        $('.about__content').show(700)
-    }
-    else  if( !(/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) )
-        $('.about__content').hide(700)
+    // $introHeight = $('.intro').outerHeight();
+    // // $aboutHeight = $('.about').outerHeight();
+    // if ($(window).scrollTop() >  $introHeight * 0.65 && $(document).width()>768){
+    //     $('.about__content').show(700)
+    // }
+    // else  if( !(/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) )
+    //     $('.about__content').hide(700)
 
-    if( $(document).width() < 768)
-        $('.about.fullscreen').css('height', 'auto')
+    // if( $(document).width() < 768)
+    //     $('.about.fullscreen').css('height', 'auto')
         /*ABOUT CONTENT SHOW END*/
 
 
@@ -124,7 +126,7 @@ $(function() { // wait for document ready
         event.preventDefault(); //забираем идентификатор бока с атрибута href    
         var id = $(this).attr('href'), //узнаем высоту от начала страницы до блока на который ссылается якорь
             top = $(id).offset().top;
-        var top0 = $('#intro').offset().top
+        var top0 = $('#about').offset().top
            //анимируем переход на расстояние - top за 1500 мс
         $('body,html').animate({ scrollTop: top - top0 }, 1500);
     });
