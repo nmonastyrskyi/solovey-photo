@@ -44,7 +44,7 @@ $(function() { // wait for document ready
             url: "../mail.php",
             data: th.serialize()
         }).done(function() {
-            alert("Thank you!");
+            pageMessage('Спасибо, Ваше сообщение отправлено!');
             setTimeout(function() {
                 // Done Functions
                 th.trigger("reset");
@@ -503,10 +503,26 @@ $(function() { // wait for document ready
         }, 5000);
 
     }
-
-
     /*DO WHEN RESIZING FINISH END*/
+    
+    /*MAKES 4 SEC MESSAGE ON A PAGE*/
+    function pageMessage(txt){
+        var text_container = document.createElement('div');
+        var text = document.createElement('div');
+        text_container.className = 'text_container'
 
+
+        text_container.style.cssText = "position: fixed; z-index: 99; width: 80vw; height: 50vh; background: rgba(6, 188, 188, 0.9); top: 50%; left: 50%; transform: translate(-50%, -50%); border-radius: 10px; opacity: 0; transition: all 1.5s ease;"
+        text.style.cssText = "position: fixed; z-index: 99; top: 50%; left: 50%; transform: translate(-50%, -50%); text-align: center; font-size: 30px; color: #fff; "
+
+        text.innerHTML = txt
+        document.body.appendChild(text_container)
+        document.querySelector('.text_container').appendChild(text)
+
+        setTimeout(function(){text_container.style.opacity = "1"}, 100)
+        setTimeout(function(){text_container.style.opacity = "0"}, 3000)
+    }
+        /*MAKES 4 SEC MESSAGE ON A PAGE END*/
 
     $(window).on('resize', function() {
 
