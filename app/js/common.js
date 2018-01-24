@@ -518,9 +518,12 @@ $(function() { // wait for document ready
         text.innerHTML = txt
         document.body.appendChild(text_container)
         document.querySelector('.text_container').appendChild(text)
-
         setTimeout(function(){text_container.style.opacity = "1"}, 100)
-        setTimeout(function(){text_container.style.opacity = "0"}, 3000)
+        setTimeout(function(){
+            text_container.style.opacity = "0"
+            text_container.remove();
+        }, 3000)
+
     }
         /*MAKES 4 SEC MESSAGE ON A PAGE END*/
 
