@@ -44,7 +44,7 @@ $(function() { // wait for document ready
             url: "../mail.php",
             data: th.serialize()
         }).done(function() {
-            pageMessage('Спасибо, Ваше сообщение отправлено!');
+            pageMessage('Спасибо, Ваше сообщение отправлено!', 3);
             setTimeout(function() {
                 // Done Functions
                 th.trigger("reset");
@@ -128,7 +128,7 @@ $(function() { // wait for document ready
         event.preventDefault(); //забираем идентификатор бока с атрибута href    
         var id = $(this).attr('href'), //узнаем высоту от начала страницы до блока на который ссылается якорь
             top = $(id).offset().top;
-        var top0 = $('#intro').offset().top
+        var top0 = $('#about').offset().top
         //анимируем переход на расстояние - top за 1500 мс
         $('body,html').animate({ scrollTop: top - top0 }, 1500);
         // alert(top)
@@ -410,35 +410,38 @@ $(function() { // wait for document ready
 
     /*INIT REVIEW ADDING*/
     $(".add_review").on('click', function() {
-        var $name = $('.reviews__new-review .name').val();
-        var $review = $('.reviews__new-review__text').val();
+        // var $name = $('.reviews__new-review .name').val();
+        // var $review = $('.reviews__new-review__text').val();
 
-        addReview($name, $review)
+        addReview(/*$name, $review*/)
 
     })
     $('.reviews__new-review__text, .reviews__new-review .name ').focus(function() {
         $(this).css('border', 'none')
     })
 
-    function addReview($name, $review) {
-        if ($name.length >= 1 && $review.length >= 1) {
+    function addReview(/*$name, $review*/) {
 
-            $newComment = $(".reviews__box__comment:first").clone().prependTo('.reviews__box')
-            $('.reviews__box__comment__text__wrapper:first').removeClass('green').removeClass('red').removeClass('gray')
-            $newComment.children('.reviews__box__comment__name').html($name);
-            $newComment.find('.reviews__box__comment__text').html($review);
+              pageMessage('Приносим свои извенения, эта функция находится в разработке. Пока что, оставить отзыв вы можете на страничке Вконтакте', 5);
 
-            $('.reviews__box__comment__text__wrapper:first').addClass($('.reviews option:selected').val())
+    //     if ($name.length >= 1 && $review.length >= 1) {
+
+    //         $newComment = $(".reviews__box__comment:first").clone().prependTo('.reviews__box')
+    //         $('.reviews__box__comment__text__wrapper:first').removeClass('green').removeClass('red').removeClass('gray')
+    //         $newComment.children('.reviews__box__comment__name').html($name);
+    //         $newComment.find('.reviews__box__comment__text').html($review);
+
+    //         $('.reviews__box__comment__text__wrapper:first').addClass($('.reviews option:selected').val())
 
 
-            $('.reviews__new-review .name').val('')
-            $('.reviews__new-review__text').val('')
-            resizeReview();
-        }
-        if ($name.length < 1)
-            $('.reviews__new-review .name').css('border', '2px solid #db594f')
-        if ($review.length < 1)
-            $('.reviews__new-review__text').css('border', '2px solid #db594f')
+    //         $('.reviews__new-review .name').val('')
+    //         $('.reviews__new-review__text').val('')
+    //         resizeReview();
+    //     }
+    //     if ($name.length < 1)
+    //         $('.reviews__new-review .name').css('border', '2px solid #db594f')
+    //     if ($review.length < 1)
+    //         $('.reviews__new-review__text').css('border', '2px solid #db594f')
     }
 
     /*SHOW MORE REVIEWS BUTTON HANDLER*/
@@ -506,7 +509,7 @@ $(function() { // wait for document ready
     /*DO WHEN RESIZING FINISH END*/
     
     /*MAKES 4 SEC MESSAGE ON A PAGE*/
-    function pageMessage(txt){
+    function pageMessage(txt, seconds){
         var text_container = document.createElement('div');
         var text = document.createElement('div');
         text_container.className = 'text_container'
@@ -521,8 +524,8 @@ $(function() { // wait for document ready
         setTimeout(function(){text_container.style.opacity = "1"}, 100)
         setTimeout(function(){
             text_container.style.opacity = "0"
-            text_container.remove();
-        }, 3000)
+             setTimeout(function(){text_container.remove()},1010);
+        }, seconds * 1000)
 
     }
         /*MAKES 4 SEC MESSAGE ON A PAGE END*/
