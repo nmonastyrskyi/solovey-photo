@@ -517,7 +517,9 @@ $(function() { // wait for document ready
 
         text_container.style.cssText = "position: fixed; z-index: 99; width: 80vw; height: 50vh; background: rgba(6, 188, 188, 0.9); top: 50%; left: 50%; transform: translate(-50%, -50%); border-radius: 10px; opacity: 0; transition: all 1.5s ease;"
         text.style.cssText = "position: fixed; z-index: 99; top: 50%; left: 50%; transform: translate(-50%, -50%); text-align: center; font-size: 30px; color: #fff; "
-
+        if ((/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent))) {
+              text_container.style.cssText = "position: fixed; z-index: 99; width: 90vw; height: 100vh; background: rgba(6, 188, 188, 0.9); top: 50%; left: 50%; transform: translate(-50%, -50%); opacity: 0; transition: all 1.5s ease;"
+        } 
         text.innerHTML = txt
         document.body.appendChild(text_container)
         document.querySelector('.text_container').appendChild(text)
